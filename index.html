@@ -71,77 +71,101 @@
     <section class="py-16 px-6 max-w-7xl mx-auto border-t">
         <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">La Nostra Selezione Premium</h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             
-            <!-- NUOVA CARD: OSMOSYSTEM 150 (In evidenza) -->
-            <div class="bg-white rounded-3xl shadow-2xl border-2 border-cyan-500 p-6 transform hover:-translate-y-2 transition duration-300 relative">
-                <div class="absolute top-0 right-0 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-2xl uppercase tracking-wider">
-                    Bestseller
+            <!-- CARD 1: OSMOSYSTEM 150 -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="osmosystem.jpg" class="max-h-full object-contain" alt="Osmosystem 150" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'">
                 </div>
-                <div class="h-56 flex items-center justify-center mb-4 bg-slate-50 rounded-xl overflow-hidden p-2">
-                    <img src="osmosystem.jpg" class="max-h-full object-contain drop-shadow-md" alt="Osmosystem 150">
-                </div>
-                <h3 class="text-2xl font-extrabold text-slate-800">OSMOSYSTEM 150</h3>
-                <p class="text-cyan-600 text-sm font-bold uppercase mb-4">Prestazioni Top in 10,5 cm</p>
-                <ul class="text-sm space-y-3 text-slate-600">
-                    <li class="flex items-start"><span class="mr-2 text-cyan-500">✓</span> <strong>Flusso Diretto:</strong> 150 Lt/h (2,5 L/min), niente più attese.</li>
-                    <li class="flex items-start"><span class="mr-2 text-cyan-500">✓</span> <strong>Design Ultra-Slim:</strong> Solo 10,5 cm di spessore. Installazione orizzontale o verticale.</li>
-                    <li class="flex items-start"><span class="mr-2 text-cyan-500">✓</span> <strong>Materiali Premium:</strong> Scocca robusta in Acciaio Inox ed Alluminio.</li>
-                    <li class="flex items-start"><span class="mr-2 text-cyan-500">✓</span> <strong>Smart Tech:</strong> Display multifunzione, sensore antiallagamento e autoflushing delle membrane.</li>
-                    <li class="flex items-start"><span class="mr-2 text-cyan-500">✓</span> <strong>Versioni:</strong> Standard, Alka e GAS (con carbonatore integrato per acqua frizzante).</li>
+                <h3 class="text-xl font-bold">OSMOSYSTEM 150</h3>
+                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Prestazioni Top in 10,5 cm</p>
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                    <li>• Produzione: 150 Lt/h (2,5 L/min)</li>
+                    <li>• Versioni: Standard, Alka e GAS</li>
+                    <li>• Scocca in Acciaio Inox e Alluminio</li>
+                    <li>• Sensore antiallagamento e autoflushing</li>
                 </ul>
             </div>
 
-            <!-- CARD ESISTENTI -->
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="osmosi.jpg" class="max-h-full" alt="Osmosì" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosì'"></div>
+            <!-- CARD 2: OSMOSÌ -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="osmosi.jpg" class="max-h-full object-contain" alt="Osmosì" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosì'">
+                </div>
                 <h3 class="text-xl font-bold">OSMOSÌ</h3>
                 <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Sottile: 10,5 cm</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
                     <li>• Produzione: 100 Lt/h (1,6 L/min)</li>
                     <li>• Motore 180W - Pompa rotativa</li>
                     <li>• Vessel FV System brevettato</li>
                 </ul>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="bollicina.jpg" class="max-h-full" alt="Bollicina FV" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'"></div>
+            <!-- CARD 3: BOLLICINA FV -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="bollicina.jpg" class="max-h-full object-contain" alt="Bollicina FV" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'">
+                </div>
                 <h3 class="text-xl font-bold">BOLLICINA FV</h3>
                 <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Acqua Fredda e Frizzante</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
                     <li>• Osmofrigogasatore Inox</li>
                     <li>• Produzione osmosi: 100 Lt/h</li>
                     <li>• Display controllo temperatura</li>
                 </ul>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="bollaquick.jpg" class="max-h-full" alt="Bollaquick" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollaquick'"></div>
+            <!-- CARD 4: BOLLAQUICK -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="bollaquick.jpg" class="max-h-full object-contain" alt="Bollaquick" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollaquick'">
+                </div>
                 <h3 class="text-xl font-bold">BOLLAQUICK</h3>
                 <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Efficienza Sottobanco</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
                     <li>• Produzione nominale: 90 Lt/h</li>
                     <li>• Pompa booster 220V High Perf.</li>
                     <li>• Condensazione ad acqua</li>
                 </ul>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="thanta.jpg" class="max-h-full" alt="Thanta" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'"></div>
+            <!-- CARD 5: LINEA THANTA -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="thanta.jpg" class="max-h-full object-contain" alt="Thanta" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'">
+                </div>
                 <h3 class="text-xl font-bold">LINEA THANTA</h3>
                 <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Business & HoReCa</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
                     <li>• Raffreddamento: fino a 80 L/h</li>
                     <li>• Tecnologia Dual Cold (Igiene)</li>
                     <li>• Soprabanco o a Colonna</li>
                 </ul>
             </div>
+
+            <!-- CARD 6: OSMOSLIM -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="osmoslim.jpg" class="max-h-full object-contain" alt="Osmoslim" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmoslim'">
+                </div>
+                <h3 class="text-xl font-bold">OSMOSLIM</h3>
+                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Salvaspazio estremo</p>
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                    <li>• Spessore record: 6,7 cm</li>
+                    <li>• 2 Membrane TW30 2012</li>
+                    <li>• Installazione in ogni angolo</li>
+                </ul>
+            </div>
             
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="frighost.jpg" class="max-h-full" alt="Frighost" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Frighost'"></div>
+            <!-- CARD 7: FRIGHOST -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-4">
+                    <img src="frighost.jpg" class="max-h-full object-contain" alt="Frighost" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Frighost'">
+                </div>
                 <h3 class="text-xl font-bold">FRIGHOST</h3>
                 <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Invisibile sottozoccolo</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
                     <li>• Altezza: soli 10,5 cm</li>
                     <li>• Carbonatore Inox da 1 litro</li>
                     <li>• Fredda e frizzante nascosta</li>
@@ -161,7 +185,7 @@
                 <input type="tel" name="Telefono" placeholder="Telefono Cellulare" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                 <select name="Prodotto" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500">
                     <option value="">Quale modello ti interessa maggiormente?</option>
-                    <option value="Osmosystem 150">Osmosystem 150 (Novità Bestseller)</option>
+                    <option value="Osmosystem 150">Osmosystem 150</option>
                     <option value="Osmosì">Osmosì</option>
                     <option value="Bollicina FV">Bollicina FV</option>
                     <option value="Bollaquick">Bollaquick</option>
