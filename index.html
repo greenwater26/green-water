@@ -3,108 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Water | Sistemi di Filtrazione Avanzati</title>
+    <title>Acquasystem | Sistemi di Filtrazione Avanzati</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-slate-50 font-sans text-slate-900">
 
-    <nav class="p-6 bg-white shadow-sm flex justify-between items-center fixed w-full top-0 z-50">
-        <div class="text-2xl font-black text-green-600 tracking-tighter">GREEN WATER</div>
-        <a href="#form" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition shadow-md">Richiedi Preventivo</a>
+    <nav class="p-4 bg-white shadow-md flex justify-between items-center fixed w-full top-0 z-50">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Acquasystem Logo" class="h-10 md:h-14" onerror="this.style.display='none'">
+        </div>
+        <a href="#form" class="bg-cyan-500 text-white px-6 py-2 rounded-full font-bold hover:bg-cyan-600 transition shadow-md">Richiedi Analisi</a>
     </nav>
 
-    <header class="pt-32 pb-16 px-6 text-center bg-gradient-to-b from-white to-green-50">
-        <p class="text-green-600 font-bold tracking-widest mb-2 uppercase">Tecnologia Acquasystem Made in Italy</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">L'acqua più pura, <br>nel minor spazio possibile.</h1>
-        <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">Sistemi di filtrazione ad osmosi inversa e frigogasatori a flusso diretto. Design ultra-slim per la tua casa, potenza senza limiti per il tuo locale.</p>
-        <a href="#form" class="bg-gray-900 text-white text-lg px-8 py-4 rounded-lg font-bold shadow-xl hover:scale-105 transition inline-block">Scegli il tuo impianto</a>
+    <header class="pt-32 pb-16 px-6 text-center bg-gradient-to-b from-white to-cyan-50">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-slate-800">L'acqua pura a flusso diretto. <br><span class="text-cyan-500">Massima resa, minimo ingombro.</span></h1>
+        <p class="text-lg text-slate-600 mb-10 max-w-3xl mx-auto">Tecnologia Made in Italy certificata D.M. 25/2012 e D.M. 174/2004. Soluzioni salvaspazio invisibili per la Casa e ad alte prestazioni per Uffici e Ho.Re.Ca.</p>
+        <a href="#form" class="bg-slate-800 text-white px-10 py-4 rounded-xl font-bold shadow-2xl hover:bg-slate-700 transition inline-block">Configura il tuo impianto</a>
     </header>
 
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Le nostre soluzioni di punta</h2>
-        <div class="grid md:grid-cols-3 gap-8">
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-green-500 transition">
-                <div class="text-green-600 font-black text-xl mb-2">OSMOSLIM</div>
-                <h3 class="text-2xl font-bold mb-4">L'invisibile</h3>
-                <ul class="space-y-2 mb-6 text-gray-600">
-                    <li>✓ Soli <strong>6,7 cm</strong> di spessore</li>
-                    <li>✓ Installazione salva-spazio</li>
-                    <li>✓ Osmosi inversa a flusso diretto</li>
-                </ul>
-                <img src="foto-osmoslim.jpg" alt="Osmoslim" class="w-full h-48 object-cover rounded bg-gray-100 mb-4" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 hover:border-cyan-400 transition">
+                <div class="p-4 h-48 flex items-center justify-center bg-white"><img src="osmoslim.jpg" class="max-h-full object-contain" alt="Osmoslim" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Foto+Osmoslim'"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 text-slate-800">OSMOSLIM</h3>
+                    <p class="text-cyan-600 font-bold mb-4 text-sm uppercase">Soli 6,7 cm di spessore</p>
+                    <ul class="text-sm space-y-2 text-slate-600 mb-4">
+                        <li>• Produzione: 100 Lt/h</li>
+                        <li>• 2 Membrane TW30 2012</li>
+                        <li>• Salinità rigettata: 95/98%</li>
+                        <li>• Installazione orizzontale/verticale</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-green-500 transition">
-                <div class="text-green-600 font-black text-xl mb-2">FRIGHOST</div>
-                <h3 class="text-2xl font-bold mb-4">Il Sottozoccolo</h3>
-                <ul class="space-y-2 mb-6 text-gray-600">
-                    <li>✓ Altezza <strong>10,5 cm</strong> (va sotto la cucina)</li>
-                    <li>✓ Acqua fredda e frizzante</li>
-                    <li>✓ Zero ingombro sul piano di lavoro</li>
-                </ul>
-                <img src="foto-frighost.jpg" alt="Frighost" class="w-full h-48 object-cover rounded bg-gray-100 mb-4" onerror="this.src='https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 hover:border-cyan-400 transition">
+                <div class="p-4 h-48 flex items-center justify-center bg-white"><img src="frighost.jpg" class="max-h-full object-contain" alt="Frighost" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Foto+Frighost'"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 text-slate-800">FRIGHOST</h3>
+                    <p class="text-cyan-600 font-bold mb-4 text-sm uppercase">Sottozoccolo da 10,5 cm</p>
+                    <ul class="text-sm space-y-2 text-slate-600 mb-4">
+                        <li>• Acqua fredda e frizzante</li>
+                        <li>• Produzione acqua: 2 L/min</li>
+                        <li>• Produzione osmosi: 120 Lt/h</li>
+                        <li>• Carbonatore Inox 304 da 1L</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-green-500 transition">
-                <div class="text-green-600 font-black text-xl mb-2">LINEA THANTA</div>
-                <h3 class="text-2xl font-bold mb-4">Per Uffici e Ho.Re.Ca.</h3>
-                <ul class="space-y-2 mb-6 text-gray-600">
-                    <li>✓ Design elegante a colonna o banco</li>
-                    <li>✓ Fino a 80 Litri/ora di erogazione</li>
-                    <li>✓ Tecnologia Dual Cold R290</li>
-                </ul>
-                <img src="foto-thanta.jpg" alt="Thanta" class="w-full h-48 object-cover rounded bg-gray-100 mb-4" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 hover:border-cyan-400 transition">
+                <div class="p-4 h-48 flex items-center justify-center bg-white"><img src="osmosystem.jpg" class="max-h-full object-contain" alt="Osmosystem 150" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Foto+Osmosystem'"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 text-slate-800">OSMOSYSTEM 150</h3>
+                    <p class="text-cyan-600 font-bold mb-4 text-sm uppercase">Alte Prestazioni (10,5 cm)</p>
+                    <ul class="text-sm space-y-2 text-slate-600 mb-4">
+                        <li>• Produzione nominale: 150 Lt/h</li>
+                        <li>• Erogazione: 2,5 L/min</li>
+                        <li>• Mix regolatore salinità</li>
+                        <li>• Motore 180W ad alte prestazioni</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 hover:border-cyan-400 transition">
+                <div class="p-4 h-48 flex items-center justify-center bg-white"><img src="thanta.jpg" class="max-h-full object-contain" alt="Thanta" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Foto+Thanta'"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 text-slate-800">LINEA THANTA</h3>
+                    <p class="text-cyan-600 font-bold mb-4 text-sm uppercase">Design Ufficio & HoReCa</p>
+                    <ul class="text-sm space-y-2 text-slate-600 mb-4">
+                        <li>• Raffreddamento: 80 L/h</li>
+                        <li>• Tecnologia DUAL COLD (Igiene)</li>
+                        <li>• Gas ecologico R290</li>
+                        <li>• Modelli Soprabanco e Totem</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <section class="py-10 bg-gray-900 text-white text-center px-6">
-        <p class="text-lg font-semibold mb-2">Tutti i nostri impianti sono conformi ai decreti del Ministero della Salute:</p>
-        <p class="text-green-400 font-mono text-xl">D.M. 25/2012 | D.M. 174/2004</p>
-    </section>
-
-    <section id="form" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-200">
-            <div class="p-10 bg-green-600 text-white md:w-1/2 flex flex-col justify-center">
-                <h2 class="text-3xl font-bold mb-4">Scegli la soluzione su misura.</h2>
-                <p class="mb-6 opacity-90">I nostri tecnici valuteranno i tuoi spazi (anche i più stretti) per installare l'impianto perfetto senza opere murarie.</p>
-                <ul class="space-y-3 font-semibold">
-                    <li>✓ Preventivo gratuito</li>
-                    <li>✓ Test qualità dell'acqua</li>
-                    <li>✓ Installazione in 24/48h</li>
-                </ul>
-            </div>
-            <div class="p-10 md:w-1/2 bg-gray-50">
-                
-                <form action="https://formspree.io/f/mojnkvgl" method="POST" class="space-y-5">
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Nome e Cognome *</label>
-                        <input type="text" name="Nome" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 outline-none" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Numero di Cellulare *</label>
-                        <input type="tel" name="Telefono" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 outline-none" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Indirizzo Email *</label>
-                        <input type="email" name="Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 outline-none" placeholder="esempio@mail.com" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Cosa ti interessa?</label>
-                        <select name="Interesse" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 outline-none">
-                            <option>Casa (Salvaspazio / Sottozoccolo)</option>
-                            <option>Ufficio / Azienda</option>
-                            <option>Ristorante / Bar (Ho.Re.Ca)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full bg-gray-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-black transition mt-4">Richiedi Contatto</button>
-                </form>
-            </div>
+    <section id="form" class="py-20 bg-slate-800 px-6 mt-10">
+        <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
+            <h2 class="text-3xl font-bold mb-2 text-center text-slate-800">Richiedi un Preventivo</h2>
+            <p class="text-center text-slate-500 mb-8">Compila il modulo per ricevere la scheda tecnica e i prezzi riservati.</p>
+            
+            <form action="https://formspree.io/f/mojnkvgl" method="POST" class="space-y-4">
+                <input type="text" name="Nome" placeholder="Nome e Cognome" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                <input type="email" name="Email" placeholder="Indirizzo Email" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                <input type="tel" name="Telefono" placeholder="Telefono Cellulare" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                <select name="ProdottoInteresse" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    <option>Scegli il prodotto...</option>
+                    <option>Osmoslim (Salvaspazio casa)</option>
+                    <option>Frighost (Sottozoccolo)</option>
+                    <option>Osmosystem 150 (Casa alte prestazioni)</option>
+                    <option>Thanta (Ufficio / HoReCa)</option>
+                </select>
+                <button type="submit" class="w-full bg-cyan-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-cyan-600 shadow-lg transition">INVIA RICHIESTA</button>
+            </form>
         </div>
     </section>
+
+    <footer class="py-10 text-center text-slate-400 text-sm bg-slate-900">
+        <p>© 2024 Acquasystem | Sistemi di Filtrazione Avanzati</p>
+    </footer>
 
 </body>
 </html>
