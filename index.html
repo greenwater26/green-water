@@ -12,19 +12,35 @@
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
+    
     <nav class="p-4 bg-white shadow-md flex justify-between items-center fixed w-full top-0 z-50">
         <div class="flex items-center gap-3">
             <img src="logo.png" alt="Green Water Italia Logo" class="h-10" onerror="this.style.display='none'">
             <span class="text-xl font-black text-cyan-600 tracking-tighter hidden md:block">GREEN WATER ITALIA</span>
         </div>
-        <div class="flex items-center gap-6">
-            <div class="hidden md:flex gap-6 font-semibold text-slate-600">
-                <a href="#vantaggi" class="hover:text-cyan-500 transition">Vantaggi</a>
-                <a href="#prodotti" class="hover:text-cyan-500 transition">Prodotti</a>
-            </div>
+        
+        <div class="hidden md:flex items-center gap-6 font-semibold text-slate-600">
+            <a href="#vantaggi" class="hover:text-cyan-500 transition">Vantaggi</a>
+            <a href="#prodotti" class="hover:text-cyan-500 transition">Prodotti</a>
+            <a href="#faq" class="hover:text-cyan-500 transition">FAQ</a>
             <a href="#form" class="bg-cyan-500 text-white px-6 py-2 rounded-full font-bold hover:bg-cyan-600 transition shadow-md">Richiedi Analisi</a>
         </div>
+
+        <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="text-slate-600 hover:text-cyan-500 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
     </nav>
+
+    <div id="mobile-menu" class="hidden fixed top-[72px] left-0 w-full bg-white shadow-lg z-40 flex flex-col items-center py-6 font-semibold text-slate-600 space-y-6 md:hidden border-t">
+        <a href="#vantaggi" class="hover:text-cyan-500 transition text-lg mobile-link">Vantaggi</a>
+        <a href="#prodotti" class="hover:text-cyan-500 transition text-lg mobile-link">Prodotti</a>
+        <a href="#faq" class="hover:text-cyan-500 transition text-lg mobile-link">FAQ</a>
+        <a href="#form" class="bg-cyan-500 text-white px-8 py-3 rounded-full font-bold hover:bg-cyan-600 transition shadow-md mobile-link">Richiedi Analisi</a>
+    </div>
 
     <header class="pt-32 pb-12 px-6 text-center bg-gradient-to-b from-white to-cyan-50">
         <div class="flex justify-center mb-8">
@@ -40,73 +56,47 @@
     </header>
 
     <section id="vantaggi" class="py-16 px-6 max-w-5xl mx-auto text-slate-700">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-800 mb-4">Analisi tecnica e finanziaria</h2>
-        <p class="text-center text-lg text-cyan-700 font-medium mb-12 max-w-3xl mx-auto">Basata su una famiglia media di 3-4 persone (consumo stimato: 2.200 - 2.500 litri/anno).</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-800 mb-4">Calcola il tuo risparmio reale</h2>
+        <p class="text-center text-lg text-cyan-700 font-medium mb-12 max-w-3xl mx-auto">Usa gli slider per scoprire quanti soldi, tempo e plastica puoi risparmiare con un sistema premium.</p>
         
-        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 mb-10">
-            <h3 class="text-2xl font-bold text-cyan-600 mb-4">1. Costo dell’inefficienza</h3>
-            <p class="mb-5 text-lg">Molte famiglie considerano l’acqua al supermercato un "piccolo costo". In realtà, è una passività finanziaria e logistica.<br>Se guardiamo i numeri, una famiglia di 4 persone consuma circa <strong>1.600 bottiglie da 1,5L all'anno</strong>. Questo significa:</p>
-            <ul class="space-y-4 text-lg">
-                <li class="flex items-start"><span class="text-cyan-500 font-bold mr-3 text-xl">🏋️</span> <div><strong>Peso:</strong> 2,5 tonnellate di plastica e acqua trasportate a mano dal market a casa.</div></li>
-                <li class="flex items-start"><span class="text-cyan-500 font-bold mr-3 text-xl">⏱️</span> <div><strong>Tempo:</strong> Circa 52 ore l'anno (1 ora a settimana) perse tra corsie, carico/scarico e smaltimento rifiuti.</div></li>
-                <li class="flex items-start"><span class="text-cyan-500 font-bold mr-3 text-xl">📦</span> <div><strong>Spazio:</strong> Almeno 1 metro cubo di spazio vitale in casa costantemente occupato da casse d’acqua e plastica da riciclare.</div></li>
-            </ul>
-        </div>
-
-        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 mb-10 overflow-hidden">
-            <h3 class="text-2xl font-bold text-cyan-600 mb-4">2. Business case: bottiglia vs. filtrazione premium</h3>
-            <p class="mb-6 text-lg">Ecco la comparazione economica su un orizzonte temporale di 5 anni. Consideriamo un impianto di filtrazione/frigogasatura di fascia alta con manutenzione inclusa.</p>
+        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 mb-12">
             
-            <div class="overflow-x-auto rounded-xl border border-slate-200 mb-8">
-                <table class="w-full text-left border-collapse min-w-max">
-                    <thead>
-                        <tr class="bg-cyan-50 text-slate-800 text-lg">
-                            <th class="p-4 border-b border-slate-200">Voce di costo</th>
-                            <th class="p-4 border-b border-slate-200">Acqua in bottiglia (Media)</th>
-                            <th class="p-4 border-b border-slate-200 text-cyan-700">Sistema premium</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-base">
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-4 font-semibold">Costo litro (medio)</td>
-                            <td class="p-4">€ 0,28 / L</td>
-                            <td class="p-4">€ 0,002 / L (Acqua di rete)</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-4 font-semibold">Spesa annuale acqua</td>
-                            <td class="p-4">€ 700,00</td>
-                            <td class="p-4">€ 5,00</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-4 font-semibold">Manutenzione/Filtri</td>
-                            <td class="p-4">€ 0,00</td>
-                            <td class="p-4">€ 180,00 (Media annua)</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-4 font-semibold">Ammortamento macchina</td>
-                            <td class="p-4">€ 0,00</td>
-                            <td class="p-4">€ 300,00 (Esempio su 5 anni)</td>
-                        </tr>
-                        <tr class="bg-slate-100 font-black text-lg">
-                            <td class="p-4 text-slate-800">TOTALE ANNUO</td>
-                            <td class="p-4 text-slate-500">€ 700,00</td>
-                            <td class="p-4 text-cyan-600">€ 485,00</td>
-                        </tr>
-                        <tr class="bg-cyan-50 font-black text-xl">
-                            <td class="p-4 text-slate-800">RISPARMIO NETTO</td>
-                            <td class="p-4 text-slate-500">-</td>
-                            <td class="p-4 text-green-600">€ 215,00 / anno</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="grid md:grid-cols-2 gap-10 mb-10">
+                <div>
+                    <label class="block text-slate-700 font-bold mb-4 text-lg">Persone in famiglia / ufficio</label>
+                    <input type="range" id="calc-persone" min="1" max="10" value="4" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+                    <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-persone">4</span> Persone</div>
+                </div>
+                <div>
+                    <label class="block text-slate-700 font-bold mb-4 text-lg">Orizzonte temporale</label>
+                    <input type="range" id="calc-anni" min="1" max="10" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+                    <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-anni">5</span> Anni</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-center mb-8">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
+                    <div class="text-4xl mb-3">💸</div>
+                    <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Acqua in Bottiglia</div>
+                    <div class="text-3xl font-black text-slate-800">€ <span id="res-costo-bottiglie">3.500</span></div>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
+                    <div class="text-4xl mb-3">💧</div>
+                    <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Sistema Premium</div>
+                    <div class="text-3xl font-black text-cyan-600">€ <span id="res-costo-sistema">2.425</span></div>
+                </div>
+                <div class="p-6 bg-cyan-50 rounded-2xl border border-cyan-200 shadow-inner flex flex-col justify-center transform scale-105">
+                    <div class="text-4xl mb-3">💰</div>
+                    <div class="text-sm text-cyan-700 font-bold uppercase mb-1">Risparmio Netto</div>
+                    <div class="text-4xl font-black text-green-600">€ <span id="res-risparmio">1.075</span></div>
+                </div>
             </div>
             
-            <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-slate-800 text-slate-700 leading-relaxed">
-                <strong>Nota Strategica:</strong> Dopo i primi 4-5 anni, una volta ammortizzato il costo dell'impianto, il risparmio sale a <strong>oltre € 500,00 l'anno</strong>. In 10 anni, stiamo parlando di <strong>oltre € 4.000,00</strong> che restano nel tuo conto corrente invece di finire in discarica.
+            <div class="bg-slate-800 p-6 rounded-2xl text-center text-slate-300">
+                Oltre ai soldi, nello stesso periodo eviterai di trasportare <strong class="text-white text-xl"><span id="res-peso">12.000</span> kg</strong> di peso e di smaltire <strong class="text-white text-xl"><span id="res-plastica">8.000</span> bottiglie</strong> di plastica.
             </div>
         </div>
-
-        <h3 class="text-2xl font-bold text-cyan-600 mb-6 px-2">3. Perché installarlo? (Oltre il risparmio economico)</h3>
+        <h3 class="text-2xl font-bold text-cyan-600 mb-6 px-2">Perché installarlo? (Oltre il risparmio economico)</h3>
         <div class="grid md:grid-cols-3 gap-6 mb-10">
             <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-100">
                 <div class="text-4xl mb-4">🌿</div>
@@ -262,6 +252,23 @@
         </div>
     </section>
 
+    <section id="faq" class="py-16 px-6 max-w-4xl mx-auto border-t">
+        <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Domande Frequenti (FAQ)</h2>
+        <div class="space-y-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-slate-800 mb-2">Come avviene l'installazione?</h3>
+                <p class="text-slate-600">I nostri tecnici specializzati si occupano di tutto. L'installazione richiede meno di due ore e non prevede opere murarie. Il sistema viene integrato in modo invisibile, tipicamente sotto il lavello o sullo zoccolino.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-slate-800 mb-2">Ogni quanto va fatta la manutenzione?</h3>
+                <p class="text-slate-600">Per garantire la massima purezza dell'acqua e l'efficienza dei macchinari, raccomandiamo un intervento di sanificazione e cambio filtri una volta all'anno. Ce ne occupiamo noi contattandoti quando è il momento.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-slate-800 mb-2">L'acqua filtrata è povera di sali minerali?</h3>
+                <p class="text-slate-600">Assolutamente no. I nostri sistemi ad osmosi inversa includono un modulo di miscelazione che permette di regolare il residuo fisso, mantenendo i sali minerali essenziali e restituendo un'acqua leggera e bilanciata al palato.</p>
+            </div>
+        </div>
+    </section>
     <section id="form" class="py-20 bg-slate-800 px-6">
         <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
             <h2 class="text-3xl font-bold text-center text-slate-800">Configura il tuo sistema</h2>
@@ -270,18 +277,6 @@
                 <input type="text" name="Nome" placeholder="Nome e Cognome / Azienda" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                 <input type="email" name="Email" placeholder="Indirizzo Email" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                 <input type="tel" name="Telefono" placeholder="Telefono Cellulare" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                <select name="Prodotto" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500">
-                    <option value="">Quale modello ti interessa maggiormente?</option>
-                    <option value="Osmosystem 150">Osmosystem 150</option>
-                    <option value="Osmosì">Osmosì</option>
-                    <option value="Bollicina FV">Bollicina FV</option>
-                    <option value="Bollaquick">Bollaquick</option>
-                    <option value="Thanta">Linea Thanta (Ufficio/Ristorazione)</option>
-                    <option value="Osmoslim">Osmoslim</option>
-                    <option value="Frighost">Frighost</option>
-                    <option value="T40 Totem">T40 Totem</option>
-                    <option value="Totem Bollicina">Totem Bollicina</option>
-                </select>
                 
                 <textarea name="Messaggio" rows="4" placeholder="Scrivi qui la tua richiesta o eventuali domande..." class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
                 
@@ -368,29 +363,92 @@
             </div>
         </div>
     </div>
-
     <script>
+        // --- LOGICA MENU MOBILE ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- LOGICA CALCOLATORE INTERATTIVO ---
+        const calcPersone = document.getElementById('calc-persone');
+        const calcAnni = document.getElementById('calc-anni');
+        
+        const valPersone = document.getElementById('val-persone');
+        const valAnni = document.getElementById('val-anni');
+        const resCostoBottiglie = document.getElementById('res-costo-bottiglie');
+        const resCostoSistema = document.getElementById('res-costo-sistema');
+        const resRisparmio = document.getElementById('res-risparmio');
+        const resPeso = document.getElementById('res-peso');
+        const resPlastica = document.getElementById('res-plastica');
+
+        function aggiornaCalcolatore() {
+            const persone = parseInt(calcPersone.value);
+            const anni = parseInt(calcAnni.value);
+
+            valPersone.innerText = persone;
+            valAnni.innerText = anni;
+
+            // Variabili fisse per il calcolo
+            const costoBottigliePerPersonaAnno = 175; // € stimati
+            const bottigliePerPersonaAnno = 400; // Bottiglie da 1.5L
+            const pesoBottiglia = 1.5; // Kg
+            
+            const costoImpiantoIniziale = 1500; // Costo indicativo macchina
+            const costoGestioneAnnuo = 185; // Manutenzione + costo acqua rete
+
+            // Calcoli
+            const totaleCostoBottiglie = persone * costoBottigliePerPersonaAnno * anni;
+            const totaleCostoSistema = costoImpiantoIniziale + (costoGestioneAnnuo * anni);
+            const risparmio = totaleCostoBottiglie - totaleCostoSistema;
+
+            const numeroTotaleBottiglie = persone * bottigliePerPersonaAnno * anni;
+            const pesoTotale = numeroTotaleBottiglie * pesoBottiglia;
+
+            // Aggiornamento DOM formattando i numeri con il punto delle migliaia
+            resCostoBottiglie.innerText = totaleCostoBottiglie.toLocaleString('it-IT');
+            resCostoSistema.innerText = totaleCostoSistema.toLocaleString('it-IT');
+            
+            // Se il risparmio è negativo i primi anni, mostriamo 0 per evitare confusione
+            resRisparmio.innerText = risparmio > 0 ? risparmio.toLocaleString('it-IT') : "0";
+            
+            resPeso.innerText = pesoTotale.toLocaleString('it-IT');
+            resPlastica.innerText = numeroTotaleBottiglie.toLocaleString('it-IT');
+        }
+
+        // Event listener sugli slider
+        calcPersone.addEventListener('input', aggiornaCalcolatore);
+        calcAnni.addEventListener('input', aggiornaCalcolatore);
+
+        // --- LOGICA COOKIE (Invariata) ---
         const banner = document.getElementById('cookie-banner');
         const modal = document.getElementById('cookie-modal');
         const modalContent = document.getElementById('cookie-modal-content');
 
-        // Controlla se l'utente ha già fatto una scelta prima di mostrare il banner
         document.addEventListener('DOMContentLoaded', () => {
+            aggiornaCalcolatore(); // Inizializza il calcolatore al caricamento
+
             const cookieConsent = localStorage.getItem('greenWater_cookieConsent');
             if (!cookieConsent) {
-                // Se non c'è scelta salvata, mostra il banner
                 banner.style.display = 'block';
             }
         });
 
-        // Nasconde il banner principale
         function nascondiBanner() {
             banner.style.opacity = '0';
             banner.style.transform = 'translateY(20px)';
             setTimeout(() => { banner.style.display = 'none'; }, 300);
         }
 
-        // Azioni rapide dal banner
         function accettaTutti() {
             document.getElementById('cookie-analytics').checked = true;
             document.getElementById('cookie-marketing').checked = true;
@@ -409,7 +467,6 @@
             nascondiBanner();
         }
 
-        // Gestione Modal (Finestra Preferenze)
         function apriPreferenze() {
             modal.classList.remove('hidden');
             setTimeout(() => {
@@ -432,7 +489,6 @@
             const analytics = document.getElementById('cookie-analytics').checked;
             const marketing = document.getElementById('cookie-marketing').checked;
             
-            // Salva nel browser
             localStorage.setItem('greenWater_cookieConsent', 'custom');
             localStorage.setItem('greenWater_cookieAnalytics', analytics);
             localStorage.setItem('greenWater_cookieMarketing', marketing);
@@ -441,5 +497,5 @@
             nascondiBanner();
         }
     </script>
-    </body>
+</body>
 </html>
