@@ -251,28 +251,91 @@
             </div>
         </div>
     </section>
+    
+    <style>
+    .faq-water-container {
+        max-width: 800px;
+        margin: 20px auto;
+        font-family: inherit;
+    }
+    .faq-water-item {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 15px 0;
+    }
+    .faq-water-item summary {
+        font-weight: 600;
+        font-size: 1.1em;
+        color: #1a202c;
+        cursor: pointer;
+        outline: none;
+        list-style: none; 
+        position: relative;
+        padding-right: 30px;
+    }
+    /* Rimuove la freccia di default su Safari */
+    .faq-water-item summary::-webkit-details-marker {
+        display: none;
+    }
+    /* Aggiunge il + e il - personalizzati */
+    .faq-water-item summary::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 1.4em;
+        color: #3182ce; /* Colore azzurro, puoi cambiarlo */
+        line-height: 1;
+    }
+    .faq-water-item[open] summary::after {
+        content: '-';
+    }
+    .faq-water-item p {
+        margin-top: 15px;
+        color: #4a5568;
+        line-height: 1.6;
+        font-size: 1em;
+    }
+</style>
 
-    <section id="faq" class="py-16 px-6 max-w-4xl mx-auto border-t">
-        <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Domande Frequenti (FAQ)</h2>
-        <div class="space-y-4">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">Come avviene l'installazione?</h3>
-                <p class="text-slate-600">I nostri tecnici specializzati si occupano di tutto. L'installazione richiede meno di due ore e non prevede opere murarie. Il sistema viene integrato in modo invisibile, tipicamente sotto il lavello o sullo zoccolino.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">Ogni quanto va fatta la manutenzione?</h3>
-                <p class="text-slate-600">Per garantire la massima purezza dell'acqua e l'efficienza dei macchinari, raccomandiamo un intervento di sanificazione e cambio filtri una volta all'anno. Ce ne occupiamo noi contattandoti quando è il momento.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">L'acqua filtrata è povera di sali minerali?</h3>
-                <p class="text-slate-600">Assolutamente no. I nostri sistemi ad osmosi inversa includono un modulo di miscelazione che permette di regolare il residuo fisso, mantenendo i sali minerali essenziali e restituendo un'acqua leggera e bilanciata al palato.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">L'acqua del rubinetto è già potabile, perché dovrei installare un sistema di filtrazione?</h3>
-                <p class="text-slate-600">L'acqua dell'acquedotto è controllata alla fonte, ma durante il tragitto nelle tubature cittadine e condominiali può raccogliere sedimenti, ruggine, metalli pesanti e microplastiche. Inoltre, il cloro aggiunto per la disinfezione ne altera spesso il gusto e l'odore. I nostri sistemi eliminano queste impurità, restituendoti un'acqua pura e dal sapore eccellente.</p>
-            </div>
-        </div>
-    </section>
+<div class="faq-water-container">
+
+    <details class="faq-water-item">
+        <summary>1. L'acqua del rubinetto è già potabile, perché dovrei installare un sistema di filtrazione?</summary>
+        <p>L'acqua dell'acquedotto è controllata alla fonte, ma durante il tragitto nelle tubature cittadine e condominiali può raccogliere sedimenti, ruggine, metalli pesanti e microplastiche. Inoltre, il cloro aggiunto per la disinfezione ne altera spesso il gusto e l'odore. I nostri sistemi eliminano queste impurità, restituendoti un'acqua pura e dal sapore eccellente.</p>
+    </details>
+
+    <details class="faq-water-item">
+        <summary>2. Qual è la differenza tra microfiltrazione e osmosi inversa?</summary>
+        <p>La microfiltrazione agisce come uno scudo che trattiene cloro e sedimenti, migliorando il gusto ma mantenendo i sali minerali originali. L'osmosi inversa è un sistema più profondo che filtra anche le particelle più infinitesimali (come nitrati e metalli pesanti), ideale se desideri un'acqua a basso residuo fisso, simile a quella delle alte vette.</p>
+    </details>
+
+    <details class="faq-water-item">
+        <summary>3. Gli impianti occupano molto spazio in cucina?</summary>
+        <p>Assolutamente no. I nostri modelli, come Osmoslim, sono progettati per il design moderno: hanno uno spessore di soli 6,7 cm e possono essere installati sotto il lavello o persino dietro lo zoccolo della cucina, risultando completamente invisibili.</p>
+    </details>
+
+    <details class="faq-water-item">
+        <summary>4. Posso avere anche l'acqua frizzante direttamente dal rubinetto?</summary>
+        <p>Sì! Grazie ai nostri frigogasatori (come la linea Bollicina), puoi scegliere tra acqua naturale a temperatura ambiente, naturale fredda o frizzante fredda, regolando anche il livello di gassatura in base ai tuoi gusti.</p>
+    </details>
+
+    <details class="faq-water-item">
+        <summary>5. Quanto costa la manutenzione dell'impianto?</summary>
+        <p>La manutenzione è minima e consiste generalmente nella sostituzione dei filtri una volta all'anno (o in base al consumo). Il sistema ti avviserà automaticamente con un segnale sonoro o visivo quando è il momento di intervenire, garantendo sempre la massima igiene.</p>
+    </details>
+
+    <details class="faq-water-item">
+        <summary>6. L'acqua filtrata è sicura per neonati e bambini?</summary>
+        <p>Sì, è l'ideale. I nostri sistemi rimuovono sostanze indesiderate garantendo un'acqua leggera e pura, perfetta per la preparazione di pappe e biberon, evitando di sovraccaricare i reni dei più piccoli con eccessivi sali minerali.</p>
+    </details>
+
+    <details class="faq-water-item">
+        <summary>7. L'installazione richiede lavori invasivi o fori nel marmo?</summary>
+        <p>L'installazione è rapida e non invasiva. Possiamo utilizzare un piccolo rubinetto aggiuntivo dedicato oppure sostituire il tuo attuale rubinetto con uno a "3 o 5 vie" (miscelatore standard + vie per l'acqua filtrata), mantenendo intatto il tuo piano cucina.</p>
+    </details>
+
+</div>
+    
     <section id="form" class="py-20 bg-slate-800 px-6">
         <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
             <h2 class="text-3xl font-bold text-center text-slate-800">Richiedi informazioni</h2>
