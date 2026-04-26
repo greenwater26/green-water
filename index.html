@@ -68,45 +68,98 @@
 
     <section id="vantaggi" class="py-16 px-6 max-w-5xl mx-auto text-slate-700">
         <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-800 mb-4">Calcola il tuo risparmio reale</h2>
-        <p class="text-center text-lg text-cyan-700 font-medium mb-12 max-w-3xl mx-auto">Usa gli slider per scoprire quanti soldi, tempo e plastica puoi risparmiare con un sistema premium.</p>
-        
-        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 mb-12">
-            
-            <div class="grid md:grid-cols-2 gap-10 mb-10">
-                <div>
-                    <label class="block text-slate-700 font-bold mb-4 text-lg">Persone in famiglia / ufficio</label>
-                    <input type="range" id="calc-persone" min="1" max="50" value="4" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
-                    <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-persone">4</span> Persone</div>
-                </div>
-                <div>
-                    <label class="block text-slate-700 font-bold mb-4 text-lg">Orizzonte temporale</label>
-                    <input type="range" id="calc-anni" min="1" max="20" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
-                    <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-anni">5</span> Anni</div>
-                </div>
-            </div>
+<p class="text-center text-lg text-cyan-700 font-medium mb-12 max-w-3xl mx-auto">Usa gli slider per scoprire quanti soldi, tempo e plastica puoi risparmiare con un sistema premium.</p>
 
-            <div class="grid md:grid-cols-3 gap-6 text-center mb-8">
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
-                    <div class="text-4xl mb-3">💸</div>
-                    <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Acqua in Bottiglia</div>
-                    <div class="text-3xl font-black text-slate-800">€ <span id="res-costo-bottiglie">3.500</span></div>
-                </div>
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
-                    <div class="text-4xl mb-3">💧</div>
-                    <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Sistema Premium</div>
-                    <div class="text-3xl font-black text-cyan-600">€ <span id="res-costo-sistema">2.425</span></div>
-                </div>
-                <div class="p-6 bg-cyan-50 rounded-2xl border border-cyan-200 shadow-inner flex flex-col justify-center transform scale-105">
-                    <div class="text-4xl mb-3">💰</div>
-                    <div class="text-sm text-cyan-700 font-bold uppercase mb-1">Risparmio Netto</div>
-                    <div class="text-4xl font-black text-green-600">€ <span id="res-risparmio">1.075</span></div>
-                </div>
-            </div>
-            
-            <div class="bg-slate-800 p-6 rounded-2xl text-center text-slate-300">
-                Oltre ai soldi, nello stesso periodo eviterai di trasportare <strong class="text-white text-xl"><span id="res-peso">12.000</span> kg</strong> di peso e di smaltire <strong class="text-white text-xl"><span id="res-plastica">8.000</span> bottiglie</strong> di plastica.
-            </div>
+<div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 mb-12">
+    
+    <div class="grid md:grid-cols-2 gap-10 mb-10">
+        <div>
+            <label class="block text-slate-700 font-bold mb-4 text-lg">Persone in famiglia / ufficio</label>
+            <input type="range" id="calc-persone" min="1" max="20" value="4" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+            <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-persone">4</span> Persone</div>
         </div>
+        <div>
+            <label class="block text-slate-700 font-bold mb-4 text-lg">Orizzonte temporale</label>
+            <input type="range" id="calc-anni" min="1" max="20" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+            <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-anni">5</span> Anni</div>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 text-center mb-8">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
+            <div class="text-4xl mb-3">💸</div>
+            <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Acqua in Bottiglia</div>
+            <div class="text-3xl font-black text-slate-800">€ <span id="res-costo-bottiglie">3.500</span></div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
+            <div class="text-4xl mb-3">💧</div>
+            <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Sistema Premium</div>
+            <div class="text-3xl font-black text-cyan-600">€ <span id="res-costo-sistema">2.425</span></div>
+        </div>
+        <div class="p-6 bg-cyan-50 rounded-2xl border border-cyan-200 shadow-inner flex flex-col justify-center transform scale-105">
+            <div class="text-4xl mb-3">💰</div>
+            <div class="text-sm text-cyan-700 font-bold uppercase mb-1">Risparmio Netto</div>
+            <div class="text-4xl font-black text-green-600">€ <span id="res-risparmio">1.075</span></div>
+        </div>
+    </div>
+    
+    <div class="bg-slate-800 p-6 rounded-2xl text-center text-slate-300">
+        Oltre ai soldi, nello stesso periodo eviterai di trasportare <strong class="text-white text-xl"><span id="res-peso">12.000</span> kg</strong> di peso e di smaltire <strong class="text-white text-xl"><span id="res-plastica">8.000</span> bottiglie</strong> di plastica.
+    </div>
+</div>
+
+<script>
+    const sliderPersone = document.getElementById('calc-persone');
+    const sliderAnni = document.getElementById('calc-anni');
+    
+    const displayPersone = document.getElementById('val-persone');
+    const displayAnni = document.getElementById('val-anni');
+    
+    const resCostoBottiglie = document.getElementById('res-costo-bottiglie');
+    const resCostoSistema = document.getElementById('res-costo-sistema');
+    const resRisparmio = document.getElementById('res-risparmio');
+    const resPeso = document.getElementById('res-peso');
+    const resPlastica = document.getElementById('res-plastica');
+
+    function updateCalculations() {
+        const persone = parseInt(sliderPersone.value);
+        const anni = parseInt(sliderAnni.value);
+
+        // Parametri di calcolo
+        const costoLitroMedia = 0.32; // Media costo acqua bottiglia
+        const litriPersonaGiorno = 1.5;
+        const costoInizialeSistema = 1800; // Esempio costo impianto
+        const manutenzioneAnnua = 125; // Filtri e CO2
+
+        // Calcoli
+        const totaleLitri = persone * litriPersonaGiorno * 365 * anni;
+        const costoBottiglie = Math.round(totaleLitri * costoLitroMedia);
+        const costoSistema = costoInizialeSistema + (manutenzioneAnnua * anni);
+        const risparmio = costoBottiglie - costoSistema;
+        const pesoKg = Math.round(totaleLitri);
+        const bottigliePlastica = Math.round(totaleLitri / 1.5);
+
+        // Aggiornamento UI
+        displayPersone.innerText = persone;
+        displayAnni.innerText = anni;
+        
+        resCostoBottiglie.innerText = costoBottiglie.toLocaleString('it-IT');
+        resCostoSistema.innerText = costoSistema.toLocaleString('it-IT');
+        resRisparmio.innerText = risparmio.toLocaleString('it-IT');
+        resPeso.innerText = pesoKg.toLocaleString('it-IT');
+        resPlastica.innerText = bottigliePlastica.toLocaleString('it-IT');
+
+        // Colore dinamico risparmio
+        resRisparmio.parentElement.className = risparmio > 0 ? "text-4xl font-black text-green-600" : "text-4xl font-black text-red-500";
+    }
+
+    sliderPersone.addEventListener('input', updateCalculations);
+    sliderAnni.addEventListener('input', updateCalculations);
+
+    // Inizializza al caricamento
+    updateCalculations();
+</script>
+        
         <h3 class="text-2xl font-bold text-cyan-600 mb-6 px-2">Perché installarlo? (Oltre il risparmio economico)</h3>
         <div class="grid md:grid-cols-3 gap-6 mb-10">
             <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-100">
