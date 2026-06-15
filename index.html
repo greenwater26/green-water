@@ -5,9 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Water Italia - Soluzioni Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#1d1d1f',
+                        sub: '#6e6e73',
+                        line: '#d2d2d7',
+                        surface: '#f5f5f7',
+                        brand: {
+                            DEFAULT: '#2596be',
+                            dark: '#1b7a9c',
+                            light: '#e8f4f9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         html {
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            letter-spacing: -0.01em;
+        }
+        h1, h2, h3, h4 {
+            letter-spacing: -0.025em;
+        }
+        .apple-blur {
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+        /* Slider in stile Apple */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e8e8ed;
+            border-radius: 999px;
+            height: 6px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 0.5px solid rgba(0,0,0,0.04);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.12);
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:active {
+            transform: scale(1.1);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 0.5px solid rgba(0,0,0,0.04);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.12);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -17,57 +83,52 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EQSCT1RWG4');
 </script>
+<body class="bg-white font-sans text-ink antialiased">
 
-<body class="bg-slate-50 font-sans text-slate-900">
-    
-    <nav class="p-4 bg-white shadow-md flex justify-between items-center fixed w-full top-0 z-50">
+    <nav class="px-6 py-3 bg-white/70 apple-blur border-b border-black/5 flex justify-between items-center fixed w-full top-0 z-50">
         <div class="flex items-center gap-3">
-            <img src="logo.png" alt="Green Water Italia Logo" class="h-10" onerror="this.style.display='none'">
-            <span class="text-xl font-black text-cyan-600 tracking-tighter hidden md:block">GREEN WATER ITALIA</span>
-        </div>
-        
-        <div class="hidden md:flex items-center gap-6 font-semibold text-slate-600">
-            <a href="#vantaggi" class="hover:text-cyan-500 transition">Vantaggi</a>
-            <a href="#prodotti" class="hover:text-cyan-500 transition">Prodotti</a>
-            <a href="#faq" class="hover:text-cyan-500 transition">FAQ</a>
-            <a href="#lavora-con-noi" class="hover:text-cyan-500 transition">Lavora con noi</a>
-            <a href="#form" class="bg-cyan-500 text-white px-6 py-2 rounded-full font-bold hover:bg-cyan-600 transition shadow-md">Prenota una consulenza gratuita</a>
+            <img src="logo.png" alt="Green Water Italia Logo" class="h-9" onerror="this.style.display='none'">
+            <span class="text-lg font-semibold text-ink tracking-tight hidden md:block">GREEN WATER ITALIA</span>
         </div>
 
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-sub">
+            <a href="#vantaggi" class="hover:text-ink transition-colors">Vantaggi</a>
+            <a href="#prodotti" class="hover:text-ink transition-colors">Prodotti</a>
+            <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
+            <a href="#lavora-con-noi" class="hover:text-ink transition-colors">Lavora con noi</a>
+            <a href="#form" class="bg-brand text-white px-5 py-2 rounded-full font-medium hover:bg-brand-dark transition-colors">Prenota una consulenza gratuita</a>
+        </div>
         <div class="md:hidden flex items-center">
-            <button id="mobile-menu-btn" class="text-slate-600 hover:text-cyan-500 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <button id="mobile-menu-btn" class="text-ink hover:text-brand focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
     </nav>
-
-    <div id="mobile-menu" class="hidden fixed top-[72px] left-0 w-full bg-white shadow-lg z-40 flex flex-col items-center py-6 font-semibold text-slate-600 space-y-6 md:hidden border-t">
-        <a href="#vantaggi" class="hover:text-cyan-500 transition text-lg mobile-link">Vantaggi</a>
-        <a href="#prodotti" class="hover:text-cyan-500 transition text-lg mobile-link">Prodotti</a>
-        <a href="#faq" class="hover:text-cyan-500 transition text-lg mobile-link">FAQ</a>
-        <a href="#lavora-con-noi" class="hover:text-cyan-500 transition text-lg mobile-link">Lavora con noi</a>
-        <a href="#form" class="bg-cyan-500 text-white px-8 py-3 rounded-full font-bold hover:bg-cyan-600 transition shadow-md mobile-link">Prenota una consulenza gratuita</a>
+    <div id="mobile-menu" class="hidden fixed top-[57px] left-0 w-full bg-white/80 apple-blur shadow-lg z-40 flex flex-col items-center py-8 font-medium text-sub space-y-6 md:hidden border-t border-black/5">
+        <a href="#vantaggi" class="hover:text-ink transition-colors text-lg mobile-link">Vantaggi</a>
+        <a href="#prodotti" class="hover:text-ink transition-colors text-lg mobile-link">Prodotti</a>
+        <a href="#faq" class="hover:text-ink transition-colors text-lg mobile-link">FAQ</a>
+        <a href="#lavora-con-noi" class="hover:text-ink transition-colors text-lg mobile-link">Lavora con noi</a>
+        <a href="#form" class="bg-brand text-white px-8 py-3 rounded-full font-medium hover:bg-brand-dark transition-colors mobile-link">Prenota una consulenza gratuita</a>
     </div>
-
-    <header class="pt-32 pb-12 px-6 text-center bg-gradient-to-b from-white to-cyan-50">
-        <div class="flex justify-center mb-8">
-            <img src="logo.png" alt="Green Water Italia" class="h-32 md:h-48 object-contain drop-shadow-xl" onerror="this.style.display='none'">
+    <header class="pt-36 pb-20 px-6 text-center bg-gradient-to-b from-white via-brand-light/40 to-white">
+        <div class="flex justify-center mb-10">
+            <img src="logo.png" alt="Green Water Italia" class="h-32 md:h-44 object-contain drop-shadow-sm" onerror="this.style.display='none'">
         </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-800">
-            La tua sorgente privata, ogni giorno a casa tua. <br><br><span class="text-cyan-500">Massima resa, minimo ingombro.</span>
+        <h1 class="text-5xl md:text-6xl font-semibold mb-6 leading-[1.07] text-ink max-w-4xl mx-auto">
+            La tua sorgente privata, ogni giorno a casa tua. <br><br><span class="text-brand">Massima resa, minimo ingombro.</span>
         </h1>
-        <p class="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
+        <p class="text-xl text-sub mb-10 max-w-2xl mx-auto leading-relaxed">
             Tecnologia Made in Italy certificata. Soluzioni di design per la casa e sistemi ad altissime prestazioni per uffici e settore Ho.Re.Ca.
         </p>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-    <a href="#form" class="bg-slate-800 text-white px-10 py-4 rounded-xl font-bold shadow-2xl hover:bg-slate-700 transition inline-block w-full sm:w-auto text-center">Prenota una consulenza gratuita</a>
-    
-    <a href="https://wa.me/c/393204478319" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-10 py-4 rounded-xl font-bold shadow-2xl hover:bg-[#128C7E] transition inline-block w-full sm:w-auto text-center flex items-center justify-center gap-2">
+    <a href="#form" class="bg-brand text-white px-8 py-3.5 rounded-full font-medium text-lg hover:bg-brand-dark transition-colors inline-block w-full sm:w-auto text-center">Prenota una consulenza gratuita</a>
+
+    <a href="https://wa.me/c/393204478319" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-8 py-3.5 rounded-full font-medium text-lg hover:bg-[#128C7E] transition-colors inline-block w-full sm:w-auto text-center flex items-center justify-center gap-2">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
@@ -75,72 +136,65 @@
     </a>
 </div>
     </header>
+    <section id="vantaggi" class="py-24 px-6 max-w-5xl mx-auto text-sub">
+        <h2 class="text-4xl md:text-5xl font-semibold text-center text-ink mb-4">Calcola il tuo risparmio reale</h2>
+<p class="text-center text-xl text-sub font-normal mb-14 max-w-3xl mx-auto leading-relaxed">Usa gli slider per scoprire quanti soldi, tempo e plastica puoi risparmiare con un sistema premium.</p>
+<div class="bg-surface p-8 md:p-12 rounded-[28px] mb-16">
 
-    <section id="vantaggi" class="py-16 px-6 max-w-5xl mx-auto text-slate-700">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-800 mb-4">Calcola il tuo risparmio reale</h2>
-<p class="text-center text-lg text-cyan-700 font-medium mb-12 max-w-3xl mx-auto">Usa gli slider per scoprire quanti soldi, tempo e plastica puoi risparmiare con un sistema premium.</p>
-
-<div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 mb-12">
-    
-    <div class="grid md:grid-cols-2 gap-10 mb-10">
+    <div class="grid md:grid-cols-2 gap-10 mb-12">
         <div>
-            <label class="block text-slate-700 font-bold mb-4 text-lg">Persone in famiglia / ufficio</label>
-            <input type="range" id="calc-persone" min="1" max="20" value="4" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
-            <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-persone">4</span> Persone</div>
+            <label class="block text-ink font-semibold mb-5 text-lg">Persone in famiglia / ufficio</label>
+            <input type="range" id="calc-persone" min="1" max="20" value="4" class="w-full cursor-pointer">
+            <div class="text-center text-2xl font-semibold text-brand mt-5"><span id="val-persone">4</span> Persone</div>
         </div>
         <div>
-            <label class="block text-slate-700 font-bold mb-4 text-lg">Orizzonte temporale</label>
-            <input type="range" id="calc-anni" min="1" max="20" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-500">
-            <div class="text-center text-2xl font-black text-cyan-600 mt-4"><span id="val-anni">5</span> Anni</div>
+            <label class="block text-ink font-semibold mb-5 text-lg">Orizzonte temporale</label>
+            <input type="range" id="calc-anni" min="1" max="20" value="5" class="w-full cursor-pointer">
+            <div class="text-center text-2xl font-semibold text-brand mt-5"><span id="val-anni">5</span> Anni</div>
         </div>
     </div>
-
-    <div class="grid md:grid-cols-3 gap-6 text-center mb-8">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
+    <div class="grid md:grid-cols-3 gap-5 text-center mb-8">
+        <div class="p-7 bg-white rounded-3xl flex flex-col justify-center">
             <div class="text-4xl mb-3">💸</div>
-            <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Acqua in Bottiglia</div>
-            <div class="text-3xl font-black text-slate-800">€ <span id="res-costo-bottiglie">3.500</span></div>
+            <div class="text-xs text-sub font-semibold uppercase tracking-wide mb-2">Costo Acqua in Bottiglia</div>
+            <div class="text-3xl font-semibold text-ink">€ <span id="res-costo-bottiglie">3.500</span></div>
         </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-center">
+        <div class="p-7 bg-white rounded-3xl flex flex-col justify-center">
             <div class="text-4xl mb-3">💧</div>
-            <div class="text-xs text-slate-500 font-bold uppercase mb-1">Costo Sistema Premium</div>
-            <div class="text-3xl font-black text-cyan-600">€ <span id="res-costo-sistema">2.425</span></div>
+            <div class="text-xs text-sub font-semibold uppercase tracking-wide mb-2">Costo Sistema Premium</div>
+            <div class="text-3xl font-semibold text-brand">€ <span id="res-costo-sistema">2.425</span></div>
         </div>
-        <div class="p-6 bg-cyan-50 rounded-2xl border border-cyan-200 shadow-inner flex flex-col justify-center transform scale-105">
+        <div class="p-7 bg-brand-light rounded-3xl flex flex-col justify-center ring-1 ring-brand/20">
             <div class="text-4xl mb-3">💰</div>
-            <div class="text-sm text-cyan-700 font-bold uppercase mb-1">Risparmio Netto</div>
-            <div class="text-4xl font-black text-green-600">€ <span id="res-risparmio">1.075</span></div>
+            <div class="text-sm text-brand-dark font-semibold uppercase tracking-wide mb-2">Risparmio Netto</div>
+            <div class="text-4xl font-semibold text-green-600">€ <span id="res-risparmio">1.075</span></div>
         </div>
     </div>
-    
-    <div class="bg-slate-800 p-6 rounded-2xl text-center text-slate-300">
-        Oltre ai soldi, nello stesso periodo eviterai di trasportare <strong class="text-white text-xl"><span id="res-peso">12.000</span> kg</strong> di peso e di smaltire <strong class="text-white text-xl"><span id="res-plastica">8.000</span> bottiglie</strong> di plastica.
+
+    <div class="bg-ink p-7 rounded-3xl text-center text-white/70 text-lg leading-relaxed">
+        Oltre ai soldi, nello stesso periodo eviterai di trasportare <strong class="text-white text-xl font-semibold"><span id="res-peso">12.000</span> kg</strong> di peso e di smaltire <strong class="text-white text-xl font-semibold"><span id="res-plastica">8.000</span> bottiglie</strong> di plastica.
     </div>
 </div>
-
 <script>
     const sliderPersone = document.getElementById('calc-persone');
     const sliderAnni = document.getElementById('calc-anni');
-    
+
     const displayPersone = document.getElementById('val-persone');
     const displayAnni = document.getElementById('val-anni');
-    
+
     const resCostoBottiglie = document.getElementById('res-costo-bottiglie');
     const resCostoSistema = document.getElementById('res-costo-sistema');
     const resRisparmio = document.getElementById('res-risparmio');
     const resPeso = document.getElementById('res-peso');
     const resPlastica = document.getElementById('res-plastica');
-
     function updateCalculations() {
         const persone = parseInt(sliderPersone.value);
         const anni = parseInt(sliderAnni.value);
-
         // Parametri di calcolo
         const costoLitroMedia = 0.32; // Media costo acqua bottiglia
         const litriPersonaGiorno = 1.5;
         const costoInizialeSistema = 2000; // Esempio costo impianto
         const manutenzioneAnnua = 150; // Filtri e CO2
-
         // Calcoli
         const totaleLitri = persone * litriPersonaGiorno * 365 * anni;
         const costoBottiglie = Math.round(totaleLitri * costoLitroMedia);
@@ -148,74 +202,68 @@
         const risparmio = costoBottiglie - costoSistema;
         const pesoKg = Math.round(totaleLitri);
         const bottigliePlastica = Math.round(totaleLitri / 1.5);
-
         // Aggiornamento UI
         displayPersone.innerText = persone;
         displayAnni.innerText = anni;
-        
+
         resCostoBottiglie.innerText = costoBottiglie.toLocaleString('it-IT');
         resCostoSistema.innerText = costoSistema.toLocaleString('it-IT');
         resRisparmio.innerText = risparmio.toLocaleString('it-IT');
         resPeso.innerText = pesoKg.toLocaleString('it-IT');
         resPlastica.innerText = bottigliePlastica.toLocaleString('it-IT');
-
         // Colore dinamico risparmio
-        resRisparmio.parentElement.className = risparmio > 0 ? "text-4xl font-black text-green-600" : "text-4xl font-black text-red-500";
+        resRisparmio.parentElement.className = risparmio > 0 ? "text-4xl font-semibold text-green-600" : "text-4xl font-semibold text-red-500";
     }
-
     sliderPersone.addEventListener('input', updateCalculations);
     sliderAnni.addEventListener('input', updateCalculations);
-
     // Inizializza al caricamento
     updateCalculations();
 </script>
-        
-        <h3 class="text-2xl font-bold text-cyan-600 mb-6 px-2">Perché installarlo? (Oltre il risparmio economico)</h3>
-        <div class="grid md:grid-cols-3 gap-6 mb-10">
-            <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-100">
-                <div class="text-4xl mb-4">🌿</div>
-                <h4 class="font-bold text-xl text-slate-800 mb-3">Sostenibilità reale</h4>
-                <p class="text-slate-600 mb-2"><strong>(Zero greenwashing)</strong></p>
-                <p class="text-slate-600">Una famiglia di 4 persone genera circa 50-60 kg di plastica PET all'anno. Anche se riciclata, la produzione e il trasporto di quella plastica hanno un'impronta carbonica massiccia. Con un impianto, riduci il tuo impatto ambientale del 98% istantaneamente.</p>
+
+        <h3 class="text-3xl font-semibold text-ink mb-8 px-2">Perché installarlo? (Oltre il risparmio economico)</h3>
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-surface p-8 rounded-[28px]">
+                <div class="text-4xl mb-5">🌿</div>
+                <h4 class="font-semibold text-xl text-ink mb-3">Sostenibilità reale</h4>
+                <p class="text-sub mb-2"><strong>(Zero greenwashing)</strong></p>
+                <p class="text-sub leading-relaxed">Una famiglia di 4 persone genera circa 50-60 kg di plastica PET all'anno. Anche se riciclata, la produzione e il trasporto di quella plastica hanno un'impronta carbonica massiccia. Con un impianto, riduci il tuo impatto ambientale del 98% istantaneamente.</p>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-100">
-                <div class="text-4xl mb-4">⏳</div>
-                <h4 class="font-bold text-xl text-slate-800 mb-3">Guadagno di tempo e comfort</h4>
-                <p class="text-slate-600 mb-3">Immagina di non dover mai più:</p>
-                <ul class="text-slate-600 list-disc pl-5 mb-3 space-y-1">
+            <div class="bg-surface p-8 rounded-[28px]">
+                <div class="text-4xl mb-5">⏳</div>
+                <h4 class="font-semibold text-xl text-ink mb-3">Guadagno di tempo e comfort</h4>
+                <p class="text-sub mb-3">Immagina di non dover mai più:</p>
+                <ul class="text-sub list-disc pl-5 mb-3 space-y-1 leading-relaxed">
                     <li>Controllare se l'acqua sta finendo.</li>
                     <li>Caricare pesi eccessivi.</li>
                     <li>Fare le scale con le casse d'acqua.</li>
                     <li>Riempire il sacco della plastica.</li>
                 </ul>
-                <p class="text-slate-600 font-medium">L'acqua è sempre lì: fresca, purificata, liscia o frizzante, al tocco di un dito.</p>
+                <p class="text-sub font-medium leading-relaxed">L'acqua è sempre lì: fresca, purificata, liscia o frizzante, al tocco di un dito.</p>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-100">
-                <div class="text-4xl mb-4">🛡️</div>
-                <h4 class="font-bold text-xl text-slate-800 mb-3">Sicurezza e salute continua</h4>
-                <p class="text-slate-600">L'acqua delle bottiglie di plastica può restare mesi sotto il sole nei piazzali dei logistici o nei container, con rischio di migrazione di microplastiche. L'acqua microfiltrata è acqua viva, trattata al momento, priva di cloro, metalli pesanti e sapori sgradevoli, ma ricca dei sali minerali necessari al corpo.</p>
+            <div class="bg-surface p-8 rounded-[28px]">
+                <div class="text-4xl mb-5">🛡️</div>
+                <h4 class="font-semibold text-xl text-ink mb-3">Sicurezza e salute continua</h4>
+                <p class="text-sub leading-relaxed">L'acqua delle bottiglie di plastica può restare mesi sotto il sole nei piazzali dei logistici o nei container, con rischio di migrazione di microplastiche. L'acqua microfiltrata è acqua viva, trattata al momento, priva di cloro, metalli pesanti e sapori sgradevoli, ma ricca dei sali minerali necessari al corpo.</p>
             </div>
         </div>
-
-        <div class="text-center bg-slate-800 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-10 -top-10 text-cyan-500 opacity-20 text-9xl">💡</div>
-            <h3 class="text-3xl font-black text-cyan-400 mb-4 relative z-10">Il ROI del benessere</h3>
-            <p class="text-xl leading-relaxed relative z-10 text-slate-200">Comprare acqua in bottiglia non è solo antieconomico, è <strong>un lavoro non pagato che infliggi a te stesso</strong>. L'installazione di un sistema premium trasforma una scomoda necessità in un servizio di hotel a 5 stelle direttamente nella tua cucina.</p>
+        <div class="text-center bg-ink text-white p-12 rounded-[28px] relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 text-brand opacity-20 text-9xl">💡</div>
+            <h3 class="text-3xl font-semibold text-brand mb-4 relative z-10">Il ROI del benessere</h3>
+            <p class="text-xl leading-relaxed relative z-10 text-white/80">Comprare acqua in bottiglia non è solo antieconomico, è <strong class="text-white">un lavoro non pagato che infliggi a te stesso</strong>. L'installazione di un sistema premium trasforma una scomoda necessità in un servizio di hotel a 5 stelle direttamente nella tua cucina.</p>
         </div>
     </section>
+    <section id="prodotti" class="py-24 px-6 max-w-7xl mx-auto border-t border-line/60">
+        <h2 class="text-4xl md:text-5xl font-semibold text-center mb-16 text-ink">La nostra selezione premium</h2>
 
-    <section id="prodotti" class="py-16 px-6 max-w-7xl mx-auto border-t">
-        <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">La nostra selezione premium</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-            
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="osmosystem.jpg" class="max-h-full object-contain" alt="Osmosystem 150" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="osmosystem.jpg" class="max-h-full object-contain p-4" alt="Osmosystem 150" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'">
                 </div>
-                <h3 class="text-xl font-bold">OSMOSYSTEM 150</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Prestazioni Top in 10,5 cm</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">OSMOSYSTEM 150</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Prestazioni Top in 10,5 cm</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Produzione acqua: 150 Lt/h (2,5 L/min)</li>
                     <li>• Versioni: Standard, Alka e GAS</li>
                     <li>• Scocca in acciaio Inox e alluminio</li>
@@ -226,14 +274,13 @@
                     <li>• Pompa in tecnopolimero per maggior resistenza al calcare</li>
                 </ul>
             </div>
-
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="osmosi.jpg" class="max-h-full object-contain" alt="Osmosì" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosì'">
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="osmosi.jpg" class="max-h-full object-contain p-4" alt="Osmosì" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosì'">
                 </div>
-                <h3 class="text-xl font-bold">OSMOSÌ</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Sottile: 10,5 cm</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">OSMOSÌ</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Sottile: 10,5 cm</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Produzione acqua: 100 Lt/h (1,6 L/min)</li>
                     <li>• Scocca in acciaio verniciato</li>
                     <li>• Motore 180W - Pompa rotativa</li>
@@ -244,14 +291,14 @@
                     <li>• Avviso sonoro per segnalazione funzionalità</li>
                 </ul>
             </div>
-            
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="bollicina.jpg" class="max-h-full object-contain" alt="Bollicina FV" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'">
+
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="bollicina.jpg" class="max-h-full object-contain p-4" alt="Bollicina FV" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'">
                 </div>
-                <h3 class="text-xl font-bold">BOLLICINA FV</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Acqua Fredda e Frizzante</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">BOLLICINA FV</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Acqua Fredda e Frizzante</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Scocca in acciaio Inox e antine in alluminio verniciato</li>
                     <li>• Produzione acqua: 100 Lt/h (1,6 L/min)</li>
                     <li>• Display controllo funzioni e temperatura</li>
@@ -261,14 +308,14 @@
                     <li>• Condensazione ad acqua</li>
                 </ul>
             </div>
-            
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="bollaquick.jpg" class="max-h-full object-contain" alt="Bollaquick" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollaquick'">
+
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="bollaquick.jpg" class="max-h-full object-contain p-4" alt="Bollaquick" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollaquick'">
                 </div>
-                <h3 class="text-xl font-bold">BOLLAQUICK</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Efficienza Sottobanco</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">BOLLAQUICK</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Efficienza Sottobanco</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Produzione acqua: 90 Lt/h (1,5 L/min)</li>
                     <li>• Scocca in acciaio verniciato e struttura in acciaio Inox</li>
                     <li>• Pompa booster 220V High Perf.</li>
@@ -276,17 +323,17 @@
                     <li>• Vaschetta raccogli condensa e antiallagamento</li>
                     <li>• Avviso sonoro per segnalazione funzionalità</li>
                     <li>• Pompa booster 220 V ad alte prestazioni</li>
-                    <li>• Centralina di controllo funzioni antiallagamento</li>                 
+                    <li>• Centralina di controllo funzioni antiallagamento</li>
                 </ul>
             </div>
-            
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="thanta.jpg" class="max-h-full object-contain" alt="Thanta" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'">
+
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="thanta.jpg" class="max-h-full object-contain p-4" alt="Thanta" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'">
                 </div>
-                <h3 class="text-xl font-bold">LINEA THANTA</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Business & HoReCa</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">LINEA THANTA</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Business & HoReCa</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Raffreddamento: fino a 80 L/h</li>
                     <li>• Tecnologia Dual Cold (Igiene)</li>
                     <li>• Erogazione in continuo: 6 Litri</li>
@@ -295,17 +342,16 @@
                     <li>• Tecnologia di raffreddamento DUAL COLD: Aria; Acqua; Condensazione combinata Aria/Acqua</li>
                     <li>• Pompa carbonazione booster 220V</li>
                     <li>• Dimensioni mm 360(L)x567(P)x1404(H)</li>
-                    <li>• Alimentazione/potenza assorbita 230V - 50 Hz/330W</li>                                      
+                    <li>• Alimentazione/potenza assorbita 230V - 50 Hz/330W</li>
                 </ul>
             </div>
-
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="osmoslim.jpg" class="max-h-full object-contain" alt="Osmoslim" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmoslim'">
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="osmoslim.jpg" class="max-h-full object-contain p-4" alt="Osmoslim" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmoslim'">
                 </div>
-                <h3 class="text-xl font-bold">OSMOSLIM</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Salvaspazio estremo</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">OSMOSLIM</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Salvaspazio estremo</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Spessore record: 6,7 cm</li>
                     <li>• 2 Membrane TW30 2012</li>
                     <li>• Installazione in ogni angolo</li>
@@ -318,14 +364,14 @@
                     <li>• Mix regolatore di salinità integrato</li>
                 </ul>
             </div>
-            
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-4">
-                    <img src="frighost.jpg" class="max-h-full object-contain" alt="Frighost" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Frighost'">
+
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
+                    <img src="frighost.jpg" class="max-h-full object-contain p-4" alt="Frighost" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Frighost'">
                 </div>
-                <h3 class="text-xl font-bold">FRIGHOST</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Invisibile sottozoccolo</p>
-                <ul class="text-sm space-y-2 text-slate-600 flex-grow">
+                <h3 class="text-xl font-semibold text-ink">FRIGHOST</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Invisibile sottozoccolo</p>
+                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
                     <li>• Altezza: soli 10,5 cm di altezza per installazione sottozoccolo</li>
                     <li>• Esclusivo carbonatore Inox 304 da 1 litro</li>
                     <li>• Fredda e frizzante nascosta</li>
@@ -340,12 +386,12 @@
                     <li>• Pompa in tecnopolimero per maggior resistenza al calcare</li>
                 </ul>
             </div>
-            
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="t40-totem.jpg" class="max-h-full" alt="T40 Totem" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=T40+Totem'"></div>
-                <h3 class="text-xl font-bold">T40 TOTEM</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Erogatore a Colonna</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+
+            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl"><img src="t40-totem.jpg" class="max-h-full object-contain p-4" alt="T40 Totem" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=T40+Totem'"></div>
+                <h3 class="text-xl font-semibold text-ink">T40 TOTEM</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Erogatore a Colonna</p>
+                <ul class="text-sm space-y-2 text-sub leading-relaxed">
                     <li>• Capacità raffreddamento: 40 L/h</li>
                     <li>• Erogazione in continuo: 6 Litri</li>
                     <li>• Temperatura acqua fredda: tra 5° e 12°</li>
@@ -356,12 +402,11 @@
                     <li>• Gas refrigerante R290</li>
                 </ul>
             </div>
-
-             <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 hover:border-cyan-400 transition">
-                <div class="h-48 flex items-center justify-center mb-4"><img src="totem-bollicina.jpg" class="max-h-full" alt="Totem Bollicina" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Totem+Bollicina'"></div>
-                <h3 class="text-xl font-bold">TOTEM BOLLICINA</h3>
-                <p class="text-cyan-600 text-xs font-bold uppercase mb-4">Design Bianco Slim</p>
-                <ul class="text-sm space-y-2 text-slate-600">
+             <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl"><img src="totem-bollicina.jpg" class="max-h-full object-contain p-4" alt="Totem Bollicina" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Totem+Bollicina'"></div>
+                <h3 class="text-xl font-semibold text-ink">TOTEM BOLLICINA</h3>
+                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Design Bianco Slim</p>
+                <ul class="text-sm space-y-2 text-sub leading-relaxed">
                     <li>• Capacità raffreddamento: 25 L/h</li>
                     <li>• Erogazione in continuo: 2 Litri</li>
                     <li>• Dimensioni: 20 x 134 x 55 cm</li>
@@ -374,7 +419,7 @@
             </div>
         </div>
     </section>
-    
+
     <style>
     .faq-water-container {
         max-width: 800px;
@@ -382,16 +427,17 @@
         font-family: inherit;
     }
     .faq-water-item {
-        border-bottom: 1px solid #e2e8f0;
-        padding: 15px 0;
+        border-bottom: 1px solid #d2d2d7;
+        padding: 22px 0;
     }
     .faq-water-item summary {
         font-weight: 600;
-        font-size: 1.1em;
-        color: #1a202c;
+        font-size: 1.15em;
+        color: #1d1d1f;
+        letter-spacing: -0.02em;
         cursor: pointer;
         outline: none;
-        list-style: none; 
+        list-style: none;
         position: relative;
         padding-right: 30px;
     }
@@ -406,185 +452,166 @@
         right: 0;
         top: 0;
         font-size: 1.4em;
-        color: #3182ce; /* Colore azzurro, puoi cambiarlo */
+        font-weight: 300;
+        color: #2596be;
         line-height: 1;
+        transition: transform 0.2s ease;
     }
     .faq-water-item[open] summary::after {
-        content: '-';
+        content: '−';
     }
     .faq-water-item p {
-        margin-top: 15px;
-        color: #4a5568;
-        line-height: 1.6;
+        margin-top: 16px;
+        color: #6e6e73;
+        line-height: 1.65;
         font-size: 1em;
     }
 </style>
-
-    <section id="faq" class="py-16 px-6 max-w-4xl mx-auto border-t">
-        <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Domande Frequenti (FAQ)</h2>
+    <section id="faq" class="py-24 px-6 max-w-4xl mx-auto border-t border-line/60">
+        <h2 class="text-4xl md:text-5xl font-semibold text-center mb-12 text-ink">Domande Frequenti (FAQ)</h2>
 <div class="faq-water-container">
-
     <details class="faq-water-item">
         <summary>1. L'acqua del rubinetto è già potabile, perché dovrei installare un sistema di filtrazione?</summary>
         <p>L'acqua dell'acquedotto è controllata alla fonte, ma durante il tragitto nelle tubature cittadine e condominiali può raccogliere sedimenti, ruggine, metalli pesanti e microplastiche. Inoltre, il cloro aggiunto per la disinfezione ne altera spesso il gusto e l'odore. I nostri sistemi eliminano queste impurità, restituendoti un'acqua pura e dal sapore eccellente.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>2. Qual è la differenza tra microfiltrazione e osmosi inversa?</summary>
         <p>La microfiltrazione agisce come uno scudo che trattiene cloro e sedimenti, migliorando il gusto ma mantenendo i sali minerali originali. L'osmosi inversa è un sistema più profondo che filtra anche le particelle più infinitesimali (come nitrati e metalli pesanti), ideale se desideri un'acqua a basso residuo fisso, simile a quella delle alte vette.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>3. Gli impianti occupano molto spazio in cucina?</summary>
         <p>Assolutamente no. I nostri modelli, come Osmoslim, sono progettati per il design moderno: hanno uno spessore di soli 6,7 cm e possono essere installati sotto il lavello o persino dietro lo zoccolo della cucina.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>4. Posso avere anche l'acqua frizzante direttamente dal rubinetto?</summary>
         <p>Sì! Grazie ai nostri frigogasatori (come la linea Bollicina), puoi scegliere tra acqua naturale a temperatura ambiente, naturale fredda o frizzante fredda, regolando anche il livello di gasatura in base ai tuoi gusti.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>5. Quanto costa e ogni quanto va fatta la manutenzione dell'impianto?</summary>
         <p>La manutenzione è minima (circa €150) e consiste generalmente nella sostituzione dei filtri una volta all'anno (o in base al consumo). Il sistema ti avviserà automaticamente con un segnale sonoro o visivo quando è il momento di intervenire, garantendo sempre la massima igiene.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>6. L'acqua filtrata è sicura per neonati e bambini?</summary>
         <p>Sì, è l'ideale. I nostri sistemi rimuovono sostanze indesiderate garantendo un'acqua leggera e pura, perfetta per la preparazione di pappe e biberon.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>7. L'installazione richiede lavori invasivi o fori nel marmo?</summary>
         <p>L'installazione è rapida, non invasiva, richiede meno di mezza giornata di lavoro e non prevede opere murarie. Il sistema viene integrato tipicamente sotto il lavello o sullo zoccolino. Possiamo utilizzare un piccolo rubinetto aggiuntivo dedicato oppure sostituire il tuo attuale rubinetto con uno a "3 o 5 vie" (miscelatore standard + vie per l'acqua filtrata), mantenendo intatto il tuo piano cucina.</p>
     </details>
-
     <details class="faq-water-item">
         <summary>8. L'acqua filtrata è povera di sali minerali?</summary>
         <p>Assolutamente no. I nostri sistemi ad osmosi inversa includono un modulo di miscelazione che permette di regolare il residuo fisso, mantenendo i sali minerali essenziali e restituendo un'acqua leggera e bilanciata al palato.</p>
     </details>
 </div>
 </section>
-
-    <section id="lavora-con-noi" class="py-16 px-6 max-w-5xl mx-auto border-t">
-        <div class="bg-gradient-to-br from-white to-cyan-50 p-8 md:p-12 rounded-3xl shadow-xl border border-cyan-100 text-center">
-            <div class="text-5xl mb-4">🤝</div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-6">Lavora con noi</h2>
-            <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
-                Siamo in continua espansione e valutiamo profili intraprendenti da inserire nella nostra rete commerciale. Green Water Italia è sempre alla ricerca di <strong class="text-cyan-600">agenti commerciali</strong> motivati e professionisti della vendita per proporre le nostre macchine, i sistemi di filtrazione dell'acqua e i frigogasatori premium a privati, uffici e settore Ho.Re.Ca.
+    <section id="lavora-con-noi" class="py-24 px-6 max-w-5xl mx-auto border-t border-line/60">
+        <div class="bg-gradient-to-br from-surface to-brand-light p-10 md:p-16 rounded-[28px] text-center">
+            <div class="text-5xl mb-5">🤝</div>
+            <h2 class="text-4xl md:text-5xl font-semibold text-ink mb-6">Lavora con noi</h2>
+            <p class="text-xl text-sub max-w-3xl mx-auto mb-10 leading-relaxed">
+                Siamo in continua espansione e valutiamo profili intraprendenti da inserire nella nostra rete commerciale. Green Water Italia è sempre alla ricerca di <strong class="text-brand">agenti commerciali</strong> motivati e professionisti della vendita per proporre le nostre macchine, i sistemi di filtrazione dell'acqua e i frigogasatori premium a privati, uffici e settore Ho.Re.Ca.
             </p>
-            <a href="#form" class="bg-cyan-500 text-white px-8 py-3 rounded-full font-bold hover:bg-cyan-600 transition shadow-md inline-block">Candidati o richiedi maggiori info</a>
+            <a href="#form" class="bg-brand text-white px-8 py-3.5 rounded-full font-medium text-lg hover:bg-brand-dark transition-colors inline-block">Candidati o richiedi maggiori info</a>
         </div>
     </section>
-    <section id="form" class="py-20 bg-slate-800 px-6">
-        <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
-            <h2 class="text-3xl font-bold text-center text-slate-800">Richiedi informazioni</h2>
-            <p class="text-center text-slate-500 mb-8">Richiedi informazioni e scopri l'impianto perfetto per le tue esigenze (casa, ufficio o locale).</p>
-            <form action="https://formspree.io/f/mojnkvgl" method="POST" class="space-y-5">
-                <input type="text" name="Nome" placeholder="Nome e Cognome / Azienda" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                <input type="email" name="Email" placeholder="Indirizzo Email" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                <input type="tel" name="Telefono" placeholder="Telefono Cellulare" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                
-                <textarea name="Messaggio" rows="4" placeholder="Scrivi qui la tua richiesta o eventuali domande..." class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
-                
-                <button type="submit" class="w-full bg-cyan-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-cyan-600 transition shadow-lg transform hover:-translate-y-1">
+    <section id="form" class="py-28 bg-surface px-6">
+        <div class="max-w-xl mx-auto bg-white p-10 md:p-14 rounded-[28px] shadow-sm">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-ink">Richiedi informazioni</h2>
+            <p class="text-center text-sub mb-10 mt-3 leading-relaxed">Richiedi informazioni e scopri l'impianto perfetto per le tue esigenze (casa, ufficio o locale).</p>
+            <form action="https://formspree.io/f/mojnkvgl" method="POST" class="space-y-4">
+                <input type="text" name="Nome" placeholder="Nome e Cognome / Azienda" class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition" required>
+                <input type="email" name="Email" placeholder="Indirizzo Email" class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition" required>
+                <input type="tel" name="Telefono" placeholder="Telefono Cellulare" class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition" required>
+
+                <textarea name="Messaggio" rows="4" placeholder="Scrivi qui la tua richiesta o eventuali domande..." class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition"></textarea>
+
+                <button type="submit" class="w-full bg-brand text-white py-4 rounded-full font-medium text-lg hover:bg-brand-dark transition-colors">
                     RICHIEDI IL TUO PREVENTIVO GRATUITO
                 </button>
-                <p class="text-xs text-center text-slate-400 mt-4">I tuoi dati sono al sicuro.</p>
+                <p class="text-xs text-center text-sub mt-4">I tuoi dati sono al sicuro.</p>
             </form>
         </div>
     </section>
-
-    <footer class="py-12 bg-slate-900 text-slate-400 text-sm border-t border-slate-800">
+    <footer class="py-16 bg-ink text-white/60 text-sm">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mb-8 text-center md:text-left">
-        
-        <div class="flex flex-col space-y-3">
-            <h4 class="text-white text-lg font-bold mb-2">Navigazione</h4>
-            <a href="#vantaggi" class="hover:text-cyan-500 transition">Vantaggi</a>
-            <a href="#prodotti" class="hover:text-cyan-500 transition">Prodotti</a>
-            <a href="#faq" class="hover:text-cyan-500 transition">FAQ</a>
-            <a href="#lavora-con-noi" class="hover:text-cyan-500 transition">Lavora con Noi</a>
-        </div>
 
+        <div class="flex flex-col space-y-3">
+            <h4 class="text-white text-base font-semibold mb-2">Navigazione</h4>
+            <a href="#vantaggi" class="hover:text-brand transition-colors">Vantaggi</a>
+            <a href="#prodotti" class="hover:text-brand transition-colors">Prodotti</a>
+            <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
+            <a href="#lavora-con-noi" class="hover:text-brand transition-colors">Lavora con Noi</a>
+        </div>
         <div class="flex flex-col space-y-3 items-center md:items-start">
-            <h4 class="text-white text-lg font-bold mb-2">Contattaci</h4>
-            
+            <h4 class="text-white text-base font-semibold mb-2">Contattaci</h4>
+
             <!-- Email -->
-            <a href="mailto:commercialegreenwater@protonmail.com" class="hover:text-cyan-500 transition flex items-center gap-2">
+            <a href="mailto:commercialegreenwater@protonmail.com" class="hover:text-brand transition-colors flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
                 Email: commercialegreenwater@protonmail.com
             </a>
-
             <!-- Telefono -->
-            <a href="tel:+393489897098" class="hover:text-cyan-500 transition flex items-center gap-2">
+            <a href="tel:+393489897098" class="hover:text-brand transition-colors flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
                 Telefono: +39 3489897098
             </a>
-
             <!-- Indirizzo -->
             <div class="flex items-center gap-2 text-inherit">
                 <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <span>Indirizzo: Via Guglielmo Marconi, 7, 20024 Garbagnate Milanese MI, Italia</span>
             </div>
         </div>
-
         <div class="flex flex-col space-y-3 items-center md:items-start">
-            <h4 class="text-white text-lg font-bold mb-2">Social</h4>
-            
-            <a href="https://www.instagram.com/greenwater26/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-cyan-500 transition w-fit">
+            <h4 class="text-white text-base font-semibold mb-2">Social</h4>
+
+            <a href="https://www.instagram.com/greenwater26/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand transition-colors w-fit">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                 </svg>
                 Seguici su Instagram
             </a>
-
-            <a href="https://www.tiktok.com/@greenwateritalia" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-cyan-500 transition w-fit">
+            <a href="https://www.tiktok.com/@greenwateritalia" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand transition-colors w-fit">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.78 4.07 1.02.89 2.34 1.37 3.68 1.48v3.86c-1.24-.06-2.49-.46-3.51-1.15-.34-.23-.65-.49-.94-.78v5.17c.05 3.32-1.92 6.54-5.11 7.49-3.58 1.13-7.64-.67-9.04-4.14C2.01 13.01 3.5 8.79 7.21 7.6c.92-.3 1.9-.37 2.86-.21v3.91c-.84-.17-1.74-.03-2.47.41-.95.57-1.44 1.69-1.26 2.78.22 1.4 1.53 2.45 2.94 2.36 1.48-.02 2.67-1.24 2.67-2.72V.02z"/>
                 </svg>
                 Seguici su TikTok
             </a>
-
-            <a href="https://www.facebook.com/profile.php?id=61590626797555" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-cyan-500 transition w-fit">
+            <a href="https://www.facebook.com/profile.php?id=61590626797555" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand transition-colors w-fit">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
                 Seguici su Facebook
             </a>
-
-            <a href="https://www.youtube.com/@GreenWaterItalia" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-cyan-500 transition w-fit">
+            <a href="https://www.youtube.com/@GreenWaterItalia" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand transition-colors w-fit">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
                 Iscriviti su YouTube
             </a>
         </div>
-    </div> <div class="border-t border-slate-800 pt-8 mt-8">
+    </div> <div class="border-t border-white/10 pt-8 mt-8">
         <div class="flex flex-row items-center justify-center gap-3 text-xs text-center w-full px-6">
             <img src="logo-s.png" alt="Romimatic Logo" class="h-6 w-auto object-contain opacity-80" onerror="this.style.display='none'">
-            <p class="text-white">
+            <p class="text-white/80">
                 &copy; 2026 Green Water Italia. Tutti i diritti riservati. | <strong>P.Iva: 04456450966</strong>
             </p>
         </div>
     </div>
 </footer>
-
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const links = document.querySelectorAll('.mobile-link');
-
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
-
         links.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
