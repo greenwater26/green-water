@@ -6,4 +6,28 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://www.greenwateritalia.it/blog/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.greenwateritalia.it/blog/cosa-ce-nellacqua-del-rubinetto.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.greenwateritalia.it/blog/osmosi-inversa-ultrafiltrazione-microfiltrazione.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.greenwateritalia.it/blog/residuo-fisso-acqua-cosa-significa.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
