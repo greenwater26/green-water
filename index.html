@@ -412,6 +412,120 @@
         </div>
     </section>
 
+    <section id="recensioni" class="py-24 px-6 border-t border-line/60">
+        <style>
+            #reviews-scroll::-webkit-scrollbar { display: none; }
+            .review-card { scroll-snap-align: start; flex-shrink: 0; width: calc(33.333% - 1rem); }
+            @media (max-width: 767px) { .review-card { width: 100%; } }
+        </style>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-semibold text-center mb-4 text-ink">Dicono di noi</h2>
+            <p class="text-center text-xl text-sub mb-14 max-w-2xl mx-auto leading-relaxed">Le esperienze di chi ha già scelto un sistema Green Water Italia.</p>
+
+            <div class="relative px-7">
+                <div id="reviews-scroll" class="flex gap-6 overflow-x-auto pb-2" style="scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;">
+
+                    <div class="review-card bg-surface rounded-[28px] p-8 flex flex-col">
+                        <div class="text-brand text-xl mb-4 tracking-wide">★★★★★</div>
+                        <p class="text-sub leading-relaxed mb-6 flex-grow">"Da quando ho installato l'impianto in cucina non compro più una singola bottiglia. L'acqua ha un sapore completamente diverso: pulita, fresca, senza quel retrogusto di cloro. E smettere di trascinare casse dal supermercato è una vera liberazione."</p>
+                        <div><p class="font-semibold text-ink">Marco T.</p><p class="text-sm text-sub">Milano</p></div>
+                    </div>
+
+                    <div class="review-card bg-surface rounded-[28px] p-8 flex flex-col">
+                        <div class="text-brand text-xl mb-4 tracking-wide">★★★★★</div>
+                        <p class="text-sub leading-relaxed mb-6 flex-grow">"Avevo qualche dubbio sul costo iniziale, ma dopo sei mesi ho fatto i conti: risparmio più di 80 euro al mese rispetto alle bottiglie. L'installazione è durata meno di mezza giornata e il team è stato gentilissimo e professionale."</p>
+                        <div><p class="font-semibold text-ink">Federica R.</p><p class="text-sm text-sub">Bergamo</p></div>
+                    </div>
+
+                    <div class="review-card bg-surface rounded-[28px] p-8 flex flex-col">
+                        <div class="text-brand text-xl mb-4 tracking-wide">★★★★★</div>
+                        <p class="text-sub leading-relaxed mb-6 flex-grow">"Ho scelto la linea Thanta per il mio ristorante. I clienti adorano l'acqua frizzante servita direttamente dalla cucina, e il risparmio sulle forniture è notevole. Uno degli investimenti migliori che abbia mai fatto per il locale."</p>
+                        <div><p class="font-semibold text-ink">Luca M.</p><p class="text-sm text-sub">Torino</p></div>
+                    </div>
+
+                    <div class="review-card bg-surface rounded-[28px] p-8 flex flex-col">
+                        <div class="text-brand text-xl mb-4 tracking-wide">★★★★★</div>
+                        <p class="text-sub leading-relaxed mb-6 flex-grow">"In casa siamo in quattro e l'acqua finiva sempre al momento sbagliato. Da quando abbiamo il Frighost non ci pensiamo più: acqua fredda e frizzante sempre disponibile, nascosta sotto lo zoccolo. Il piano cucina è rimasto intatto."</p>
+                        <div><p class="font-semibold text-ink">Giulia e Stefano</p><p class="text-sm text-sub">Brescia</p></div>
+                    </div>
+
+                    <div class="review-card bg-surface rounded-[28px] p-8 flex flex-col">
+                        <div class="text-brand text-xl mb-4 tracking-wide">★★★★★</div>
+                        <p class="text-sub leading-relaxed mb-6 flex-grow">"Temevo fori nel marmo e lavori invasivi, invece in mezza giornata era tutto fatto. Zero danni, zero problemi. Il tecnico è stato preciso e ha spiegato tutto con calma. I miei figli ora preferiscono questa acqua a qualsiasi bottiglia."</p>
+                        <div><p class="font-semibold text-ink">Andrea C.</p><p class="text-sm text-sub">Genova</p></div>
+                    </div>
+
+                    <div class="review-card bg-surface rounded-[28px] p-8 flex flex-col">
+                        <div class="text-brand text-xl mb-4 tracking-wide">★★★★★</div>
+                        <p class="text-sub leading-relaxed mb-6 flex-grow">"Oltre al risparmio, sapere che non produciamo più 2.000 bottiglie di plastica all'anno è una soddisfazione enorme. I nostri figli ci ringraziano per questa scelta. Prodotto eccellente, azienda seria e davvero affidabile."</p>
+                        <div><p class="font-semibold text-ink">Roberto e Anna</p><p class="text-sm text-sub">Varese</p></div>
+                    </div>
+
+                </div>
+
+                <button id="review-prev" class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-ink hover:bg-brand hover:text-white transition-colors z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="review-next" class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-ink hover:bg-brand hover:text-white transition-colors z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <div id="review-dots" class="flex justify-center items-center gap-2 mt-8"></div>
+        </div>
+
+        <script>
+        (function() {
+            var track = document.getElementById('reviews-scroll');
+            var dotsContainer = document.getElementById('review-dots');
+            var cards = track.querySelectorAll('.review-card');
+            var currentIndex = 0;
+            var autoTimer;
+
+            cards.forEach(function(_, i) {
+                var dot = document.createElement('button');
+                dot.style.cssText = 'height:8px;border-radius:999px;background:' + (i === 0 ? '#2596be' : '#d2d2d7') + ';width:' + (i === 0 ? '20px' : '8px') + ';border:none;cursor:pointer;transition:all 0.3s ease;padding:0;';
+                dot.addEventListener('click', function() { resetTimer(); goTo(i); });
+                dotsContainer.appendChild(dot);
+            });
+
+            function updateDots(index) {
+                dotsContainer.querySelectorAll('button').forEach(function(d, i) {
+                    d.style.width = i === index ? '20px' : '8px';
+                    d.style.background = i === index ? '#2596be' : '#d2d2d7';
+                });
+            }
+
+            function goTo(index) {
+                currentIndex = (index + cards.length) % cards.length;
+                track.scrollTo({ left: cards[currentIndex].offsetLeft, behavior: 'smooth' });
+                updateDots(currentIndex);
+            }
+
+            document.getElementById('review-prev').addEventListener('click', function() { resetTimer(); goTo(currentIndex - 1); });
+            document.getElementById('review-next').addEventListener('click', function() { resetTimer(); goTo(currentIndex + 1); });
+
+            track.addEventListener('scroll', function() {
+                var closest = 0, minDiff = Infinity;
+                cards.forEach(function(card, i) {
+                    var diff = Math.abs(card.offsetLeft - track.scrollLeft);
+                    if (diff < minDiff) { minDiff = diff; closest = i; }
+                });
+                if (closest !== currentIndex) { currentIndex = closest; updateDots(currentIndex); }
+            });
+
+            track.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+            track.addEventListener('mouseleave', resetTimer);
+
+            function resetTimer() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(function() { goTo(currentIndex + 1); }, 4500);
+            }
+            resetTimer();
+        })();
+        </script>
+    </section>
+
     <style>
     .faq-water-container {
         max-width: 800px;
