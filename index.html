@@ -179,7 +179,29 @@
 
         <div class="hidden md:flex items-center gap-8 text-sm font-medium text-sub">
             <a href="#vantaggi" class="hover:text-ink transition-colors">Vantaggi</a>
-            <a href="#prodotti" class="hover:text-ink transition-colors">Prodotti</a>
+
+            <!-- Prodotti dropdown -->
+            <div class="relative group">
+                <button class="flex items-center gap-1 hover:text-ink transition-colors">
+                    Prodotti
+                    <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                    </svg>
+                </button>
+                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div class="bg-white rounded-2xl shadow-xl border border-line/60 py-2 min-w-[180px]">
+                        <a href="prodotti.html#casa" class="flex items-center gap-2.5 px-4 py-3 text-sm text-sub hover:bg-surface hover:text-brand transition-colors rounded-xl mx-1">
+                            <svg class="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+                            Casa
+                        </a>
+                        <a href="prodotti.html#uffici" class="flex items-center gap-2.5 px-4 py-3 text-sm text-sub hover:bg-surface hover:text-brand transition-colors rounded-xl mx-1">
+                            <svg class="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                            Uffici / HoReCa
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <a href="#recensioni" class="hover:text-ink transition-colors">Dicono di noi</a>
             <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
             <a href="#lavora-con-noi" class="hover:text-ink transition-colors">Lavora con noi</a>
@@ -194,14 +216,36 @@
             </button>
         </div>
     </nav>
-    <div id="mobile-menu" class="hidden fixed top-[57px] left-0 w-full bg-white/80 apple-blur shadow-lg z-40 flex flex-col items-center py-8 font-medium text-sub space-y-6 md:hidden border-t border-black/5">
-        <a href="#vantaggi" class="hover:text-ink transition-colors text-lg mobile-link">Vantaggi</a>
-        <a href="#prodotti" class="hover:text-ink transition-colors text-lg mobile-link">Prodotti</a>
-        <a href="#recensioni" class="hover:text-ink transition-colors text-lg mobile-link">Dicono di noi</a>
-        <a href="#faq" class="hover:text-ink transition-colors text-lg mobile-link">FAQ</a>
-        <a href="#lavora-con-noi" class="hover:text-ink transition-colors text-lg mobile-link">Lavora con noi</a>
-        <a href="blog/index.html" class="hover:text-ink transition-colors text-lg mobile-link">Blog</a>
-        <a href="#form" class="bg-brand text-white px-8 py-3 rounded-full font-medium hover:bg-brand-dark transition-colors mobile-link">Prenota una consulenza gratuita</a>
+    <div id="mobile-menu" class="hidden fixed top-[57px] left-0 w-full bg-white/95 apple-blur shadow-lg z-40 md:hidden border-t border-black/5 overflow-y-auto max-h-[calc(100vh-57px)]">
+        <div class="flex flex-col items-center py-8 font-medium text-sub space-y-5">
+            <a href="#vantaggi" class="hover:text-ink transition-colors text-lg mobile-link">Vantaggi</a>
+
+            <!-- Prodotti expandable -->
+            <div class="w-full px-8">
+                <button id="mobile-prodotti-btn" class="w-full flex items-center justify-center gap-2 text-lg hover:text-ink transition-colors">
+                    Prodotti
+                    <svg id="mobile-prodotti-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                    </svg>
+                </button>
+                <div id="mobile-prodotti-sub" class="hidden flex flex-col items-center gap-3 mt-4">
+                    <a href="prodotti.html#casa" class="mobile-link flex items-center gap-2 text-base text-sub hover:text-brand transition-colors">
+                        <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+                        Casa
+                    </a>
+                    <a href="prodotti.html#uffici" class="mobile-link flex items-center gap-2 text-base text-sub hover:text-brand transition-colors">
+                        <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                        Uffici / HoReCa
+                    </a>
+                </div>
+            </div>
+
+            <a href="#recensioni" class="hover:text-ink transition-colors text-lg mobile-link">Dicono di noi</a>
+            <a href="#faq" class="hover:text-ink transition-colors text-lg mobile-link">FAQ</a>
+            <a href="#lavora-con-noi" class="hover:text-ink transition-colors text-lg mobile-link">Lavora con noi</a>
+            <a href="blog/index.html" class="hover:text-ink transition-colors text-lg mobile-link">Blog</a>
+            <a href="#form" class="bg-brand text-white px-8 py-3 rounded-full font-medium hover:bg-brand-dark transition-colors mobile-link">Prenota una consulenza gratuita</a>
+        </div>
     </div>
     <header class="pt-24 pb-14 md:pt-36 md:pb-20 px-6 text-center bg-gradient-to-b from-white via-brand-light/40 to-white">
         <div class="flex justify-center mb-6 md:mb-10">
@@ -340,171 +384,70 @@
             <p class="text-base md:text-xl leading-relaxed relative z-10 text-white/80">Comprare acqua in bottiglia non è solo antieconomico, è <strong class="text-white">un lavoro non pagato che infliggi a te stesso</strong>. L'installazione di un sistema premium trasforma una scomoda necessità in un servizio di hotel a 5 stelle direttamente nella tua cucina.</p>
         </div>
     </section>
-    <section id="prodotti" class="py-16 md:py-24 px-6 max-w-7xl mx-auto border-t border-line/60">
-        <h2 class="text-4xl md:text-5xl font-semibold text-center mb-10 md:mb-16 text-ink">La nostra selezione premium</h2>
+    <section id=”prodotti” class=”py-16 md:py-24 px-6 max-w-7xl mx-auto border-t border-line/60”>
+        <h2 class=”text-4xl md:text-5xl font-semibold text-center mb-4 text-ink”>La nostra selezione premium</h2>
+        <p class=”text-center text-sub text-lg mb-12 max-w-2xl mx-auto”>Soluzioni per ogni esigenza — dalla cucina di casa al locale professionale.</p>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div class=”grid md:grid-cols-3 gap-6 items-stretch”>
 
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="osmosystem.webp" class="max-h-full object-contain p-4" alt="Osmosystem 150" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'">
+            <div class=”bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col”>
+                <div class=”h-48 flex items-center justify-center mb-5 bg-white rounded-2xl”>
+                    <img src=”osmosystem.webp” class=”max-h-full object-contain p-4” alt=”Osmosystem 150” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'”>
                 </div>
-                <h3 class="text-xl font-semibold text-ink">OSMOSYSTEM 150</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Prestazioni Top in 10,5 cm</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
+                <span class=”text-[10px] font-semibold uppercase tracking-widest text-sub mb-1”>Casa · Osmosi inversa</span>
+                <h3 class=”text-xl font-semibold text-ink”>OSMOSYSTEM 150</h3>
+                <p class=”text-brand text-xs font-semibold uppercase tracking-wide mb-4”>Prestazioni Top in 10,5 cm</p>
+                <ul class=”text-sm space-y-2 text-sub flex-grow leading-relaxed”>
                     <li>• Produzione acqua: 150 Lt/h (2,5 L/min)</li>
                     <li>• Versioni: Standard, Alka e GAS</li>
                     <li>• Scocca in acciaio Inox e alluminio</li>
                     <li>• Sensore antiallagamento e autoflushing</li>
-                    <li>• Display di segnalazione funzionalità e conducibilità</li>
-                    <li>• Soli 10,5 cm di spessore - installazione verticale e orizzontale</li>
-                    <li>• Sistema di filtraggio a cartucce</li>
-                    <li>• Pompa in tecnopolimero per maggior resistenza al calcare</li>
-                </ul>
-            </div>
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="osmosi.webp" class="max-h-full object-contain p-4" alt="Osmosì" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosì'">
-                </div>
-                <h3 class="text-xl font-semibold text-ink">OSMOSÌ</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Sottile: 10,5 cm</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
-                    <li>• Produzione acqua: 100 Lt/h (1,6 L/min)</li>
-                    <li>• Scocca in acciaio verniciato</li>
-                    <li>• Motore 180W - Pompa rotativa</li>
-                    <li>• Vessel FV System brevettato</li>
-                    <li>• Soli 10,5 cm di spessore - installazione verticale/orizzontale</li>
-                    <li>• Pompa rotativa a palette</li>
-                    <li>• Centralina di controllo funzioni antiallagamento</li>
-                    <li>• Avviso sonoro per segnalazione funzionalità</li>
+                    <li>• Soli 10,5 cm di spessore</li>
                 </ul>
             </div>
 
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="bollicina.webp" class="max-h-full object-contain p-4" alt="Bollicina FV" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'">
+            <div class=”bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col”>
+                <div class=”h-48 flex items-center justify-center mb-5 bg-white rounded-2xl”>
+                    <img src=”bollicina.webp” class=”max-h-full object-contain p-4” alt=”Bollicina FV” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'”>
                 </div>
-                <h3 class="text-xl font-semibold text-ink">BOLLICINA FV</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Acqua Fredda e Frizzante</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
-                    <li>• Scocca in acciaio Inox e antine in alluminio verniciato</li>
+                <span class=”text-[10px] font-semibold uppercase tracking-widest text-sub mb-1”>Casa · Microfiltrazione</span>
+                <h3 class=”text-xl font-semibold text-ink”>BOLLICINA FV</h3>
+                <p class=”text-brand text-xs font-semibold uppercase tracking-wide mb-4”>Acqua Fredda e Frizzante</p>
+                <ul class=”text-sm space-y-2 text-sub flex-grow leading-relaxed”>
+                    <li>• Scocca in acciaio Inox e alluminio verniciato</li>
                     <li>• Produzione acqua: 100 Lt/h (1,6 L/min)</li>
                     <li>• Display controllo funzioni e temperatura</li>
-                    <li>• Vaschetta raccogli condensa e antiallagamento</li>
+                    <li>• Condensazione ad acqua</li>
                     <li>• Sistema di filtraggio a cartucce</li>
-                    <li>• Pompa in tecnopolimero per maggior resistenza al calcare</li>
-                    <li>• Condensazione ad acqua</li>
                 </ul>
             </div>
 
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="bollaquick.webp" class="max-h-full object-contain p-4" alt="Bollaquick" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollaquick'">
+            <div class=”bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col”>
+                <div class=”h-48 flex items-center justify-center mb-5 bg-white rounded-2xl”>
+                    <img src=”thanta.webp” class=”max-h-full object-contain p-4” alt=”Linea Thanta” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'”>
                 </div>
-                <h3 class="text-xl font-semibold text-ink">BOLLAQUICK</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Efficienza Sottobanco</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
-                    <li>• Produzione acqua: 90 Lt/h (1,5 L/min)</li>
-                    <li>• Scocca in acciaio verniciato e struttura in acciaio Inox</li>
-                    <li>• Pompa booster 220V High Perf.</li>
-                    <li>• Condensazione ad acqua</li>
-                    <li>• Vaschetta raccogli condensa e antiallagamento</li>
-                    <li>• Avviso sonoro per segnalazione funzionalità</li>
-                    <li>• Pompa booster 220 V ad alte prestazioni</li>
-                    <li>• Centralina di controllo funzioni antiallagamento</li>
-                </ul>
-            </div>
-
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="thanta.webp" class="max-h-full object-contain p-4" alt="Thanta" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'">
-                </div>
-                <h3 class="text-xl font-semibold text-ink">LINEA THANTA</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Business & HoReCa</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
+                <span class=”text-[10px] font-semibold uppercase tracking-widest text-sub mb-1”>Uffici / HoReCa · Totem</span>
+                <h3 class=”text-xl font-semibold text-ink”>LINEA THANTA</h3>
+                <p class=”text-brand text-xs font-semibold uppercase tracking-wide mb-4”>Business & HoReCa</p>
+                <ul class=”text-sm space-y-2 text-sub flex-grow leading-relaxed”>
                     <li>• Raffreddamento: fino a 80 L/h</li>
                     <li>• Tecnologia Dual Cold (Igiene)</li>
                     <li>• Erogazione in continuo: 6 Litri</li>
                     <li>• Temperatura acqua fredda: tra 5° e 12°</li>
-                    <li>• Gas refrigerante R290</li>
-                    <li>• Tecnologia di raffreddamento DUAL COLD: Aria; Acqua; Condensazione combinata Aria/Acqua</li>
-                    <li>• Pompa carbonazione booster 220V</li>
-                    <li>• Dimensioni mm 360(L)x567(P)x1404(H)</li>
-                    <li>• Alimentazione/potenza assorbita 230V - 50 Hz/330W</li>
-                </ul>
-            </div>
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="osmoslim.webp" class="max-h-full object-contain p-4" alt="Osmoslim" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmoslim'">
-                </div>
-                <h3 class="text-xl font-semibold text-ink">OSMOSLIM</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Salvaspazio estremo</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
-                    <li>• Spessore record: 6,7 cm</li>
-                    <li>• 2 Membrane TW30 2012</li>
-                    <li>• Installazione in ogni angolo</li>
-                    <li>• Scocca in acciaio verniciato</li>
-                    <li>• Produzione nominale: 100 Lt/h</li>
-                    <li>• Alimentazione 220 V 50/60 Hz</li>
-                    <li>• Pompe booster a membrana 24V</li>
-                    <li>• Filtro CTO a carbone alimentare in linea 12” x 2,5"</li>
-                    <li>• Assorbimento max: 90W</li>
-                    <li>• Mix regolatore di salinità integrato</li>
+                    <li>• Dimensioni mm 360(L)×567(P)×1404(H)</li>
                 </ul>
             </div>
 
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl">
-                    <img src="frighost.webp" class="max-h-full object-contain p-4" alt="Frighost" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Frighost'">
-                </div>
-                <h3 class="text-xl font-semibold text-ink">FRIGHOST</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Invisibile sottozoccolo</p>
-                <ul class="text-sm space-y-2 text-sub flex-grow leading-relaxed">
-                    <li>• Altezza: soli 10,5 cm di altezza per installazione sottozoccolo</li>
-                    <li>• Esclusivo carbonatore Inox 304 da 1 litro</li>
-                    <li>• Fredda e frizzante nascosta</li>
-                    <li>• Scocca in acciaio Inox</li>
-                    <li>• Display LCD controllo funzioni e temperatura</li>
-                    <li>• Esclusivo compressore ermetico 24 V</li>
-                    <li>• Sistema anti-condensa ed antiallagamento integrato</li>
-                    <li>• Produzione acqua: 2 L/min</li>
-                    <li>• Sistema di filtraggio a cartucce</li>
-                    <li>• Esclusivo vessel per membrana in acciaio Inox 304</li>
-                    <li>• Sistema di filtraggio a cartucce</li>
-                    <li>• Pompa in tecnopolimero per maggior resistenza al calcare</li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl"><img src="t40-totem.webp" class="max-h-full object-contain p-4" alt="T40 Totem" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=T40+Totem'"></div>
-                <h3 class="text-xl font-semibold text-ink">T40 TOTEM</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Erogatore a Colonna</p>
-                <ul class="text-sm space-y-2 text-sub leading-relaxed">
-                    <li>• Capacità raffreddamento: 40 L/h</li>
-                    <li>• Erogazione in continuo: 6 Litri</li>
-                    <li>• Temperatura acqua fredda: tra 5° e 12°</li>
-                    <li>• Pompa carbonazione booster 220V</li>
-                    <li>• Alimentazione/potenza assorbita 230V - 50 Hz/330W</li>
-                    <li>• Dimensioni mm 360(L)x567(P)x1404(H)</li>
-                    <li>• Tecnologia di raffreddamento DUAL COLD: Aria; Acqua; Condensazione combinata Aria/Acqua</li>
-                    <li>• Gas refrigerante R290</li>
-                </ul>
-            </div>
-             <div class="bg-surface rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div class="h-48 flex items-center justify-center mb-5 bg-white rounded-2xl"><img src="totem-bollicina.webp" class="max-h-full object-contain p-4" alt="Totem Bollicina" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Totem+Bollicina'"></div>
-                <h3 class="text-xl font-semibold text-ink">TOTEM BOLLICINA</h3>
-                <p class="text-brand text-xs font-semibold uppercase tracking-wide mb-4">Design Bianco Slim</p>
-                <ul class="text-sm space-y-2 text-sub leading-relaxed">
-                    <li>• Capacità raffreddamento: 25 L/h</li>
-                    <li>• Erogazione in continuo: 2 Litri</li>
-                    <li>• Dimensioni: 20 x 134 x 55 cm</li>
-                    <li>• Carbonatore in acciaio Inox da 1,2 L</li>
-                    <li>• Pompa booster 220 V alte prestazioni</li>
-                    <li>• Centralina di controllo funzioni elettronica</li>
-                    <li>• Alimentazione 220 V 50/60 Hz</li>
-                    <li>• Assorbimento max: 360 W</li>
-                </ul>
-            </div>
+        <!-- CTA -->
+        <div class=”mt-10 text-center”>
+            <a href=”prodotti.html” class=”inline-flex items-center gap-2 border-2 border-brand text-brand px-8 py-3.5 rounded-full font-semibold text-base hover:bg-brand hover:text-white transition-all duration-200”>
+                Vedi tutti i prodotti
+                <svg class=”w-4 h-4” fill=”none” stroke=”currentColor” stroke-width=”2.5” viewBox=”0 0 24 24”>
+                    <path stroke-linecap=”round” stroke-linejoin=”round” d=”M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3”/>
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -824,7 +767,9 @@
         <div class="flex flex-col space-y-3">
             <h4 class="text-white text-base font-semibold mb-2">Navigazione</h4>
             <a href="#vantaggi" class="hover:text-brand transition-colors">Vantaggi</a>
-            <a href="#prodotti" class="hover:text-brand transition-colors">Prodotti</a>
+            <span class="font-medium text-white/80">Prodotti</span>
+            <a href="prodotti.html#casa" class="hover:text-brand transition-colors pl-3 text-xs">↳ Casa</a>
+            <a href="prodotti.html#uffici" class="hover:text-brand transition-colors pl-3 text-xs">↳ Uffici / HoReCa</a>
             <a href="#recensioni" class="hover:text-brand transition-colors">Dicono di noi</a>
             <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
             <a href="#lavora-con-noi" class="hover:text-brand transition-colors">Lavora con Noi</a>
@@ -928,6 +873,14 @@
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
+        });
+
+        // Mobile prodotti sub-menu
+        document.getElementById('mobile-prodotti-btn').addEventListener('click', function() {
+            const sub = document.getElementById('mobile-prodotti-sub');
+            const arrow = document.getElementById('mobile-prodotti-arrow');
+            sub.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
         });
     </script>
     <script>
