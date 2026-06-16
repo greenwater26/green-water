@@ -384,66 +384,60 @@
             <p class="text-base md:text-xl leading-relaxed relative z-10 text-white/80">Comprare acqua in bottiglia non è solo antieconomico, è <strong class="text-white">un lavoro non pagato che infliggi a te stesso</strong>. L'installazione di un sistema premium trasforma una scomoda necessità in un servizio di hotel a 5 stelle direttamente nella tua cucina.</p>
         </div>
     </section>
-    <section id=”prodotti” class=”py-16 md:py-24 px-6 max-w-7xl mx-auto border-t border-line/60”>
-        <h2 class=”text-4xl md:text-5xl font-semibold text-center mb-4 text-ink”>La nostra selezione premium</h2>
-        <p class=”text-center text-sub text-lg mb-12 max-w-2xl mx-auto”>Soluzioni per ogni esigenza — dalla cucina di casa al locale professionale.</p>
+    <section id=”prodotti” class=”py-16 md:py-24 border-t border-line/60”>
+        <div class=”px-6 max-w-7xl mx-auto”>
+            <h2 class=”text-4xl md:text-5xl font-semibold text-center mb-4 text-ink”>La nostra selezione premium</h2>
+            <p class=”text-center text-sub text-lg mb-10 max-w-2xl mx-auto”>Soluzioni per ogni esigenza — dalla cucina di casa al locale professionale.</p>
+        </div>
 
-        <div class=”grid md:grid-cols-3 gap-6”>
+        <!-- Fascia prodotti: 3 card affiancate, scroll orizzontale su mobile -->
+        <div class=”px-6 overflow-x-auto”>
+            <div style=”display:grid; grid-template-columns:repeat(3,minmax(260px,1fr)); gap:1.5rem; min-width:700px;”>
 
-            <div class=”bg-surface rounded-[28px] overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group”>
-                <div class=”h-56 flex items-center justify-center bg-white”>
-                    <img src=”osmosystem.webp” class=”h-48 w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300” alt=”Osmosystem 150” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'”>
+                <div style=”background:#f5f5f7; border-radius:28px; overflow:hidden;”>
+                    <div style=”height:220px; background:#fff; display:flex; align-items:center; justify-content:center;”>
+                        <img src=”osmosystem.webp” alt=”Osmosystem 150” style=”max-height:190px; max-width:100%; object-fit:contain; padding:1rem;” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Osmosystem+150'”>
+                    </div>
+                    <div style=”padding:1.5rem;”>
+                        <p style=”font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#6e6e73; margin:0 0 4px;”>Casa · Osmosi inversa</p>
+                        <h3 style=”font-size:1.2rem; font-weight:700; color:#1d1d1f; margin:0 0 8px;”>OSMOSYSTEM 150</h3>
+                        <p style=”font-size:.875rem; color:#6e6e73; line-height:1.6; margin:0 0 14px;”>Osmosi inversa ad alte prestazioni in soli 10,5 cm. Elimina microplastiche, PFAS e metalli pesanti.</p>
+                        <a href=”prodotti.html#osmosystem” style=”color:#2596be; font-size:.875rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:6px;”>Scopri →</a>
+                    </div>
                 </div>
-                <div class=”p-6”>
-                    <span class=”text-[10px] font-semibold uppercase tracking-widest text-sub”>Casa · Osmosi inversa</span>
-                    <h3 class=”text-xl font-semibold text-ink mt-1”>OSMOSYSTEM 150</h3>
-                    <p class=”text-sub text-sm mt-2 leading-relaxed”>Osmosi inversa ad alte prestazioni in soli 10,5 cm. Elimina microplastiche, PFAS e metalli pesanti.</p>
-                    <a href=”prodotti.html#osmosystem” class=”inline-flex items-center gap-1.5 mt-4 text-brand text-sm font-semibold hover:gap-2.5 transition-all”>
-                        Scopri
-                        <svg class=”w-4 h-4” fill=”none” stroke=”currentColor” stroke-width=”2.5” viewBox=”0 0 24 24”><path stroke-linecap=”round” stroke-linejoin=”round” d=”M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3”/></svg>
-                    </a>
+
+                <div style=”background:#f5f5f7; border-radius:28px; overflow:hidden;”>
+                    <div style=”height:220px; background:#fff; display:flex; align-items:center; justify-content:center;”>
+                        <img src=”bollicina.webp” alt=”Bollicina FV” style=”max-height:190px; max-width:100%; object-fit:contain; padding:1rem;” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'”>
+                    </div>
+                    <div style=”padding:1.5rem;”>
+                        <p style=”font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#6e6e73; margin:0 0 4px;”>Casa · Microfiltrazione</p>
+                        <h3 style=”font-size:1.2rem; font-weight:700; color:#1d1d1f; margin:0 0 8px;”>BOLLICINA FV</h3>
+                        <p style=”font-size:.875rem; color:#6e6e73; line-height:1.6; margin:0 0 14px;”>Acqua fredda e frizzante sempre pronta. Design in acciaio Inox, 100 Lt/h di produzione.</p>
+                        <a href=”prodotti.html#bollicina” style=”color:#2596be; font-size:.875rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:6px;”>Scopri →</a>
+                    </div>
                 </div>
+
+                <div style=”background:#f5f5f7; border-radius:28px; overflow:hidden;”>
+                    <div style=”height:220px; background:#fff; display:flex; align-items:center; justify-content:center;”>
+                        <img src=”thanta.webp” alt=”Linea Thanta” style=”max-height:190px; max-width:100%; object-fit:contain; padding:1rem;” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'”>
+                    </div>
+                    <div style=”padding:1.5rem;”>
+                        <p style=”font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#6e6e73; margin:0 0 4px;”>Uffici / HoReCa · Totem</p>
+                        <h3 style=”font-size:1.2rem; font-weight:700; color:#1d1d1f; margin:0 0 8px;”>LINEA THANTA</h3>
+                        <p style=”font-size:.875rem; color:#6e6e73; line-height:1.6; margin:0 0 14px;”>Totem ad alta capacità per uffici e ristoranti. Fino a 80 L/h con tecnologia Dual Cold.</p>
+                        <a href=”prodotti.html#thanta” style=”color:#2596be; font-size:.875rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:6px;”>Scopri →</a>
+                    </div>
+                </div>
+
             </div>
-
-            <div class=”bg-surface rounded-[28px] overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group”>
-                <div class=”h-56 flex items-center justify-center bg-white”>
-                    <img src=”bollicina.webp” class=”h-48 w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300” alt=”Bollicina FV” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Bollicina+FV'”>
-                </div>
-                <div class=”p-6”>
-                    <span class=”text-[10px] font-semibold uppercase tracking-widest text-sub”>Casa · Microfiltrazione</span>
-                    <h3 class=”text-xl font-semibold text-ink mt-1”>BOLLICINA FV</h3>
-                    <p class=”text-sub text-sm mt-2 leading-relaxed”>Acqua fredda e frizzante sempre pronta. Design in acciaio Inox, 100 Lt/h di produzione.</p>
-                    <a href=”prodotti.html#bollicina” class=”inline-flex items-center gap-1.5 mt-4 text-brand text-sm font-semibold hover:gap-2.5 transition-all”>
-                        Scopri
-                        <svg class=”w-4 h-4” fill=”none” stroke=”currentColor” stroke-width=”2.5” viewBox=”0 0 24 24”><path stroke-linecap=”round” stroke-linejoin=”round” d=”M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3”/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class=”bg-surface rounded-[28px] overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group”>
-                <div class=”h-56 flex items-center justify-center bg-white”>
-                    <img src=”thanta.webp” class=”h-48 w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300” alt=”Linea Thanta” onerror=”this.src='https://placehold.co/400x300/e2e8f0/475569?text=Linea+Thanta'”>
-                </div>
-                <div class=”p-6”>
-                    <span class=”text-[10px] font-semibold uppercase tracking-widest text-sub”>Uffici / HoReCa · Totem</span>
-                    <h3 class=”text-xl font-semibold text-ink mt-1”>LINEA THANTA</h3>
-                    <p class=”text-sub text-sm mt-2 leading-relaxed”>Totem ad alta capacità per uffici e ristoranti. Fino a 80 L/h con tecnologia Dual Cold.</p>
-                    <a href=”prodotti.html#thanta” class=”inline-flex items-center gap-1.5 mt-4 text-brand text-sm font-semibold hover:gap-2.5 transition-all”>
-                        Scopri
-                        <svg class=”w-4 h-4” fill=”none” stroke=”currentColor” stroke-width=”2.5” viewBox=”0 0 24 24”><path stroke-linecap=”round” stroke-linejoin=”round” d=”M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3”/></svg>
-                    </a>
-                </div>
-            </div>
-
         </div>
 
         <!-- CTA -->
-        <div class=”mt-10 text-center”>
-            <a href=”prodotti.html” class=”inline-flex items-center gap-2 border-2 border-brand text-brand px-8 py-3.5 rounded-full font-semibold text-base hover:bg-brand hover:text-white transition-all duration-200”>
+        <div class=”mt-10 text-center px-6”>
+            <a href=”prodotti.html” style=”display:inline-flex; align-items:center; gap:8px; border:2px solid #2596be; color:#2596be; padding:14px 32px; border-radius:9999px; font-weight:700; font-size:1rem; text-decoration:none; background:transparent; cursor:pointer;”>
                 Vedi tutti i prodotti
-                <svg class=”w-4 h-4” fill=”none” stroke=”currentColor” stroke-width=”2.5” viewBox=”0 0 24 24”>
-                    <path stroke-linecap=”round” stroke-linejoin=”round” d=”M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3”/>
-                </svg>
+                <svg width=”16” height=”16” fill=”none” stroke=”currentColor” stroke-width=”2.5” viewBox=”0 0 24 24”><path stroke-linecap=”round” stroke-linejoin=”round” d=”M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3”/></svg>
             </a>
         </div>
     </section>
