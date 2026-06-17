@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossario dell'acqua e della filtrazione | Green Water Italia</title>
+  <meta name="description" content="Dizionario completo dei termini tecnici sull'acqua potabile, sistemi di filtrazione e depurazione: osmosi inversa, TDS, nitrati, PFAS, residuo fisso e molto altro." />
+  <link rel="canonical" href="https://www.greenwateritalia.it/glossario.html" />
+  <meta property="og:title" content="Glossario dell'acqua e della filtrazione | Green Water Italia" />
+  <meta property="og:description" content="37 termini tecnici spiegati in modo chiaro: osmosi inversa, TDS, residuo fisso, nitrati, PFAS, durezza, microfiltrazione e molto altro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.greenwateritalia.it/glossario.html" />
+  <meta property="og:locale" content="it_IT" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#1d1d1f', sub: '#6e6e73', line: '#d2d2d7',
+            surface: '#f5f5f7', brand: '#2596be',
+            'brand-dark': '#1b7a9c', 'brand-light': '#e8f4f9'
+          },
+          fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','SF Pro Display','Segoe UI','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    .term-card { transition: box-shadow .15s, border-color .15s; }
+    .term-card:hover { box-shadow: 0 4px 20px rgba(37,150,190,.1); }
+    .hidden-term { display: none !important; }
+    .letter-section:not(:has(.term-card:not(.hidden-term))) { display: none; }
+    #no-results { display: none; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": "https://www.greenwateritalia.it/glossario.html#glossario",
+    "name": "Glossario dell'acqua e della filtrazione",
+    "description": "Dizionario dei termini tecnici sull'acqua potabile, sistemi di filtrazione e depurazione",
+    "inLanguage": "it",
+    "publisher": { "@type": "Organization", "name": "Green Water Italia", "url": "https://www.greenwateritalia.it" }
+  }
+  </script>
+</head>
+<body class="bg-white text-ink font-sans antialiased">
+
+<!-- Header sticky -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3">
+      <img src="logo.webp" alt="Green Water Italia" class="h-8" onerror="this.style.display='none'">
+      <span class="font-semibold text-ink tracking-tight hidden sm:inline text-sm">GREEN WATER ITALIA</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-sub">
+      <a href="/prodotti.html" class="hover:text-ink transition-colors">Prodotti</a>
+      <a href="/blog/" class="hover:text-ink transition-colors">Blog</a>
+      <a href="/glossario.html" class="text-brand font-semibold">Glossario</a>
+      <a href="/#form" class="bg-brand text-white px-4 py-1.5 rounded-full text-sm hover:bg-brand-dark transition-colors">Consulenza gratuita</a>
+    </nav>
+    <!-- Mobile hamburger -->
+    <button id="mob-btn" class="md:hidden text-ink" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mob-menu" class="hidden md:hidden border-t border-line bg-white px-5 py-5 flex flex-col gap-4 text-sm font-medium text-sub">
+    <a href="/prodotti.html" class="hover:text-brand transition-colors">Prodotti</a>
+    <a href="/blog/" class="hover:text-brand transition-colors">Blog</a>
+    <a href="/glossario.html" class="text-brand font-semibold">Glossario</a>
+    <a href="/#form" class="bg-brand text-white px-5 py-2.5 rounded-full text-center hover:bg-brand-dark transition-colors">Consulenza gratuita</a>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-5 py-12">
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-xs text-sub mb-8">
+    <a href="/" class="hover:text-brand transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-ink">Glossario</span>
+  </nav>
+
+  <!-- Hero -->
+  <div class="mb-10">
+    <p class="text-brand font-semibold text-xs tracking-widest uppercase mb-3">Riferimento</p>
+    <h1 class="text-3xl md:text-5xl font-semibold text-ink mb-4 tracking-tight">Glossario dell'acqua</h1>
+    <p class="text-sub text-base md:text-lg max-w-2xl leading-relaxed">37 termini tecnici spiegati in modo chiaro: dall'osmosi inversa ai PFAS, dal TDS alla durezza. Un riferimento per orientarsi nel mondo della filtrazione.</p>
+  </div>
+
+  <!-- Search -->
+  <div class="relative mb-8">
+    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+    </svg>
+    <input id="search" type="search" placeholder="Cerca un termine… es. osmosi, nitrati, TDS"
+      class="w-full pl-11 pr-4 py-3 rounded-xl border border-line bg-surface text-sm text-ink placeholder:text-sub focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all" />
+  </div>
+
+  <!-- Alphabet nav -->
+  <div class="flex flex-wrap gap-2 mb-10" id="alpha-nav">
+    <a href="#A" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">A</a>
+    <a href="#C" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">C</a>
+    <a href="#D" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">D</a>
+    <a href="#F" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">F</a>
+    <a href="#G" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">G</a>
+    <a href="#M" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">M</a>
+    <a href="#N" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">N</a>
+    <a href="#O" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">O</a>
+    <a href="#P" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">P</a>
+    <a href="#R" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">R</a>
+    <a href="#S" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">S</a>
+    <a href="#T" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">T</a>
+    <a href="#U" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">U</a>
+    <a href="#V" class="alpha-pill text-xs font-semibold px-3 py-1 rounded-full bg-surface text-sub hover:bg-brand hover:text-white transition-colors">V</a>
+  </div>
+
+  <!-- No results -->
+  <p id="no-results" class="text-sub text-sm py-8 text-center">Nessun termine trovato per "<span id="no-results-query"></span>".</p>
+
+  <!-- Terms -->
+  <div id="terms-container" class="space-y-10">
+
+    <!-- A -->
+    <section class="letter-section" id="A">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">A</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="acqua dura durezza">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Acqua dura (durezza)</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Acqua con elevata concentrazione di sali di calcio e magnesio. Lascia depositi di calcare su elettrodomestici e tubature. Si misura in gradi francesi (°F): dolce &lt;7°F, media 7–15°F, dura 15–25°F, molto dura &gt;25°F. Milano: ~30°F, Roma: ~40°F.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="acqua oligominerale minerale residuo">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Acqua oligominerale</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Acqua con residuo fisso compreso tra 50 e 500 mg/L. Leggermente minerale, con buona tollerabilità renale. Consigliata per uso quotidiano. L'acqua prodotta da osmosi inversa con rimineralizzazione rientra generalmente in questa categoria.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="acqua potabile legge normativa direttiva">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Acqua potabile</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Acqua sicura per il consumo umano secondo i parametri stabiliti dalla Direttiva UE 2020/2184 (in Italia: D.Lgs. 18/2023). Rispetta circa 48 parametri fisici, chimici e biologici. "Potabile" non significa però assenza di sostanze indesiderate come nitrati, PFAS o cloro.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="addolcitore scambio ionico resine sodio">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Addolcitore</h3>
+            <span class="shrink-0 text-xs bg-purple-50 text-purple-600 font-semibold px-2 py-0.5 rounded-full">Apparecchi</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Apparecchio che riduce la durezza dell'acqua sostituendo gli ioni calcio e magnesio con ioni sodio, tramite resine a scambio ionico. Riduce efficacemente il calcare ma <strong>non rimuove</strong> nitrati, metalli pesanti, batteri o PFAS. Richiede rigenerazione periodica con sale.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="arsenico metallo pesante tossico cancerogeno">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Arsenico</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-semibold-2 py-0.5 rounded-full px-2">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Metalloide tossico presente naturalmente in alcune falde acquifere, specialmente nelle zone vulcaniche (Lazio, Toscana). Classificato cancerogeno IARC Gruppo 1. Limite EU: 10 µg/L. L'osmosi inversa lo rimuove con efficacia &gt;90%. Il carbone attivo è inefficace.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- C -->
+    <section class="letter-section" id="C">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">C</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="calcare carbonato calcio depositi">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Calcare</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Deposito bianco di carbonato di calcio (CaCO₃) che si forma quando l'acqua dura viene riscaldata. Si accumula su resistenze, caldaie, rubinetti e tubature riducendone efficienza e durata. 1 mm di calcare su una resistenza aumenta i consumi energetici del 10%.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="calcite rimineralizzazione minerali osmosi">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Calcite</h3>
+            <span class="shrink-0 text-xs bg-green-50 text-green-600 font-semibold px-2 py-0.5 rounded-full">Componenti</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Minerale naturale (carbonato di calcio cristallino) usato nei filtri di rimineralizzazione dei sistemi a osmosi inversa. L'acqua osmotica — povera di minerali — vi scorre attraverso e si arricchisce in modo controllato di calcio e carbonati, migliorando gusto e struttura chimica.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="carbone attivo filtro cloro pesticidi odore sapore">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Carbone attivo</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Filtro poroso con superficie interna enorme (1 g ≈ 1.000 m²) che rimuove per adsorbimento cloro, clorammine, trialomentani, pesticidi e sostanze che alterano sapore e odore. <strong>Non rimuove</strong> nitrati, sali minerali, metalli pesanti o PFAS. Spesso usato come pre-filtro nei sistemi a osmosi.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="cloro acquedotto disinfezione trialometani THM">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Cloro</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Gas o soluzione aggiunta all'acqua potabile dagli acquedotti come disinfettante. Efficace contro batteri e virus, ma altera gusto e odore. Può reagire con la materia organica formando trialometani (THM), classificati come possibili cancerogeni. Il carbone attivo lo rimuove efficacemente.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="clorammine cloro ammoniaca disinfettante">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Clorammine</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Composti formati dalla reazione tra cloro e ammoniaca, usati da alcuni acquedotti come disinfettanti alternativi. Più stabili e persistenti del cloro libero, ma più difficili da eliminare: richiedono carbone attivo a lunga esposizione o osmosi inversa per essere rimossi in modo affidabile.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- D -->
+    <section class="letter-section" id="D">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">D</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="depuratore filtro acqua casa sistema">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Depuratore</h3>
+            <span class="shrink-0 text-xs bg-purple-50 text-purple-600 font-semibold px-2 py-0.5 rounded-full">Apparecchi</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Sistema che rimuove contaminanti dall'acqua del rubinetto rendendola più sicura e gradevole. Può combinare più tecnologie: pre-filtro meccanico, carbone attivo, membrana a osmosi inversa o ultrafiltrazione, UV, rimineralizzazione. Si installa generalmente sottopiano o a parete.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="durezza gradi francesi tedeschi calcio magnesio">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Durezza (°F, °d, mg/L)</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Misura della concentrazione di ioni calcio e magnesio nell'acqua. Si esprime in gradi francesi (°F), tedeschi (°d) o mg/L CaCO₃. Conversione: 1°F = 10 mg/L CaCO₃ = 0,56°d. La durezza è "temporanea" se dovuta a bicarbonati (eliminabile bollendo) o "permanente" se dovuta a solfati.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- F -->
+    <section class="letter-section" id="F">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">F</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="filtrazione membrana pori barriera fisica">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Filtrazione</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Processo di rimozione di impurità attraverso una barriera fisica. I livelli aumentano per efficacia: filtrazione meccanica (particelle grandi) → microfiltrazione (batteri) → ultrafiltrazione (virus) → osmosi inversa (sali disciolti). Ogni livello rimuove impurità più piccole.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="fluoruri fluoro limite EU denti">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Fluoruri</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Ioni fluoro presenti naturalmente in alcune acque o aggiunti artificialmente. In dosi eccessive (&gt;1,5 mg/L) causano fluorosi dentale e ossea. Il limite EU è 1,5 mg/L. L'osmosi inversa li rimuove con efficacia &gt;95%. Il carbone attivo è inefficace contro i fluoruri.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="frigogasatore erogatore fredda gassata ufficio">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Frigogasatore</h3>
+            <span class="shrink-0 text-xs bg-purple-50 text-purple-600 font-semibold px-2 py-0.5 rounded-full">Apparecchi</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Erogatore collegato alla rete idrica che filtra, raffredda e gasifica l'acqua con CO₂. Disponibile in versione da banco, sottopiano o totem freestanding. Sostituisce sia i boccioni che i distributori d'acqua tradizionali. I modelli professionali (es. Linea Thanta) arrivano a 40–150 L/h di acqua fredda.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- G -->
+    <section class="letter-section" id="G">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">G</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="gasatura CO2 frizzante gassata bolle">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Gasatura</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Processo di dissoluzione di CO₂ nell'acqua per renderla frizzante. Il livello si misura in volumi (1 vol = 1 L di CO₂ per 1 L di acqua): leggermente frizzante 2–3 vol, frizzante 4–5 vol. I frigogasatori moderni permettono di regolare l'intensità della gasatura.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- M -->
+    <section class="letter-section" id="M">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">M</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="membrana semipermeabile osmosi inversa pori 0.0001">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Membrana semipermeabile</h3>
+            <span class="shrink-0 text-xs bg-green-50 text-green-600 font-semibold px-2 py-0.5 rounded-full">Componenti</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Cuore del sistema a osmosi inversa. Ha pori di 0,0001 micron — circa 500 volte più piccoli di un batterio — che lasciano passare solo le molecole d'acqua, bloccando virtualmente tutti i sali disciolti, nitrati, metalli pesanti, PFAS, microplastiche, batteri e virus.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="metalli pesanti piombo arsenico cromo mercurio cadmio">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Metalli pesanti</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Elementi metallici tossici a basse concentrazioni: piombo, arsenico, cromo esavalente, mercurio, cadmio. Entrano nell'acqua per contaminazione industriale, agricola o da tubature vecchie. L'osmosi inversa li rimuove con efficacia &gt;95%. Il carbone attivo è inefficace.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="microfiltrazione 0.1 10 micron batteri protozoi">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Microfiltrazione</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Tecnologia con membrane da 0,1 a 10 micron. Rimuove sedimenti, batteri, protozoi e particelle in sospensione. <strong>Non rimuove</strong> virus (troppo piccoli), sali disciolti, nitrati o metalli pesanti. Mantiene il contenuto minerale dell'acqua. Spesso usata nei frigogasatori da banco.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="microplastiche plastica frammenti sangue bottiglia">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Microplastiche</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Frammenti di plastica con diametro &lt;5 mm presenti sia nell'acqua del rubinetto che nelle bottiglie PET. Studi recenti le trovano nel sangue umano, nella placenta e nei polmoni. L'osmosi inversa le blocca completamente. Le bottiglie in plastica sono tra le principali fonti di microplastiche nell'acqua.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- N -->
+    <section class="letter-section" id="N">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">N</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="nitrati NO3 agricoltura neonati metaemoglobinemia">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Nitrati (NO₃⁻)</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Composti azotati presenti naturalmente ma aumentati dall'agricoltura intensiva. Limite EU: 50 mg/L. Nelle zone agricole (Pianura Padana, Puglia) spesso superato. Causano metaemoglobinemia nei neonati e sono classificati come possibili cancerogeni per adulti (IARC 2A). Il carbone attivo è inefficace: serve osmosi inversa (85–95% di rimozione).</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="nitriti NO2 riduzione batterica boccioni">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Nitriti (NO₂⁻)</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Forma ridotta dei nitrati, più tossica a parità di concentrazione. Limite EU: 0,5 mg/L. Si formano per riduzione batterica dei nitrati, ad esempio in sistemi non igienicamente curati. L'osmosi inversa li rimuove con la stessa efficacia dei nitrati.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O -->
+    <section class="letter-section" id="O">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">O</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="osmosi inversa membrana filtrazione pressione 0.0001 micron">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Osmosi inversa</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Tecnologia che forza l'acqua attraverso una membrana semipermeabile con pori da 0,0001 micron applicando pressione contraria all'osmosi naturale. Rimuove fino al 99% dei contaminanti: nitrati, fluoruri, arsenico, piombo, PFAS, microplastiche, batteri e virus. È il sistema di filtrazione più completo per uso domestico e professionale.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="ozono O3 disinfezione ossidante battericida">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Ozono (O₃)</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Gas potente ossidante usato in alcuni sistemi di purificazione come alternativa al cloro. Disinfetta l'acqua senza lasciare residui chimici persistenti, ma deve essere generato al momento dell'uso perché si decompone rapidamente. Usato principalmente in impianti industriali e nel trattamento delle acque municipali.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- P -->
+    <section class="letter-section" id="P">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">P</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="PFAS perfluoroalchilici forever chemicals inquinanti persistenti">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">PFAS</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Sostanze perfluoroalchiliche e polifluoroalchiliche, detti "forever chemicals": composti industriali che non si degradano in natura. Rilevati nel sangue di quasi tutta la popolazione mondiale. La Direttiva UE 2020/2184 fissa il limite a 0,1 µg/L (totale PFAS). L'osmosi inversa è uno dei pochi sistemi che li rimuove con alta efficacia.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="pH acidità alcalinità scala 7 neutro">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">pH</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Misura dell'acidità o alcalinità dell'acqua su scala da 0 a 14 (7 = neutro). L'acqua potabile deve avere pH 6,5–9,5. Il pH non indica la qualità complessiva ma influenza la solubilità di alcuni metalli dalle tubature. L'acqua osmotica tende a essere leggermente acida (pH 5,5–6,5); la rimineralizzazione la riporta a neutro.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="piombo tubature vecchie pre-1980 tossico">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Piombo</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Metallo pesante tossico che può essere rilasciato dalle tubature e saldature vecchie (pre-1980) soprattutto negli edifici storici. La normativa UE ha abbassato il limite a 5 µg/L (dal 2036, ora ancora 10 µg/L). L'osmosi inversa lo rimuove con efficacia &gt;99%. Particolarmente pericoloso per bambini e donne in gravidanza.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="portata litri ora L/h erogazione capacità">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Portata</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Volume d'acqua erogato nell'unità di tempo, espresso in litri per ora (L/h) o litri per minuto. Per dimensionare un frigogasatore professionale si calcola: n° persone × 2 L/giorno. Un T40 Thanta (40 L/h di fredda) serve comodamente fino a 25 persone in ufficio.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="pressione rete bar idraulica pompa">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Pressione di rete</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Pressione idraulica dell'acqua in arrivo dalla rete, misurata in bar. I sistemi a osmosi inversa richiedono almeno 2,5–3 bar per funzionare correttamente. Sotto questa soglia è necessaria una pompa di pressurizzazione. La pressione tipica nelle case italiane è 2–4 bar.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- R -->
+    <section class="letter-section" id="R">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">R</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="residuo fisso minerali disciolti 180 gradi mg/L bottiglia">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Residuo fisso</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Quantità di sali minerali disciolti in 1 L d'acqua, misurata facendo evaporare il campione a 180°C (mg/L). Riportato sulle etichette delle acque minerali. Classificazione: minimamente mineralizzata &lt;50, oligominerale 50–500, minerale &gt;500 mg/L. Non dice nulla sulla presenza di contaminanti.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="rimineralizzazione calcio magnesio osmosi inversa stadio">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Rimineralizzazione</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Stadio finale nei sistemi a osmosi inversa che reintroduce calcio, magnesio e altri minerali nell'acqua purificata. Si realizza con filtri a calcite o ottosite. Migliora il gusto, riporta il pH a valori neutri e restituisce un contenuto minerale bilanciato (tipicamente 80–150 mg/L di residuo fisso).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- S -->
+    <section class="letter-section" id="S">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">S</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="sedimenti particelle sabbia ruggine argilla pre-filtro">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Sedimenti</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Particelle solide in sospensione nell'acqua: sabbia, ruggine, argilla, detriti. Vengono rimossi dallo stadio di pre-filtrazione meccanica (cartuccia in polipropilene da 5 micron) che protegge la membrana a osmosi inversa dall'intasamento. Visibili come torbidità o depositi nei sanitari.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- T -->
+    <section class="letter-section" id="T">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">T</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="TDS total dissolved solids ppm conduttivimetro">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">TDS (Total Dissolved Solids)</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Totale dei solidi disciolti in acqua, misurato in mg/L o ppm tramite un conduttivimetro tascabile che stima la conducibilità elettrica. È una misura approssimativa simile al residuo fisso. <strong>Non distingue</strong> tra sali minerali utili e contaminanti: un valore alto può indicare acqua minerale ricca o acqua contaminata.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="THM trialometani cloroformio cloro materia organica cancerogeno">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">THM (Trialometani)</h3>
+            <span class="shrink-0 text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded-full">Contaminante</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Composti organici (cloroformio, bromodiclorometano, ecc.) formati dalla reazione tra cloro e materia organica naturale nell'acqua. Classificati come possibili cancerogeni (IARC Gruppo 2B). Limite EU: 100 µg/L. Il carbone attivo li rimuove efficacemente; l'osmosi inversa li blocca quasi completamente.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- U -->
+    <section class="letter-section" id="U">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">U</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="ultrafiltrazione 0.01 0.1 micron virus batteri minerali">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Ultrafiltrazione</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Tecnologia con membrane da 0,01 a 0,1 micron. Rimuove batteri, virus, protozoi e macromolecole organiche, ma <strong>non i sali minerali disciolti</strong>, nitrati o metalli pesanti. Mantiene inalterato il contenuto minerale dell'acqua. Posizionata tra microfiltrazione e osmosi inversa in termini di efficacia.</p>
+        </div>
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="UV ultravioletti disinfezione DNA batteri virus luce">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">UV (ultravioletti)</h3>
+            <span class="shrink-0 text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-0.5 rounded-full">Filtrazione</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Disinfezione tramite luce ultravioletta a 254 nm che distrugge il DNA di batteri, virus e protozoi senza aggiungere sostanze chimiche. Efficace solo su acqua già pre-filtrata (trasparente): i sedimenti proteggono i microorganismi. Non rimuove sostanze chimiche, nitrati o metalli pesanti.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- V -->
+    <section class="letter-section" id="V">
+      <h2 class="text-xs font-bold text-brand uppercase tracking-widest mb-4 pb-2 border-b border-line">V</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="term-card border border-line rounded-2xl p-5" data-term="valore soglia limite legge normativa EU parametro">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-semibold text-ink text-base">Valore soglia (limite di legge)</h3>
+            <span class="shrink-0 text-xs bg-orange-50 text-orange-600 font-semibold px-2 py-0.5 rounded-full">Qualità</span>
+          </div>
+          <p class="text-sm text-sub leading-relaxed">Concentrazione massima ammissibile di un parametro nell'acqua potabile, stabilita per legge. In Italia dalla Direttiva UE 2020/2184 recepita con D.Lgs. 18/2023. I valori soglia sono spesso di compromesso politico: rispettarli non garantisce l'assenza di rischio per tutta la popolazione, specialmente per soggetti vulnerabili.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /terms-container -->
+
+  <!-- CTA -->
+  <div class="bg-gradient-to-br from-brand to-brand-dark rounded-2xl p-8 text-white mt-14 text-center">
+    <p class="text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">Green Water Italia</p>
+    <h2 class="text-2xl font-bold mb-3">Vuoi sapere com'è l'acqua a casa tua?</h2>
+    <p class="text-white/80 text-sm mb-6 max-w-md mx-auto">Analizziamo gratuitamente il residuo fisso e la durezza della tua acqua. Nessun impegno.</p>
+    <a href="/#form" class="inline-block bg-white text-brand font-semibold text-sm px-6 py-3 rounded-full hover:bg-brand-light transition-colors">Richiedi l'analisi gratuita</a>
+  </div>
+
+</main>
+
+<footer class="border-t border-line mt-16 py-10 bg-surface">
+  <div class="max-w-5xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-sub">
+    <p>© 2026 Green Water Italia – P.IVA 04456450966</p>
+    <nav class="flex flex-wrap justify-center gap-4">
+      <a href="/" class="hover:text-brand transition-colors">Home</a>
+      <a href="/prodotti.html" class="hover:text-brand transition-colors">Prodotti</a>
+      <a href="/blog/" class="hover:text-brand transition-colors">Blog</a>
+      <a href="/glossario.html" class="text-brand font-semibold">Glossario</a>
+      <a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a>
+      <a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mob-btn').addEventListener('click', function() {
+    document.getElementById('mob-menu').classList.toggle('hidden');
+  });
+
+  // Search/filter
+  const searchInput = document.getElementById('search');
+  const noResults = document.getElementById('no-results');
+  const noResultsQuery = document.getElementById('no-results-query');
+
+  searchInput.addEventListener('input', function() {
+    const q = this.value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.term-card');
+    const sections = document.querySelectorAll('.letter-section');
+    let visibleCount = 0;
+
+    cards.forEach(function(card) {
+      const termText = (card.dataset.term || '').toLowerCase();
+      const titleText = card.querySelector('h3').textContent.toLowerCase();
+      const defText = card.querySelector('p').textContent.toLowerCase();
+      const match = !q || termText.includes(q) || titleText.includes(q) || defText.includes(q);
+      card.classList.toggle('hidden-term', !match);
+      if (match) visibleCount++;
+    });
+
+    // Hide/show letter section headers if all cards in section are hidden
+    sections.forEach(function(section) {
+      const visibleCards = section.querySelectorAll('.term-card:not(.hidden-term)');
+      section.style.display = visibleCards.length === 0 ? 'none' : '';
+    });
+
+    // Show/hide "no results"
+    noResults.style.display = visibleCount === 0 && q ? 'block' : 'none';
+    noResultsQuery.textContent = this.value.trim();
+  });
+</script>
+
+</body>
+</html>
