@@ -93,7 +93,8 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.greenwateritalia.it/#organization",
       "name": "Green Water Italia",
       "url": "https://www.greenwateritalia.it",
       "logo": "https://www.greenwateritalia.it/logo.webp",
@@ -110,13 +111,57 @@
         "postalCode": "20024",
         "addressCountry": "IT"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.5786,
+        "longitude": 9.0666
+      },
       "sameAs": [
         "https://www.instagram.com/greenwater26/",
         "https://www.tiktok.com/@greenwateritalia",
         "https://www.facebook.com/profile.php?id=61590626797555",
         "https://www.youtube.com/@GreenWaterItalia"
       ],
-      "areaServed": { "@type": "Country", "name": "Italia" },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Milano" },
+        { "@type": "AdministrativeArea", "name": "Monza e Brianza" },
+        { "@type": "AdministrativeArea", "name": "Varese" },
+        { "@type": "AdministrativeArea", "name": "Como" },
+        { "@type": "Country", "name": "Italia" }
+      ],
+      "knowsAbout": [
+        "osmosi inversa",
+        "depurazione acqua",
+        "filtrazione acqua domestica",
+        "acqua del rubinetto qualità",
+        "impianti filtraggio acqua",
+        "frigogasatori acqua",
+        "erogatori acqua professionale HoReCa",
+        "Linea Thanta erogatori",
+        "acqua dura calcare",
+        "nitrati acqua potabile",
+        "microplastiche acqua",
+        "residuo fisso acqua",
+        "TDS acqua"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sistemi di filtrazione e depurazione acqua",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Osmosi inversa per casa" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Frigogasatore ad osmosi inversa" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Linea Thanta erogatori professionali" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Microfiltrazione sottopiano" } }
+        ]
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
       "priceRange": "€€"
     }
     </script>
