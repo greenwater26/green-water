@@ -974,24 +974,7 @@
         <span class="text-sm font-semibold">Scrivici su WhatsApp</span>
     </a>
 
-    <!-- ══════════════════════════════════════
-         GUIDE GRATUITE — JS
-         ─────────────────────────────────────
-         SETUP BREVO (3 passi):
-         1. Crea account su brevo.com
-         2. Vai su Contacts > Liste > crea lista "Guide sito"
-            → copia il numero lista in BREVO_LIST_ID
-         3. Vai su Impostazioni > Chiavi API > crea chiave API
-            → incolla la chiave in BREVO_API_KEY
-         4. In Brevo crea un'automazione:
-            "Quando un contatto si iscrive alla lista X"
-            → se attributo GUIDA = 'casa'  → invia email con link a /guide/Green-Water-Guida-Qualita-Acqua-Casa.pdf
-            → se attributo GUIDA = 'horeca' → invia email con link a /guide/Green-Water-Guida-Acqua-HoReCa-Uffici.pdf
-    ══════════════════════════════════════ -->
     <script>
-        const BREVO_API_KEY  = 'INSERISCI_QUI_LA_TUA_API_KEY_BREVO';
-        const BREVO_LIST_ID  = 0; // ← sostituisci con il numero della tua lista Brevo
-
         function selectGuide(type) {
             document.getElementById('guide-selected').value = type;
             document.querySelectorAll('.guide-card').forEach(function(card) {
@@ -1033,26 +1016,17 @@
             btn.textContent = 'Invio in corso…';
             btn.disabled = true;
 
-            fetch('https://api.brevo.com/v3/contacts', {
+            fetch('/api/subscribe', {
                 method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'api-key': BREVO_API_KEY
-                },
-                body: JSON.stringify({
-                    email: email,
-                    listIds: [BREVO_LIST_ID],
-                    attributes: { GUIDA: guide, FONTE: 'sito_homepage' },
-                    updateEnabled: true
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, guide: guide })
             })
             .then(function(res) {
-                if (res.ok || res.status === 204 || res.status === 201) {
+                if (res.ok) {
                     document.getElementById('guide-form').classList.add('hidden');
                     document.getElementById('guide-success').classList.remove('hidden');
                 } else {
-                    return res.json().then(function(d) { throw new Error(d.message || 'Errore'); });
+                    throw new Error('Errore server');
                 }
             })
             .catch(function() {
