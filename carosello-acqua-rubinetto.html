@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Carosello — Cosa c'è nell'acqua del rubinetto | Green Water Italia</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: #c8c8c8;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .hint {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 18px 28px;
+      font-size: 13px;
+      color: #555;
+      max-width: 860px;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .hint strong { color: #1d1d1f; }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #444;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* ── Shared ─────────────────────────── */
+    .pill {
+      display: inline-block;
+      padding: 7px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .brand-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .brand-bar .name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-bar .counter {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.35;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SLIDE 1 — Cover ────────────────── */
+    .s1 {
+      background: #1d1d1f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    .s1-topline {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #2596be 0%, #1b7a9c 60%, transparent 100%);
+    }
+
+    .s1-logo {
+      position: absolute;
+      top: 52px; left: 60px;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .s1-drop {
+      position: absolute;
+      top: -120px; right: -130px;
+      width: 680px;
+      opacity: 0.035;
+    }
+
+    .s1-eyebrow {
+      font-size: 15px; font-weight: 700;
+      color: #2596be;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .s1-title {
+      font-size: 82px; font-weight: 700;
+      color: #fff;
+      line-height: 1.0; letter-spacing: -0.04em;
+      margin-bottom: 48px;
+    }
+
+    .s1-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      margin-bottom: 52px;
+    }
+
+    .s1-tag {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 18px; font-weight: 500;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .s1-tag-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%; flex-shrink: 0;
+    }
+
+    .s1-tagline {
+      font-size: 26px;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+      letter-spacing: -0.01em;
+    }
+
+    .s1-counter {
+      position: absolute;
+      bottom: 44px; right: 60px;
+      font-size: 14px; font-weight: 500;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SLIDE 2 — Cloro ────────────────── */
+    .s2 {
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 96px 80px 100px;
+    }
+
+    .s2-bgnum {
+      position: absolute;
+      right: 48px; top: 30px;
+      font-size: 300px; font-weight: 800;
+      color: #f5f5f7;
+      line-height: 1; letter-spacing: -0.05em;
+      user-select: none;
+    }
+
+    .s2-inner {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      height: 100%;
+    }
+
+    .s2-pill { background: #e8f4f9; color: #1b7a9c; }
+
+    .s2-h {
+      font-size: 66px; font-weight: 700;
+      color: #1d1d1f;
+      line-height: 1.0; letter-spacing: -0.04em;
+      margin: 28px 0 44px;
+    }
+
+    .bullets { display: flex; flex-direction: column; flex: 1; }
+
+    .bullet {
+      display: flex; align-items: flex-start;
+      gap: 22px; padding: 24px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .bullet:last-child { border-bottom: none; }
+
+    .bicon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center;
+      justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .bt { font-size: 24px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.015em; line-height: 1.2; }
+    .bs { font-size: 18px; color: #6e6e73; margin-top: 5px; line-height: 1.45; }
+
+    .factbox {
+      border-radius: 18px;
+      padding: 24px 28px;
+      margin-top: 36px;
+    }
+    .factbox p { font-size: 18px; font-weight: 500; line-height: 1.6; }
+
+    /* ── SLIDE 3 — PFAS ─────────────────── */
+    .s3 {
+      background: #fffbeb;
+      display: flex; flex-direction: column;
+      padding: 96px 80px 100px;
+    }
+
+    .s3-pill { background: #fef3c7; color: #92400e; }
+
+    .s3-h {
+      font-size: 62px; font-weight: 700;
+      color: #1d1d1f;
+      line-height: 1.0; letter-spacing: -0.04em;
+      margin: 28px 0 28px;
+    }
+
+    .s3-stat { font-size: 128px; font-weight: 800; color: #f59e0b; letter-spacing: -0.05em; line-height: 0.9; }
+    .s3-statlabel { font-size: 22px; color: #6e6e73; font-weight: 500; margin: 10px 0 44px; }
+
+    /* ── SLIDE 4 — Metalli ──────────────── */
+    .s4 {
+      background: #ffffff;
+      display: flex; flex-direction: column;
+      padding: 96px 80px 100px;
+    }
+
+    .s4-bgnum {
+      position: absolute;
+      right: 48px; top: 30px;
+      font-size: 300px; font-weight: 800;
+      color: #f5f5f7;
+      line-height: 1; letter-spacing: -0.05em;
+      user-select: none;
+    }
+
+    .s4-inner { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
+    .s4-pill { background: #fee2e2; color: #991b1b; }
+    .s4-h { font-size: 62px; font-weight: 700; color: #1d1d1f; line-height: 1.0; letter-spacing: -0.04em; margin: 28px 0 44px; }
+
+    /* ── SLIDE 5 — Residui ──────────────── */
+    .s5 {
+      background: #faf5ff;
+      display: flex; flex-direction: column;
+      padding: 96px 80px 100px;
+    }
+
+    .s5-pill { background: #ede9fe; color: #6d28d9; }
+    .s5-h { font-size: 62px; font-weight: 700; color: #1d1d1f; line-height: 1.0; letter-spacing: -0.04em; margin: 28px 0 44px; }
+
+    /* ── SLIDE 6 — Confronto ────────────── */
+    .s6 {
+      background: #f5f5f7;
+      display: flex; flex-direction: column;
+      padding: 96px 80px 100px;
+    }
+
+    .s6-h { font-size: 54px; font-weight: 700; color: #1d1d1f; letter-spacing: -0.04em; line-height: 1.0; margin-bottom: 10px; }
+    .s6-sub { font-size: 22px; color: #6e6e73; margin-bottom: 44px; font-weight: 400; }
+
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+
+    thead th {
+      padding: 18px 20px;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: -0.01em;
+      text-align: center;
+      color: #6e6e73;
+      background: #f9f9f9;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    thead th:first-child { text-align: left; }
+    thead th.col-ro { background: #2596be; color: white; }
+
+    tbody td {
+      padding: 18px 20px;
+      font-size: 20px;
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;
+      vertical-align: middle;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody td:first-child { text-align: left; font-size: 18px; font-weight: 500; color: #1d1d1f; }
+    .cell-ro { background: rgba(37,150,190,0.05); font-weight: 700; }
+    .ck { color: #10b981; }
+    .cx { color: #d1d5db; }
+
+    /* ── SLIDE 7 — CTA ──────────────────── */
+    .s7 {
+      background: linear-gradient(145deg, #1b7a9c 0%, #2596be 55%, #3ab4d8 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 100px 80px; text-align: center;
+    }
+
+    .s7-circles-wrap { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .s7-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .s7-logo {
+      position: absolute;
+      top: 52px; left: 60px;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .s7-eyebrow {
+      font-size: 14px; font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 28px;
+      position: relative; z-index: 1;
+    }
+
+    .s7-title {
+      font-size: 72px; font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.04em; line-height: 1.0;
+      margin-bottom: 28px;
+      position: relative; z-index: 1;
+    }
+
+    .s7-sub {
+      font-size: 24px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      margin-bottom: 56px;
+      max-width: 660px;
+      position: relative; z-index: 1;
+    }
+
+    .s7-btn {
+      background: white;
+      color: #1b7a9c;
+      font-size: 22px; font-weight: 700;
+      padding: 22px 56px;
+      border-radius: 60px;
+      letter-spacing: -0.01em;
+      display: inline-block;
+      margin-bottom: 24px;
+      position: relative; z-index: 1;
+    }
+
+    .s7-url {
+      font-size: 18px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.03em;
+      position: relative; z-index: 1;
+    }
+
+    .s7-counter {
+      position: absolute;
+      bottom: 44px; right: 60px;
+      font-size: 14px; font-weight: 500;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.05em;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="hint">
+  <strong>Come usare questo file:</strong> apri in Safari → Visualizza → Zoom 50% → Screenshot di ogni slide con ⌘⇧4.
+  Ogni slide è 1080×1350 px (formato 4:5). Su display Retina otterrai 2160×2700 px — perfetto per Instagram e Facebook.
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 1 — COVER
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 1 / 7 — Cover</div>
+  <div class="slide s1">
+    <div class="s1-topline"></div>
+    <div class="s1-logo">Green Water Italia</div>
+
+    <svg class="s1-drop" viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M150 18 C150 18 18 140 18 222 C18 302 78 362 150 362 C222 362 282 302 282 222 C282 140 150 18 150 18Z" fill="white"/>
+    </svg>
+
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;">
+      <div class="s1-eyebrow">Qualità dell'acqua</div>
+      <h1 class="s1-title">Cosa c'è<br>nell'acqua del<br>tuo rubinetto?</h1>
+
+      <div class="s1-tags">
+        <div class="s1-tag"><span class="s1-tag-dot" style="background:#10b981;"></span>Cloro</div>
+        <div class="s1-tag"><span class="s1-tag-dot" style="background:#f59e0b;"></span>PFAS</div>
+        <div class="s1-tag"><span class="s1-tag-dot" style="background:#ef4444;"></span>Metalli pesanti</div>
+        <div class="s1-tag"><span class="s1-tag-dot" style="background:#8b5cf6;"></span>Residui farmacologici</div>
+      </div>
+
+      <p class="s1-tagline">Sicura. Non sempre buona.</p>
+    </div>
+
+    <div class="s1-counter">1 / 7</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 2 — CLORO
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 2 / 7 — Cloro e monocloramina</div>
+  <div class="slide s2">
+    <div class="s2-bgnum">01</div>
+    <div class="s2-inner">
+      <span class="pill s2-pill">01 — Cloro e monocloramina</span>
+      <h2 class="s2-h">Quel sapore<br>che conosci bene</h2>
+
+      <div class="bullets">
+        <div class="bullet">
+          <div class="bicon" style="background:#e8f4f9;">💧</div>
+          <div>
+            <div class="bt">Disinfetta le reti idriche</div>
+            <div class="bs">Ipoclorito di sodio — lo stesso principio della candeggina, in dosi minime, aggiunto dall'acquedotto</div>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bicon" style="background:#e8f4f9;">👃</div>
+          <div>
+            <div class="bt">Persiste fino al tuo bicchiere</div>
+            <div class="bs">Altera il sapore di caffè, tè, ghiaccio e piatti cucinati con l'acqua del rubinetto</div>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bicon" style="background:#e8f4f9;">⚗️</div>
+          <div>
+            <div class="bt">Monocloramina: il caso Roma</div>
+            <div class="bs">Più stabile del cloro libero, raggiunge le parti più lontane della rete — resistente ai filtri a carbone standard</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="factbox" style="background:#e8f4f9;">
+        <p style="color:#1b7a9c;">✓ Il carbone attivo rimuove il cloro. Per la monocloramina serve carbone catalitico o osmosi inversa.</p>
+      </div>
+    </div>
+
+    <div class="brand-bar">
+      <span class="name" style="color:#1d1d1f;">Green Water Italia</span>
+      <span class="counter">2 / 7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 3 — PFAS
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 3 / 7 — PFAS</div>
+  <div class="slide s3">
+    <div style="position:absolute;right:48px;top:30px;font-size:300px;font-weight:800;color:rgba(245,158,11,0.1);line-height:1;letter-spacing:-0.05em;user-select:none;">02</div>
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;">
+      <span class="pill s3-pill">02 — PFAS</span>
+      <h2 class="s3-h">Gli inquinanti<br>che non se ne vanno</h2>
+
+      <div class="s3-stat">4.000<span style="font-size:64px;color:#f59e0b;opacity:0.8;">+</span></div>
+      <div class="s3-statlabel">composti chimici industriali sintetici</div>
+
+      <div class="bullets" style="flex:1;">
+        <div class="bullet" style="border-bottom-color:rgba(245,158,11,0.15);">
+          <div class="bicon" style="background:#fef3c7;">🏭</div>
+          <div>
+            <div class="bt">Da padelle a tessuti impermeabili</div>
+            <div class="bs">Presenti in imballaggi alimentari, schiume antincendio, rivestimenti industriali</div>
+          </div>
+        </div>
+        <div class="bullet" style="border-bottom-color:rgba(245,158,11,0.15);">
+          <div class="bicon" style="background:#fef3c7;">🩸</div>
+          <div>
+            <div class="bt">Si accumulano nel sangue per anni</div>
+            <div class="bs">Non si degradano né nell'ambiente né nell'organismo — "forever chemicals"</div>
+          </div>
+        </div>
+        <div class="bullet" style="border-bottom:none;">
+          <div class="bicon" style="background:#fef3c7;">📍</div>
+          <div>
+            <div class="bt">Lombardia, Veneto e Piemonte</div>
+            <div class="bs">Le zone italiane con le concentrazioni più elevate nelle acque superficiali</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="factbox" style="background:#fef3c7;">
+        <p style="color:#92400e;">⚠ L'unica tecnologia che rimuove i PFAS dall'acqua con efficacia >95% è l'osmosi inversa.</p>
+      </div>
+    </div>
+
+    <div class="brand-bar" style="border-top-color:rgba(245,158,11,0.15);">
+      <span class="name" style="color:#1d1d1f;">Green Water Italia</span>
+      <span class="counter">3 / 7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 4 — METALLI PESANTI
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 4 / 7 — Metalli pesanti e calcare</div>
+  <div class="slide s4">
+    <div class="s4-bgnum">03</div>
+    <div class="s4-inner">
+      <span class="pill s4-pill">03 — Metalli pesanti e calcare</span>
+      <h2 class="s4-h">Le tubature<br>vecchie rilasciano piombo</h2>
+
+      <div class="bullets">
+        <div class="bullet">
+          <div class="bicon" style="background:#fee2e2;">🏚️</div>
+          <div>
+            <div class="bt">Case costruite prima del 1980</div>
+            <div class="bs">Possono avere impianti idraulici parzialmente in piombo ancora in uso</div>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bicon" style="background:#fee2e2;">⚠️</div>
+          <div>
+            <div class="bt">Nessuna soglia sicura per i bambini</div>
+            <div class="bs">L'OMS lo dice chiaramente: per il piombo non esiste una dose priva di rischio sotto i 6 anni</div>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bicon" style="background:#fee2e2;">📊</div>
+          <div>
+            <div class="bt">Calcare: fastidioso ma non tossico</div>
+            <div class="bs">I sali di calcio e magnesio rovinano caldaia, lavatrice, lavastoviglie e macchina del caffè — ma non fanno male alla salute</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="factbox" style="background:#fee2e2;">
+        <p style="color:#991b1b;">🔴 Arsenico e mercurio possono essere presenti in alcune aree geografiche, soprattutto da falde superficiali contaminate.</p>
+      </div>
+    </div>
+
+    <div class="brand-bar">
+      <span class="name" style="color:#1d1d1f;">Green Water Italia</span>
+      <span class="counter">4 / 7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 5 — RESIDUI FARMACOLOGICI
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 5 / 7 — Residui farmacologici e nitrati</div>
+  <div class="slide s5">
+    <div style="position:absolute;right:48px;top:30px;font-size:300px;font-weight:800;color:rgba(139,92,246,0.08);line-height:1;letter-spacing:-0.05em;user-select:none;">04</div>
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;">
+      <span class="pill s5-pill">04 — Residui farmacologici</span>
+      <h2 class="s5-h">Quello che<br>nessuno filtra</h2>
+
+      <div class="bullets">
+        <div class="bullet" style="border-bottom-color:rgba(139,92,246,0.12);">
+          <div class="bicon" style="background:#ede9fe;">💊</div>
+          <div>
+            <div class="bt">Antibiotici, ormoni, antidolorifici</div>
+            <div class="bs">Tracce rilevate regolarmente nelle acque superficiali che alimentano gli acquedotti italiani</div>
+          </div>
+        </div>
+        <div class="bullet" style="border-bottom-color:rgba(139,92,246,0.12);">
+          <div class="bicon" style="background:#ede9fe;">🌾</div>
+          <div>
+            <div class="bt">Nitrati da agricoltura intensiva</div>
+            <div class="bs">Concentrati nelle zone della pianura Padana — rischio documentato per neonati sotto i 4 mesi</div>
+          </div>
+        </div>
+        <div class="bullet" style="border-bottom:none;">
+          <div class="bicon" style="background:#ede9fe;">🔬</div>
+          <div>
+            <div class="bt">Le infrastrutture non sono progettate per rimuoverli</div>
+            <div class="bs">I depuratori comunali trattano i batteri, non i microcontaminanti chimici</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="factbox" style="background:#ede9fe;">
+        <p style="color:#6d28d9;">✓ L'osmosi inversa con membrana a 0,001 µm rimuove anche residui farmacologici e pesticidi.</p>
+      </div>
+    </div>
+
+    <div class="brand-bar" style="border-top-color:rgba(139,92,246,0.12);">
+      <span class="name" style="color:#1d1d1f;">Green Water Italia</span>
+      <span class="counter">5 / 7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 6 — CONFRONTO TECNOLOGIE
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 6 / 7 — Confronto tecnologie</div>
+  <div class="slide s6">
+    <h2 class="s6-h">Quale filtro<br>fa cosa?</h2>
+    <p class="s6-sub">Non tutti i sistemi di filtrazione risolvono gli stessi problemi.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30%;">Sostanza</th>
+          <th>Carbone attivo</th>
+          <th>Ultrafiltrazione</th>
+          <th class="col-ro">Osmosi inversa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cloro / monocloramina</td>
+          <td><span class="ck">✓</span></td>
+          <td><span class="cx">parziale</span></td>
+          <td class="cell-ro"><span class="ck">✓</span></td>
+        </tr>
+        <tr>
+          <td>PFAS</td>
+          <td><span class="cx">✗</span></td>
+          <td><span class="cx">✗</span></td>
+          <td class="cell-ro"><span class="ck">✓</span></td>
+        </tr>
+        <tr>
+          <td>Metalli pesanti</td>
+          <td><span class="cx">✗</span></td>
+          <td><span class="cx">✗</span></td>
+          <td class="cell-ro"><span class="ck">✓</span></td>
+        </tr>
+        <tr>
+          <td>Nitrati</td>
+          <td><span class="cx">✗</span></td>
+          <td><span class="cx">✗</span></td>
+          <td class="cell-ro"><span class="ck">✓</span></td>
+        </tr>
+        <tr>
+          <td>Batteri e virus</td>
+          <td><span class="cx">✗</span></td>
+          <td><span class="ck">✓</span></td>
+          <td class="cell-ro"><span class="ck">✓</span></td>
+        </tr>
+        <tr>
+          <td>Residui farmacologici</td>
+          <td><span class="cx">✗</span></td>
+          <td><span class="cx">✗</span></td>
+          <td class="cell-ro"><span class="ck">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:auto;padding-top:32px;display:flex;align-items:center;gap:12px;">
+      <div style="width:12px;height:12px;border-radius:3px;background:#2596be;flex-shrink:0;"></div>
+      <p style="font-size:17px;color:#6e6e73;line-height:1.5;">L'osmosi inversa utilizza membrane a <strong style="color:#1d1d1f;">0,001 micron</strong> — mille volte più fini di un capello umano.</p>
+    </div>
+
+    <div class="brand-bar">
+      <span class="name" style="color:#1d1d1f;">Green Water Italia</span>
+      <span class="counter">6 / 7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 7 — CTA
+═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="label">Slide 7 / 7 — CTA</div>
+  <div class="slide s7">
+
+    <div class="s7-circles-wrap">
+      <div class="s7-circle" style="width:700px;height:700px;bottom:-280px;right:-180px;"></div>
+      <div class="s7-circle" style="width:440px;height:440px;bottom:-120px;right:-50px;"></div>
+      <div class="s7-circle" style="width:900px;height:900px;top:-400px;left:-300px;"></div>
+    </div>
+
+    <div class="s7-logo">Green Water Italia</div>
+
+    <div class="s7-eyebrow">Fai la cosa giusta per la tua famiglia</div>
+    <h2 class="s7-title">Scopri com'è<br>l'acqua a casa tua</h2>
+    <p class="s7-sub">Misuriamo il residuo fisso in tempo reale durante una visita gratuita. Vedi con i tuoi occhi cosa c'è nel tuo rubinetto — e qual è la soluzione più adatta.</p>
+
+    <div class="s7-btn">Prenota la consulenza gratuita</div>
+    <div class="s7-url">greenwateritalia.it</div>
+
+    <div class="s7-counter">7 / 7</div>
+  </div>
+</div>
+
+</body>
+</html>
