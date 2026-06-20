@@ -683,6 +683,76 @@
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════
+         GUIDE GRATUITE — LEAD MAGNET
+    ═══════════════════════════════════════ -->
+    <section id="guide-gratuite" class="py-16 md:py-24 px-6 border-t border-white/10 bg-ink">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <p class="text-brand font-semibold text-xs tracking-widest uppercase mb-4">Guide gratuite</p>
+            <h2 class="text-3xl md:text-5xl font-semibold text-white mb-4 leading-tight">Approfondisci senza impegno</h2>
+            <p class="text-white/55 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">Scegli la guida più adatta a te. Ti arriva in pochi minuti via email, gratis.</p>
+
+            <!-- Selezione guida -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto" id="guide-cards">
+
+                <div id="card-casa" onclick="selectGuide('casa')" class="guide-card cursor-pointer rounded-2xl p-6 text-left border-2 transition-all duration-200" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);">
+                    <div class="text-3xl mb-3">🏠</div>
+                    <p class="text-xs font-bold text-brand uppercase tracking-wider mb-1.5">Per la tua casa</p>
+                    <p class="text-white font-semibold text-base leading-snug mb-2">La qualità dell'acqua che bevi ogni giorno</p>
+                    <p class="text-white/40 text-sm leading-relaxed">Rubinetto vs bottiglia, filtrazione, risparmio e plastica. 5 pagine, tutto chiaro.</p>
+                    <div class="guide-check hidden mt-3 flex items-center gap-1.5 text-brand text-xs font-semibold"><span>✓</span><span>Selezionata</span></div>
+                </div>
+
+                <div id="card-horeca" onclick="selectGuide('horeca')" class="guide-card cursor-pointer rounded-2xl p-6 text-left border-2 transition-all duration-200" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);">
+                    <div class="text-3xl mb-3">🍽️</div>
+                    <p class="text-xs font-bold text-brand uppercase tracking-wider mb-1.5">Per il tuo business</p>
+                    <p class="text-white font-semibold text-base leading-snug mb-2">Acqua di qualità al servizio del tuo business</p>
+                    <p class="text-white/40 text-sm leading-relaxed">Per ristoranti, bar, uffici e HoReCa. Margine, costi, gestione e immagine green.</p>
+                    <div class="guide-check hidden mt-3 flex items-center gap-1.5 text-brand text-xs font-semibold"><span>✓</span><span>Selezionata</span></div>
+                </div>
+
+            </div>
+
+            <!-- Form -->
+            <div id="guide-form" class="max-w-md mx-auto">
+                <input type="hidden" id="guide-selected" value="">
+
+                <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                    <input type="email" id="guide-email" placeholder="La tua email" autocomplete="email"
+                        class="flex-1 px-5 py-3.5 rounded-full text-white text-sm placeholder-white/35 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                        style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);">
+                    <button onclick="submitGuide()" id="guide-btn"
+                        class="px-7 py-3.5 bg-brand hover:bg-brand-dark text-white font-semibold rounded-full text-sm transition-colors whitespace-nowrap">
+                        Scarica la guida
+                    </button>
+                </div>
+
+                <label class="flex items-start gap-2.5 cursor-pointer text-left">
+                    <input type="checkbox" id="guide-privacy" class="mt-0.5 accent-brand shrink-0 w-4 h-4">
+                    <span class="text-white/35 text-xs leading-relaxed">
+                        Ho letto e accetto la <a href="/privacy.html" class="underline hover:text-white/70 transition-colors">Privacy Policy</a>.
+                        Acconsento a ricevere la guida e a essere ricontattato da Green Water Italia.
+                    </span>
+                </label>
+
+                <p id="guide-error" class="text-red-400 text-xs mt-3 hidden text-center"></p>
+            </div>
+
+            <!-- Stato successo -->
+            <div id="guide-success" class="hidden max-w-sm mx-auto">
+                <div class="w-16 h-16 rounded-full bg-brand/20 flex items-center justify-center mx-auto mb-5">
+                    <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                <p class="text-white text-xl font-semibold mb-2">Controlla la tua email.</p>
+                <p class="text-white/45 text-sm leading-relaxed">Ti abbiamo inviato il link per scaricare la guida. Se non la trovi, controlla la cartella Spam o Promozioni.</p>
+            </div>
+
+        </div>
+    </section>
+
     <style>
     .faq-water-container {
         max-width: 800px;
@@ -815,6 +885,7 @@
             <a href="blog/index.html" class="hover:text-brand transition-colors">Blog</a>
             <a href="glossario.html" class="hover:text-brand transition-colors">Glossario</a>
             <a href="chi-siamo.html" class="hover:text-brand transition-colors">Chi siamo</a>
+            <a href="#guide-gratuite" class="hover:text-brand transition-colors">Guide gratuite</a>
             <a href="privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a>
             <a href="cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a>
             <button onclick="mostraBannerCookie()" class="hover:text-brand transition-colors text-center md:text-left">Gestisci preferenze cookie</button>
@@ -902,6 +973,100 @@
         </svg>
         <span class="text-sm font-semibold">Scrivici su WhatsApp</span>
     </a>
+
+    <!-- ══════════════════════════════════════
+         GUIDE GRATUITE — JS
+         ─────────────────────────────────────
+         SETUP BREVO (3 passi):
+         1. Crea account su brevo.com
+         2. Vai su Contacts > Liste > crea lista "Guide sito"
+            → copia il numero lista in BREVO_LIST_ID
+         3. Vai su Impostazioni > Chiavi API > crea chiave API
+            → incolla la chiave in BREVO_API_KEY
+         4. In Brevo crea un'automazione:
+            "Quando un contatto si iscrive alla lista X"
+            → se attributo GUIDA = 'casa'  → invia email con link a /guide/Green-Water-Guida-Qualita-Acqua-Casa.pdf
+            → se attributo GUIDA = 'horeca' → invia email con link a /guide/Green-Water-Guida-Acqua-HoReCa-Uffici.pdf
+    ══════════════════════════════════════ -->
+    <script>
+        const BREVO_API_KEY  = 'INSERISCI_QUI_LA_TUA_API_KEY_BREVO';
+        const BREVO_LIST_ID  = 0; // ← sostituisci con il numero della tua lista Brevo
+
+        function selectGuide(type) {
+            document.getElementById('guide-selected').value = type;
+            document.querySelectorAll('.guide-card').forEach(function(card) {
+                card.style.background = 'rgba(255,255,255,0.04)';
+                card.style.borderColor = 'rgba(255,255,255,0.1)';
+                card.querySelector('.guide-check').classList.add('hidden');
+            });
+            var sel = document.getElementById('card-' + type);
+            sel.style.background = 'rgba(37,150,190,0.12)';
+            sel.style.borderColor = '#2596be';
+            sel.querySelector('.guide-check').classList.remove('hidden');
+        }
+
+        function submitGuide() {
+            var guide   = document.getElementById('guide-selected').value;
+            var email   = document.getElementById('guide-email').value.trim();
+            var privacy = document.getElementById('guide-privacy').checked;
+            var errEl   = document.getElementById('guide-error');
+            var btn     = document.getElementById('guide-btn');
+
+            errEl.classList.add('hidden');
+
+            if (!guide) {
+                errEl.textContent = 'Seleziona prima una guida.';
+                errEl.classList.remove('hidden');
+                return;
+            }
+            if (!email || !/\S+@\S+\.\S+/.test(email)) {
+                errEl.textContent = 'Inserisci un indirizzo email valido.';
+                errEl.classList.remove('hidden');
+                return;
+            }
+            if (!privacy) {
+                errEl.textContent = 'Devi accettare la Privacy Policy per proseguire.';
+                errEl.classList.remove('hidden');
+                return;
+            }
+
+            btn.textContent = 'Invio in corso…';
+            btn.disabled = true;
+
+            fetch('https://api.brevo.com/v3/contacts', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'api-key': BREVO_API_KEY
+                },
+                body: JSON.stringify({
+                    email: email,
+                    listIds: [BREVO_LIST_ID],
+                    attributes: { GUIDA: guide, FONTE: 'sito_homepage' },
+                    updateEnabled: true
+                })
+            })
+            .then(function(res) {
+                if (res.ok || res.status === 204 || res.status === 201) {
+                    document.getElementById('guide-form').classList.add('hidden');
+                    document.getElementById('guide-success').classList.remove('hidden');
+                } else {
+                    return res.json().then(function(d) { throw new Error(d.message || 'Errore'); });
+                }
+            })
+            .catch(function() {
+                btn.textContent = 'Scarica la guida';
+                btn.disabled = false;
+                errEl.textContent = 'Si è verificato un errore. Riprova o scrivici su WhatsApp.';
+                errEl.classList.remove('hidden');
+            });
+        }
+
+        document.getElementById('guide-email').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') submitGuide();
+        });
+    </script>
 
     <script>
         const btn = document.getElementById('mobile-menu-btn');
