@@ -11,25 +11,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.greenwateritalia.it/blog/depuratore-acqua-ufficio-quante-persone.html" />
   <meta property="og:locale" content="it_IT" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#1d1d1f',
-            sub: '#6e6e73',
-            line: '#d2d2d7',
-            surface: '#f5f5f7',
-            brand: '#2596be',
-            'brand-dark': '#1b7a9c',
-            'brand-light': '#e8f4f9',
-          },
-          fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','SF Pro Display','Segoe UI','sans-serif'] }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="/dist/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,6 +66,7 @@
   </script>
 </head>
 <body class="bg-white text-ink font-sans antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:font-medium focus:text-sm">Salta al contenuto</a>
 
   <!-- Header sticky -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-line">
@@ -98,7 +81,7 @@
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 py-12">
+  <main id="main-content" class="max-w-3xl mx-auto px-4 py-12">
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-xs text-sub mb-8">
