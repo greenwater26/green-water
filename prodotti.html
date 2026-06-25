@@ -530,6 +530,89 @@
         </div>
     </section>
 
+    <!-- ── QUIZ ─────────────────────────────────────────────────────── -->
+    <section id="quiz" class="py-16 px-6 border-t border-line/60">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-brand font-semibold text-xs tracking-widest uppercase text-center mb-3">Trovalo in 5 domande</p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-ink mb-4 tracking-tight">Qual è l'impianto giusto per te?</h2>
+            <p class="text-center text-sub mb-10 text-base leading-relaxed max-w-xl mx-auto">Rispondi a 5 domande rapide e ti diciamo quale sistema di filtrazione è perfetto per le tue esigenze.</p>
+            <div class="bg-surface rounded-[28px] p-8 md:p-10">
+                <!-- Barra di progresso -->
+                <div class="flex gap-1.5 mb-8">
+                    <div id="qdot-1" class="h-1 flex-1 rounded-full" style="background:#2596be"></div>
+                    <div id="qdot-2" class="h-1 flex-1 rounded-full" style="background:#d2d2d7"></div>
+                    <div id="qdot-3" class="h-1 flex-1 rounded-full" style="background:#d2d2d7"></div>
+                    <div id="qdot-4" class="h-1 flex-1 rounded-full" style="background:#d2d2d7"></div>
+                    <div id="qdot-5" class="h-1 flex-1 rounded-full" style="background:#d2d2d7"></div>
+                </div>
+                <!-- Step 1 -->
+                <div id="qstep-1">
+                    <p class="text-xs text-sub uppercase tracking-widest font-semibold mb-2">Domanda 1 di 5</p>
+                    <h3 class="text-xl md:text-2xl font-semibold text-ink mb-6">Come verrà usato il sistema?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button data-q="1" data-v="casa" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium flex items-center gap-3 hover:border-brand transition-colors">🏠 Casa / appartamento</button>
+                        <button data-q="1" data-v="ufficio" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium flex items-center gap-3 hover:border-brand transition-colors">🏢 Ufficio / studio professionale</button>
+                        <button data-q="1" data-v="ristorante" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium flex items-center gap-3 hover:border-brand transition-colors">🍽️ Ristorante / bar / hotel</button>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div id="qstep-2" class="hidden">
+                    <p class="text-xs text-sub uppercase tracking-widest font-semibold mb-2">Domanda 2 di 5</p>
+                    <h3 class="text-xl md:text-2xl font-semibold text-ink mb-6">Quante persone utilizzeranno il sistema?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button data-q="2" data-v="1-3" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">1–3 persone</button>
+                        <button data-q="2" data-v="4-8" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">4–8 persone</button>
+                        <button data-q="2" data-v="9-20" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">9–20 persone</button>
+                        <button data-q="2" data-v="oltre20" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">Oltre 20 persone</button>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div id="qstep-3" class="hidden">
+                    <p class="text-xs text-sub uppercase tracking-widest font-semibold mb-2">Domanda 3 di 5</p>
+                    <h3 class="text-xl md:text-2xl font-semibold text-ink mb-6">Cosa ti preoccupa di più dell'acqua attuale?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button data-q="3" data-v="calcare" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">💎 Calcare e durezza</button>
+                        <button data-q="3" data-v="gusto" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">👃 Gusto e odore di cloro</button>
+                        <button data-q="3" data-v="pfas" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">⚠️ PFAS, nitrati e contaminanti chimici</button>
+                        <button data-q="3" data-v="tutto" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">🛡️ Tutto quanto — massima protezione</button>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div id="qstep-4" class="hidden">
+                    <p class="text-xs text-sub uppercase tracking-widest font-semibold mb-2">Domanda 4 di 5</p>
+                    <h3 class="text-xl md:text-2xl font-semibold text-ink mb-6">Preferisci l'acqua...</h3>
+                    <div class="flex flex-col gap-3">
+                        <button data-q="4" data-v="naturale" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">💧 Solo naturale (piatta)</button>
+                        <button data-q="4" data-v="frizzante" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">🫧 Naturale e frizzante (entrambe dal rubinetto)</button>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div id="qstep-5" class="hidden">
+                    <p class="text-xs text-sub uppercase tracking-widest font-semibold mb-2">Domanda 5 di 5</p>
+                    <h3 class="text-xl md:text-2xl font-semibold text-ink mb-6">Budget indicativo per l'impianto?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button data-q="5" data-v="basso" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">Fino a 1.000€</button>
+                        <button data-q="5" data-v="medio" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">1.000–2.500€</button>
+                        <button data-q="5" data-v="alto" class="quiz-ans text-left px-5 py-4 rounded-2xl border border-line text-ink font-medium hover:border-brand transition-colors">Oltre 2.500€</button>
+                    </div>
+                </div>
+                <!-- Risultato -->
+                <div id="qresult" class="hidden text-center">
+                    <p class="text-xs text-brand font-semibold uppercase tracking-widest mb-2">Il sistema ideale per te è</p>
+                    <h3 id="qprod-nome" class="text-3xl font-semibold text-ink mb-3"></h3>
+                    <p id="qprod-desc" class="text-sub text-sm leading-relaxed max-w-md mx-auto mb-8"></p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a id="qprod-link" href="#osmosystem" class="inline-flex items-center justify-center gap-2 bg-brand text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-dark transition-colors">
+                            Scopri il prodotto
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                        </a>
+                        <button id="qreset" class="px-8 py-3.5 rounded-full font-medium border border-line text-ink hover:border-brand hover:text-brand transition-colors">Ricomincia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ── CTA ───────────────────────────────────────────────────────── -->
     <section class="rounded-3xl p-10 md:p-14 text-center border border-brand/20 mt-4" style="background: linear-gradient(135deg, rgba(37,150,190,0.06) 0%, rgba(37,150,190,0.02) 100%);">
         <p class="text-brand font-semibold text-xs tracking-widest uppercase mb-3">Green Water Italia</p>
@@ -619,6 +702,66 @@
     <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     <span class="font-medium text-sm">Scrivici</span>
 </a>
+
+<script>
+(function(){
+    var risposte = {};
+    var prodotti = {
+        osmosystem: { nome:'Osmosystem 150', desc:'Osmosi inversa a 6 stadi: 150 L/h, certificazione NSF/ANSI 58, rejection rate 97%. Rimuove PFAS, nitrati, calcare, cloro e microplastiche. Senza serbatoio, spessore 10,5 cm.', anchor:'#osmosystem' },
+        osmosi:     { nome:'Osmosì',         desc:'Osmosi inversa compatta a 5 stadi con rimineralizzatore. Ideale per famiglie da 2–6 persone. Ottimo rapporto qualità-prezzo, installazione sotto il lavello.', anchor:'#osmosi' },
+        osmoslim:   { nome:'Osmoslim',       desc:'Design slim da soli 10 cm di profondità. Perfetta dove lo spazio è ridotto. Ideale per acqua già di buona qualità che si vuole purificare completamente.', anchor:'#osmoslim' },
+        bollaquick: { nome:'Bollaquick',     desc:'Erogatore da piano con acqua naturale e frizzante, fredda, ambiente o calda. Compatto, senza lavori invasivi. Perfetto per chi vuole la frizzante senza installazione complessa.', anchor:'#bollaquick' },
+        bollicina:  { nome:'Bollicina FV',   desc:'Erogatore professionale da piano: naturale, frizzante e calda a temperatura regolabile. Fino a 30 persone. Osmosi inversa integrata, zero boccioni.', anchor:'#bollicina' },
+        thanta:     { nome:'Linea Thanta',   desc:'Sistema professionale HoReCa per ristoranti, hotel e bar. Acqua naturale e gassata premium, portata fino a 300 L/h. Installazione a rack o banco, zero bottiglie.', anchor:'#thanta' },
+        t40:        { nome:'T40 Totem',      desc:'Totem freestanding per grandi uffici. Naturale, frizzante e calda per 20–100+ persone. Design verticale, nessuna ristrutturazione, nessun collegamento permanente.', anchor:'#t40' }
+    };
+    document.querySelectorAll('.quiz-ans').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var q = parseInt(btn.getAttribute('data-q'));
+            var v = btn.getAttribute('data-v');
+            risposte['q' + q] = v;
+            btn.style.borderColor = '#2596be';
+            btn.style.backgroundColor = 'rgba(37,150,190,0.08)';
+            setTimeout(function() {
+                btn.style.borderColor = '';
+                btn.style.backgroundColor = '';
+                if (q < 5) {
+                    document.getElementById('qstep-' + q).classList.add('hidden');
+                    document.getElementById('qstep-' + (q + 1)).classList.remove('hidden');
+                    document.getElementById('qdot-' + (q + 1)).style.background = '#2596be';
+                } else {
+                    var uso = risposte.q1, persone = risposte.q2, problema = risposte.q3, acqua = risposte.q4;
+                    var key;
+                    if (uso === 'ristorante') { key = 'thanta'; }
+                    else if (uso === 'ufficio') { key = (persone === 'oltre20') ? 't40' : 'bollicina'; }
+                    else {
+                        if (acqua === 'frizzante' && v === 'basso') key = 'bollaquick';
+                        else if (problema === 'pfas' || problema === 'tutto' || v === 'alto') key = 'osmosystem';
+                        else if (v === 'medio') key = 'osmosi';
+                        else key = 'osmoslim';
+                    }
+                    var p = prodotti[key];
+                    document.getElementById('qstep-5').classList.add('hidden');
+                    document.getElementById('qdot-5').style.background = '#2596be';
+                    document.getElementById('qprod-nome').textContent = p.nome;
+                    document.getElementById('qprod-desc').textContent = p.desc;
+                    document.getElementById('qprod-link').setAttribute('href', p.anchor);
+                    document.getElementById('qresult').classList.remove('hidden');
+                }
+            }, 120);
+        });
+    });
+    document.getElementById('qreset').addEventListener('click', function() {
+        risposte = {};
+        for (var i = 1; i <= 5; i++) {
+            document.getElementById('qstep-' + i).classList.add('hidden');
+            document.getElementById('qdot-' + i).style.background = i === 1 ? '#2596be' : '#d2d2d7';
+        }
+        document.getElementById('qresult').classList.add('hidden');
+        document.getElementById('qstep-1').classList.remove('hidden');
+    });
+})();
+</script>
 
 <script>
     // Mobile menu toggle

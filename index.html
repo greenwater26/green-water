@@ -365,6 +365,60 @@
     </a>
 </div>
     </header>
+
+    <!-- ── QUALITÀ ACQUA PER CITTÀ ───────────────────────────────────── -->
+    <section id="qualita-acqua" class="py-14 md:py-20 px-6 border-t border-line/60">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-brand font-semibold text-xs tracking-widest uppercase text-center mb-3">Conosci la tua acqua</p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-ink mb-4 tracking-tight">Qual è la qualità dell'acqua nella tua città?</h2>
+            <p class="text-center text-sub mb-10 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">Seleziona la tua città per vedere i parametri reali dell'acqua del rubinetto e scoprire quale filtro fa per te.</p>
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button data-city="Milano" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Milano</button>
+                <button data-city="Padova" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Padova</button>
+                <button data-city="Roma" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Roma</button>
+                <button data-city="Napoli" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Napoli</button>
+                <button data-city="Torino" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Torino</button>
+                <button data-city="Varese" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Varese</button>
+                <button data-city="Como" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Como</button>
+                <button data-city="Lecco" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Lecco</button>
+                <button data-city="Monza" class="acqua-btn px-5 py-2 rounded-full border border-line text-sm font-medium text-ink transition-colors">Monza</button>
+            </div>
+            <div id="acqua-result" class="hidden bg-surface rounded-[28px] p-8 md:p-10">
+                <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+                    <div class="flex-1">
+                        <p class="text-xs text-sub uppercase tracking-widest font-semibold mb-5">Acqua a <span id="acqua-city-name" class="text-ink"></span></p>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-4 py-3 border-b border-line/60">
+                                <span class="text-sub text-sm w-20 shrink-0">TDS</span>
+                                <span id="acqua-tds" class="text-ink font-semibold text-sm"></span>
+                            </div>
+                            <div class="flex items-center gap-4 py-3 border-b border-line/60">
+                                <span class="text-sub text-sm w-20 shrink-0">Durezza</span>
+                                <span id="acqua-durezza" class="text-ink font-semibold text-sm"></span>
+                            </div>
+                            <div class="flex items-start gap-4 py-3">
+                                <span class="text-sub text-sm w-20 shrink-0 mt-1">Criticità</span>
+                                <div id="acqua-problemi" class="flex flex-wrap gap-2"></div>
+                            </div>
+                        </div>
+                        <p id="acqua-pfas-alert" class="hidden mt-4 text-xs bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-3 leading-relaxed"></p>
+                    </div>
+                    <div class="md:w-64 shrink-0 bg-white rounded-2xl p-6 border border-line/60 flex flex-col gap-4">
+                        <div>
+                            <p class="text-xs text-brand font-semibold uppercase tracking-widest mb-2">Impianto consigliato</p>
+                            <p id="acqua-prodotto" class="text-2xl font-semibold text-ink mb-2"></p>
+                            <p id="acqua-motivo" class="text-sub text-sm leading-relaxed"></p>
+                        </div>
+                        <a id="acqua-link" href="prodotti.html" class="inline-flex items-center justify-center gap-2 bg-brand text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-dark transition-colors w-full" style="margin-top:auto">
+                            Scopri il prodotto
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="vantaggi" class="py-16 md:py-24 px-6 max-w-5xl mx-auto text-sub">
         <h2 class="text-4xl md:text-5xl font-semibold text-center text-ink mb-4">Calcola il tuo risparmio reale</h2>
 <p class="text-center text-xl text-sub font-normal mb-14 max-w-3xl mx-auto leading-relaxed">Usa gli slider per scoprire quanti soldi, tempo e plastica puoi risparmiare con un sistema premium.</p>
@@ -1160,6 +1214,56 @@
                 document.getElementById('cookie-banner').style.display = 'none';
             });
         })();
+    </script>
+    <script>
+    (function(){
+        var acquaData = {
+            Milano:  { tds:'380–520 mg/L', durezza:'30–35°F · molto dura', problemi:['Calcare intenso','Cloro','Microplastiche'], pfas:false, prodotto:'Osmosystem 150', anchor:'#osmosystem', motivo:'Acqua molto dura, tra le più impegnative d\'Italia. L\'osmosi inversa a 6 stadi rimuove calcare, cloro e microplastiche in un solo passaggio.' },
+            Padova:  { tds:'300–450 mg/L', durezza:'20–30°F · dura', problemi:['PFAS','Nitrati','Calcare'], pfas:true, prodotto:'Osmosystem 150', anchor:'#osmosystem', motivo:'Zona PFAS Valley: necessario un sistema certificato NSF/ANSI 58 con rejection rate >95% per eliminare i forever chemicals.' },
+            Roma:    { tds:'350–500 mg/L', durezza:'30–45°F · molto dura', problemi:['Clorammine','Durezza elevata','Calcare'], pfas:false, prodotto:'Osmosystem 150', anchor:'#osmosystem', motivo:'Acqua tra le più dure d\'Italia. L\'osmosi inversa elimina clorammine e calcare, restituendo acqua cristallina.' },
+            Napoli:  { tds:'250–400 mg/L', durezza:'15–25°F · media', problemi:['Rete datata','Qualità variabile','Cloro'], pfas:false, prodotto:'Osmosì', anchor:'#osmosi', motivo:'Qualità variabile da zona a zona. L\'Osmosì offre protezione completa con installazione compatta sotto il lavello.' },
+            Torino:  { tds:'150–250 mg/L', durezza:'8–15°F · morbida', problemi:['Microplastiche','Cloro residuo'], pfas:false, prodotto:'Osmoslim', anchor:'#osmoslim', motivo:'Una delle acque migliori d\'Italia. L\'Osmoslim rimuove microplastiche e cloro con design ultra-compatto e zero sprechi.' },
+            Varese:  { tds:'200–320 mg/L', durezza:'15–25°F · media-dura', problemi:['Calcare medio','Tracce PFAS possibili'], pfas:true, prodotto:'Osmosystem 150', anchor:'#osmosystem', motivo:'Possibili tracce di PFAS dall\'area industriale. Consigliato un sistema certificato NSF/ANSI 58 per la massima protezione.' },
+            Como:    { tds:'180–280 mg/L', durezza:'12–20°F · media', problemi:['Calcare medio','Cloro'], pfas:false, prodotto:'Osmosì', anchor:'#osmosi', motivo:'Acqua di media qualità con calcare moderato. L\'Osmosì garantisce purezza completa con basso consumo energetico.' },
+            Lecco:   { tds:'160–260 mg/L', durezza:'10–18°F · lieve', problemi:['Cloro residuo','Calcare lieve'], pfas:false, prodotto:'Osmoslim', anchor:'#osmoslim', motivo:'Acqua di buona qualità. L\'Osmoslim è la scelta ideale: design slim, senza serbatoio, installazione in 2 ore.' },
+            Monza:   { tds:'350–480 mg/L', durezza:'25–35°F · dura', problemi:['Calcare','Cloro','Microplastiche'], pfas:false, prodotto:'Osmosystem 150', anchor:'#osmosystem', motivo:'Acqua dura simile a Milano. L\'Osmosystem 150 senza serbatoio è la soluzione ideale per uso domestico e piccolo ufficio.' }
+        };
+        document.querySelectorAll('.acqua-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var city = btn.getAttribute('data-city');
+                var d = acquaData[city];
+                document.querySelectorAll('.acqua-btn').forEach(function(b) {
+                    b.style.borderColor = '';
+                    b.style.color = '';
+                    b.style.backgroundColor = '';
+                });
+                btn.style.borderColor = '#2596be';
+                btn.style.color = '#2596be';
+                btn.style.backgroundColor = 'rgba(37,150,190,0.08)';
+                document.getElementById('acqua-city-name').textContent = city;
+                document.getElementById('acqua-tds').textContent = d.tds;
+                document.getElementById('acqua-durezza').textContent = d.durezza;
+                var el = document.getElementById('acqua-problemi');
+                el.innerHTML = d.problemi.map(function(p) {
+                    var isp = d.pfas && /pfas/i.test(p);
+                    return '<span style="font-size:0.75rem;font-weight:500;padding:3px 10px;border-radius:9999px;' + (isp ? 'background:#fef3c7;color:#92400e' : 'background:rgba(37,150,190,0.12);color:#1b7a9c') + '">' + p + '</span>';
+                }).join('');
+                document.getElementById('acqua-prodotto').textContent = d.prodotto;
+                document.getElementById('acqua-motivo').textContent = d.motivo;
+                document.getElementById('acqua-link').href = 'prodotti.html' + d.anchor;
+                var pfasEl = document.getElementById('acqua-pfas-alert');
+                if (d.pfas) {
+                    pfasEl.textContent = '⚠ Zona a rischio PFAS: questi contaminanti attraversano la placenta e si accumulano nel latte materno. Un sistema certificato NSF/ANSI 58 li rimuove per oltre il 95%.';
+                    pfasEl.classList.remove('hidden');
+                } else {
+                    pfasEl.classList.add('hidden');
+                }
+                var result = document.getElementById('acqua-result');
+                result.classList.remove('hidden');
+                setTimeout(function() { result.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 50);
+            });
+        });
+    })();
     </script>
 </body>
 </html>
