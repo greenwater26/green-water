@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -35,8 +35,17 @@
           "@type": "FAQPage",
           "mainEntity": [
             {"@type": "Question", "name": "L'acqua dell'osmosi inversa fa male perché non ha minerali?", "acceptedAnswer": {"@type": "Answer", "text": "No. L'OMS ha stabilito che l'acqua a basso contenuto minerale è sicura per il consumo umano. Oltre l'80% dell'apporto giornaliero di calcio e magnesio proviene dal cibo, non dall'acqua."}},
-            {"@type": "Question", "name": "Conviene aggiungere un rimineralizzatore all'osmosi inversa?", "acceptedAnswer": {"@type": "Answer", "text": "Dipende. Il rimineralizzatore migliora il gusto e reintegra una piccola quota di minerali. Non è indispensabile per la salute, ma è consigliato per chi vuole un'acqua più simile a quella minerale naturale."}}
+            {"@type": "Question", "name": "Conviene aggiungere un rimineralizzatore all'osmosi inversa?", "acceptedAnswer": {"@type": "Answer", "text": "Dipende. Il rimineralizzatore migliora il gusto e reintegra una piccola quota di minerali. Non è indispensabile per la salute, ma è consigliato per chi vuole un'acqua più simile a quella minerale naturale."}},
+            {"@type": "Question", "name": "L'osmosi inversa causa demineralizzazione del corpo?", "acceptedAnswer": {"@type": "Answer", "text": "No, è un falso mito. Il corpo umano regola l'equilibrio elettrolitico tramite i reni e l'alimentazione, non tramite l'acqua che beve. L'OMS e l'ISS confermano che bere acqua a basso residuo fisso non causa carenze minerali in chi segue una dieta normale."}},
+            {"@type": "Question", "name": "L'acqua dell'osmosi inversa è sicura per i neonati?", "acceptedAnswer": {"@type": "Answer", "text": "Per i neonati sotto i 6 mesi alimentati con latte in polvere, si raccomanda acqua con residuo fisso tra 100 e 300 mg/L. Con un rimineralizzatore post-filtro, l'osmosi inversa produce acqua con questo profilo ideale. Per bambini più grandi che mangiano cibi solidi, l'acqua osmotizzata è perfettamente sicura."}},
+            {"@type": "Question", "name": "L'acqua dell'osmosi inversa è adatta per cucinare e per il caffè?", "acceptedAnswer": {"@type": "Answer", "text": "Sì, è ideale. L'assenza di cloro e calcare migliora il gusto di pasta, riso, caffè, tè e brodo. Le macchine da caffè espresso e i bollitori non si incrostano, prolungando la loro vita. L'unica eccezione sono alcune macchine espresso professionali che richiedono un'acqua con durezza minima per il controllo dell'estrazione."}},
+            {"@type": "Question", "name": "L'osmosi inversa è consigliata per chi soffre di calcoli renali?", "acceptedAnswer": {"@type": "Answer", "text": "Spesso sì, ma consulta sempre il tuo medico o nefrologo. I calcoli renali di calcio-ossalato (il tipo più comune) possono beneficiare di un'acqua a basso contenuto di calcio. L'osmosi inversa con rimineralizzazione calibrata permette di controllare con precisione il profilo minerale dell'acqua."}},
+            {"@type": "Question", "name": "Quanti minerali rimangono nell'acqua dopo l'osmosi inversa?", "acceptedAnswer": {"@type": "Answer", "text": "L'osmosi inversa rimuove il 90-99% dei minerali disciolti. Un'acqua con TDS di 300 mg/L produce acqua osmotizzata con TDS di 5-30 mg/L. Con un rimineralizzatore post-filtro, il TDS sale a 80-150 mg/L — profilo tipico di un'acqua minerale leggera come la San Pellegrino Levissima o la Panna."}}
           ]
+        },
+        {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["#risposta-rapida", "h1"]
         },
         {
           "@type": "BreadcrumbList",
@@ -49,6 +58,8 @@
       ]
     }
     </script>
+    <meta name="theme-color" content="#2596be">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/dist/styles.css">
     <style>
         html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
@@ -105,9 +116,14 @@
             Osmosi inversa fa male? La verità su minerali e calcio nell'acqua filtrata
         </h1>
 
-        <p class="text-sub text-lg leading-relaxed mb-12">
+        <p class="text-sub text-lg leading-relaxed mb-6">
             "Ma se toglie tutti i minerali, fa male alla salute!" È l'obiezione che sentiamo più spesso quando si parla di osmosi inversa. Ed è comprensibile: togliere calcio e magnesio dall'acqua sembra controintuitivo. La realtà, però, è molto più sfumata — e la scienza ha una risposta chiara. Eccola.
         </p>
+
+        <div id="risposta-rapida" class="bg-brand-light border-l-4 border-brand rounded-r-2xl p-6 mb-10">
+          <p class="text-xs font-semibold text-brand uppercase tracking-widest mb-2">Risposta rapida</p>
+          <p class="text-base text-ink leading-relaxed">L'osmosi inversa <strong>non fa male</strong>. L'OMS (WHO) ha confermato che l'acqua a basso contenuto minerale è sicura per il consumo umano quotidiano. Oltre l'80% di calcio e magnesio proviene dal cibo, non dall'acqua. Se vuoi un'acqua con più minerali o un gusto più simile all'acqua minerale, il <strong>rimineralizzatore</strong> è l'aggiunta giusta — ma non è medicamente necessario per gli adulti.</p>
+        </div>
 
         <!-- Tabella comparativa apporto minerali -->
         <div class="rounded-2xl overflow-hidden border border-line/60 mb-12">
@@ -225,6 +241,32 @@
             <p>Quello che l'osmosi inversa fa, e che nessuna bottiglia di plastica può garantire, è rimuovere microplastiche, PFAS, metalli pesanti e nitrati dall'acqua che bevi ogni giorno. Ed è per questo che, a conti fatti, rimane la tecnologia di filtrazione domestica più completa disponibile oggi sul mercato.</p>
 
         </article>
+
+        <section class="mt-14 mb-10" aria-label="Domande frequenti sull'osmosi inversa">
+          <h2 class="text-xl font-semibold text-ink mb-6">Domande frequenti</h2>
+          <div class="space-y-3">
+            <details class="border border-line rounded-xl overflow-hidden group">
+              <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">L'osmosi inversa causa demineralizzazione del corpo?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+              <div class="px-5 pb-5 text-sm text-sub leading-relaxed">No, è un falso mito. Il corpo regola l'equilibrio elettrolitico tramite i reni e l'alimentazione. L'OMS e l'ISS confermano che bere acqua a basso residuo fisso non causa carenze minerali in chi ha una dieta normale.</div>
+            </details>
+            <details class="border border-line rounded-xl overflow-hidden group">
+              <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">L'acqua osmotizzata è sicura per i neonati?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+              <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Per neonati sotto i 6 mesi alimentati con latte in polvere si raccomanda acqua con residuo fisso 100-300 mg/L. Con rimineralizzatore post-filtro, l'osmosi inversa produce esattamente questo profilo. Per bambini più grandi è perfettamente sicura.</div>
+            </details>
+            <details class="border border-line rounded-xl overflow-hidden group">
+              <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Quanti minerali restano nell'acqua dopo l'osmosi?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+              <div class="px-5 pb-5 text-sm text-sub leading-relaxed">L'osmosi rimuove il 90-99% dei minerali disciolti. Acqua con TDS 300 mg/L → TDS 5-30 mg/L dopo osmosi. Con rimineralizzatore: TDS 80-150 mg/L, simile a un'acqua minerale leggera.</div>
+            </details>
+            <details class="border border-line rounded-xl overflow-hidden group">
+              <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">L'acqua dell'osmosi va bene per il caffè espresso?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+              <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Sì, ed è spesso preferibile. Niente calcare nei boiler, sapore più pulito, nessun odore di cloro. Le macchine espresso professionali richiedono un'acqua con durezza minima: il rimineralizzatore calibra il profilo ideale.</div>
+            </details>
+            <details class="border border-line rounded-xl overflow-hidden group">
+              <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">L'osmosi inversa è consigliata per chi ha calcoli renali?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+              <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Spesso sì, ma consulta sempre il nefrologo. I calcoli di calcio-ossalato (tipo più comune) possono beneficiare di un'acqua a basso calcio. L'osmosi con rimineralizzazione calibrata permette di controllare con precisione il profilo minerale.</div>
+            </details>
+          </div>
+        </section>
 
         <div class="mt-14 rounded-2xl bg-gradient-to-br from-brand to-brand-dark p-8 text-center">
             <p class="text-white/80 text-sm font-medium uppercase tracking-widest mb-3">Vuoi sapere cosa c'è nella tua acqua?</p>

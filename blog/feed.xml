@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>Green Water Italia — Blog</title>
+    <link>https://www.greenwateritalia.it/blog/</link>
+    <description>Guide, approfondimenti e consigli su depurazione acqua, osmosi inversa, qualità dell'acqua del rubinetto e filtri per casa, ufficio e HoReCa.</description>
+    <language>it</language>
+    <copyright>Copyright 2026 Green Water Italia</copyright>
+    <managingEditor>info@greenwateritalia.it (Green Water Italia)</managingEditor>
+    <webMaster>info@greenwateritalia.it (Green Water Italia)</webMaster>
+    <lastBuildDate>Thu, 25 Jun 2026 10:00:00 +0200</lastBuildDate>
+    <pubDate>Thu, 25 Jun 2026 10:00:00 +0200</pubDate>
+    <ttl>1440</ttl>
+    <image>
+      <url>https://www.greenwateritalia.it/logo.webp</url>
+      <title>Green Water Italia</title>
+      <link>https://www.greenwateritalia.it/</link>
+    </image>
+    <atom:link href="https://www.greenwateritalia.it/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Acqua calcare e pelle: come l'acqua dura causa pelle secca e capelli opachi</title>
+      <link>https://www.greenwateritalia.it/blog/acqua-calcare-pelle-capelli.html</link>
+      <description>L'acqua dura (oltre 15°F di durezza) contiene sali di calcio e magnesio che alterano il film idrolipidico della pelle e depositano residui sul capello. Scopri i dati, le città più a rischio e le soluzioni certificate NSF/ANSI 58.</description>
+      <pubDate>Thu, 25 Jun 2026 08:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/acqua-calcare-pelle-capelli.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Come leggere l'analisi dell'acqua del rubinetto: guida ai parametri chiave</title>
+      <link>https://www.greenwateritalia.it/blog/come-leggere-analisi-acqua.html</link>
+      <description>Sai come interpretare l'analisi dell'acqua del tuo comune? TDS, durezza, nitrati, cloro, pH, piombo: guida pratica con tabella valori di riferimento e link ai siti dei gestori idrici per scaricare l'analisi della tua città.</description>
+      <pubDate>Thu, 25 Jun 2026 08:10:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/come-leggere-analisi-acqua.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Osmosi inversa in appartamento in affitto: si può installare? Guida legale e pratica</title>
+      <link>https://www.greenwateritalia.it/blog/osmosi-inversa-appartamento-affitto.html</link>
+      <description>Sì, puoi installare un impianto di osmosi inversa anche se sei in affitto. L'art. 1122 del Codice Civile permette miglioramenti reversibili senza alterare la struttura. Guida completa con aspetti legali, pratici e detrazioni fiscali per gli inquilini.</description>
+      <pubDate>Thu, 25 Jun 2026 08:20:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/osmosi-inversa-appartamento-affitto.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Certificazioni impianti acqua: NSF/ANSI 42, 53, 58, CE e DM 174/2004 — cosa significano</title>
+      <link>https://www.greenwateritalia.it/blog/certificazioni-impianti-acqua-nsf-ce.html</link>
+      <description>NSF/ANSI 58 (osmosi inversa), NSF/53 (contaminanti salute), NSF/42 (cloro e estetica), DM 174/2004 (norma italiana obbligatoria), marcatura CE europea: guida completa alle certificazioni che contano davvero. Come verificarle su nsf.org.</description>
+      <pubDate>Thu, 25 Jun 2026 08:30:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/certificazioni-impianti-acqua-nsf-ce.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Acqua in gravidanza: rubinetto o filtrata? Nitrati, PFAS e piombo — cosa sapere</title>
+      <link>https://www.greenwateritalia.it/blog/acqua-e-gravidanza.html</link>
+      <description>L'acqua del rubinetto è sicura in gravidanza nella maggior parte d'Italia. Le eccezioni: zone PFAS (Veneto), edifici pre-1980, piccoli comuni. Tabella parametri critici con limiti OMS per gravidanza e raccomandazioni ISS e Ministero della Salute.</description>
+      <pubDate>Thu, 25 Jun 2026 08:40:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/acqua-e-gravidanza.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Migliori impianti osmosi inversa 2026: guida all'acquisto con criteri NSF e prezzi</title>
+      <link>https://www.greenwateritalia.it/blog/migliori-impianti-osmosi-inversa-2026.html</link>
+      <description>Come scegliere il miglior impianto di osmosi inversa nel 2026: 4 criteri chiave (certificazione NSF/ANSI 58, 5-6 stadi con rimineralizzatore, rejection rate >95%, rapporto scarto 3:1), tabella prezzi per fascia e red flag da evitare.</description>
+      <pubDate>Thu, 25 Jun 2026 08:50:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/migliori-impianti-osmosi-inversa-2026.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Quanto dura un impianto di osmosi inversa? Manutenzione, costi e filtri da cambiare</title>
+      <link>https://www.greenwateritalia.it/blog/quanto-dura-impianto-osmosi-inversa.html</link>
+      <description>Un impianto di osmosi inversa dura 10-15 anni con manutenzione regolare. Pre-filtri ogni 6 mesi (10-20€), post-filtro ogni 12 mesi (15-25€), membrana ogni 2-3 anni (30-80€). Totale: circa 100-150€/anno. Guida con tabella completa e formula rejection rate.</description>
+      <pubDate>Thu, 25 Jun 2026 09:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/quanto-dura-impianto-osmosi-inversa.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Misuro il TDS dell'acqua: risultati normali, cosa significano e quando preoccuparsi</title>
+      <link>https://www.greenwateritalia.it/blog/acqua-contatore-tds-risultati.html</link>
+      <description>Il TDS misura la conducibilità elettrica dell'acqua (somma degli ioni disciolti). Rubinetto: 100-600 mg/L. Post-osmosi: 10-60 mg/L. Post-osmosi con rimineralizzatore: 60-150 mg/L. Attenzione: il TDS non rileva PFAS, batteri, pesticidi o microplastiche.</description>
+      <pubDate>Thu, 25 Jun 2026 09:10:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/acqua-contatore-tds-risultati.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>PFAS nell'acqua in Italia: rischi, zone a rischio e come eliminarli con l'osmosi inversa</title>
+      <link>https://www.greenwateritalia.it/blog/pfas-acqua-italia-rischi-come-eliminarli.html</link>
+      <description>I PFAS sono sostanze perfluoroalchiliche persistenti che attraversano la placenta e si accumulano nel latte materno. In Italia la zona più a rischio è la PFAS Valley (Vicenza-Verona-Padova). L'osmosi inversa certificata NSF/ANSI 58 rimuove >95% dei PFAS.</description>
+      <pubDate>Thu, 25 Jun 2026 09:20:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/pfas-acqua-italia-rischi-come-eliminarli.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>L'osmosi inversa fa male? Minerali, calcio e acqua demineralizzata: la verità scientifica</title>
+      <link>https://www.greenwateritalia.it/blog/osmosi-inversa-fa-male-minerali-calcio.html</link>
+      <description>L'osmosi inversa non fa male. L'OMS e l'ISS confermano che l'acqua demineralizzata è sicura se integrata con la dieta. I moderni impianti con rimineralizzatore riportano calcio e magnesio a livelli ottimali (TDS 100-200 mg/L). Dati e miti sfatati.</description>
+      <pubDate>Thu, 25 Jun 2026 09:30:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/osmosi-inversa-fa-male-minerali-calcio.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Cloro nell'acqua del rubinetto: fa male? Come eliminarlo in modo sicuro</title>
+      <link>https://www.greenwateritalia.it/blog/cloro-acqua-rubinetto-fa-male-come-eliminarlo.html</link>
+      <description>Il cloro nell'acqua potabile è sicuro ai livelli di legge (max 0,2 mg/L in Italia) ma altera sapore e odore e forma trialomentani (THM) a lungo termine. Guida a carboni attivi GAC, filtri a blocco e osmosi inversa per eliminarlo efficacemente.</description>
+      <pubDate>Thu, 25 Jun 2026 09:40:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/cloro-acqua-rubinetto-fa-male-come-eliminarlo.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Acqua del rubinetto per neonati e bambini: è sicura? Nitrati, fluoro e quando filtrare</title>
+      <link>https://www.greenwateritalia.it/blog/acqua-neonati-bambini-rubinetto-sicura.html</link>
+      <description>L'acqua del rubinetto è sicura per i bambini nella maggior parte d'Italia. Attenzione ai nitrati (soglia OMS 25 mg/L per lattanti vs. 50 mg/L di legge), al piombo negli edifici vecchi e ai PFAS nelle zone a rischio. Guida con indicazioni ISS.</description>
+      <pubDate>Thu, 25 Jun 2026 09:50:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/acqua-neonati-bambini-rubinetto-sicura.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Costo impianto osmosi inversa: prezzi di acquisto, installazione e manutenzione 2026</title>
+      <link>https://www.greenwateritalia.it/blog/costo-osmosi-inversa-prezzi-impianto.html</link>
+      <description>Un impianto di osmosi inversa professionale costa 1.800-3.000€ chiavi in mano (inclusa installazione). Tabella prezzi completa per fascia (base 600-1.200€, intermedio 1.200-2.000€, premium 2.000-3.500€) e calcolo del risparmio rispetto all'acqua in bottiglia.</description>
+      <pubDate>Thu, 25 Jun 2026 10:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/costo-osmosi-inversa-prezzi-impianto.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Detrazione fiscale 50% impianto filtrazione acqua 2026: guida completa</title>
+      <link>https://www.greenwateritalia.it/blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html</link>
+      <description>L'impianto di filtrazione acqua sotto il lavello può beneficiare della detrazione IRPEF del 50% (bonus ristrutturazioni) per i lavori sull'impianto idraulico. Massimale 96.000€, in 10 rate annuali. Guida completa con requisiti, documenti e esempi di risparmio fiscale.</description>
+      <pubDate>Wed, 24 Jun 2026 08:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>5 errori da evitare prima di acquistare un impianto di depurazione acqua</title>
+      <link>https://www.greenwateritalia.it/blog/errori-da-evitare-prima-di-acquistare-impianto-depurazione-acqua.html</link>
+      <description>Comprare il filtro più economico, ignorare le certificazioni NSF, sottovalutare la manutenzione, scegliere il filtro sbagliato per i tuoi contaminanti: i 5 errori più comuni nell'acquisto di un impianto di depurazione acqua e come evitarli.</description>
+      <pubDate>Wed, 17 Jun 2026 08:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/errori-da-evitare-prima-di-acquistare-impianto-depurazione-acqua.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Acqua dura in casa: rimedi, trattamenti e soluzioni per il calcare</title>
+      <link>https://www.greenwateritalia.it/blog/acqua-dura-casa-rimedi-calcio.html</link>
+      <description>L'acqua dura (durezza superiore a 15°F) causa incrostazioni di calcare su caldaie, lavatrici e rubinetti riducendone la vita utile. Confronto tra addolcitore a scambio ionico, impianto magnetico e osmosi inversa: quale scegliere in base al tuo uso.</description>
+      <pubDate>Wed, 17 Jun 2026 08:10:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/acqua-dura-casa-rimedi-calcio.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Nitrati nell'acqua del rubinetto: rischi per la salute e filtri per eliminarli</title>
+      <link>https://www.greenwateritalia.it/blog/nitrati-acqua-rubinetto-rischi-filtri.html</link>
+      <description>I nitrati nell'acqua potabile (limite di legge 50 mg/L) sono particolarmente pericolosi per i lattanti (metaemoglobinemia) e per chi beve grandi quantità. L'osmosi inversa rimuove il 90-95% dei nitrati; l'ebollizione non li elimina.</description>
+      <pubDate>Wed, 17 Jun 2026 08:20:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/nitrati-acqua-rubinetto-rischi-filtri.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Depuratore acqua per ufficio: quante persone copre e quale scegliere</title>
+      <link>https://www.greenwateritalia.it/blog/depuratore-acqua-ufficio-quante-persone.html</link>
+      <description>Per un ufficio fino a 10 persone è sufficiente un impianto sotto-lavello; da 10 a 30 persone si consiglia un erogatore da piano (Bollicina FV); per oltre 30 persone la Linea Thanta professionale. Calcolo consumi, costi e risparmio rispetto ai boccioni.</description>
+      <pubDate>Wed, 17 Jun 2026 08:30:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/depuratore-acqua-ufficio-quante-persone.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Acqua del rubinetto o acqua in bottiglia: confronto costi, qualità e impatto ambientale</title>
+      <link>https://www.greenwateritalia.it/blog/acqua-rubinetto-o-bottiglia-confronto.html</link>
+      <description>L'acqua del rubinetto filtrata costa 10-30€/anno contro 300-600€ in bottiglia per una famiglia. Confronto su qualità (analisi a confronto), impatto ambientale (plastica, trasporto, CO₂) e sicurezza microbiologica. Chi vince?</description>
+      <pubDate>Wed, 17 Jun 2026 08:40:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/acqua-rubinetto-o-bottiglia-confronto.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+    <item>
+      <title>Addolcitore acqua vs osmosi inversa: differenze, vantaggi e quando scegliere l'uno o l'altro</title>
+      <link>https://www.greenwateritalia.it/blog/addolcitore-acqua-vs-osmosi-inversa-differenze.html</link>
+      <description>L'addolcitore rimuove il calcare con lo scambio ionico ma aumenta il sodio; l'osmosi inversa rimuove il 95-99% di tutti i contaminanti (calcare, nitrati, PFAS, metalli). Tabella comparativa completa con costi, manutenzione e casi d'uso ideali.</description>
+      <pubDate>Wed, 17 Jun 2026 08:50:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/addolcitore-acqua-vs-osmosi-inversa-differenze.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
+
+  </channel>
+</rss>

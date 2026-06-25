@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.greenwateritalia.it/chi-siamo.html" />
   <meta property="og:locale" content="it_IT" />
+  <meta name="theme-color" content="#2596be">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="/dist/styles.css">
   <script type="application/ld+json">
   {
@@ -68,7 +70,34 @@
           "email": "commercialegreenwater@protonmail.com",
           "contactType": "customer service",
           "availableLanguage": "Italian"
-        }
+        },
+        "knowsAbout": [
+          "Sistemi di osmosi inversa per uso domestico",
+          "Depurazione acqua potabile in Italia",
+          "Contaminanti idrici: PFAS, nitrati, cloro, microplastiche, calcare",
+          "Impianti di filtrazione HoReCa e uffici",
+          "Manutenzione e ricambi impianti idrici",
+          "Qualità dell'acqua nelle province lombarde"
+        ],
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": 5
+        },
+        "areaServed": [
+          "Milano", "Monza e Brianza", "Varese", "Como", "Lecco"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "NSF/ANSI 58 — Reverse Osmosis Drinking Water Treatment Systems",
+            "credentialCategory": "certification"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Conformità Regolamento CE n. 1935/2004 — Materiali a contatto con acqua destinata al consumo umano",
+            "credentialCategory": "certification"
+          }
+        ]
       }
     ]
   }
@@ -134,6 +163,28 @@
       <p class="text-brand font-semibold text-xs tracking-widest uppercase mb-4">Chi siamo</p>
       <h1 class="text-3xl md:text-5xl font-semibold text-ink leading-tight mb-6">Acqua pura, direttamente dal tuo rubinetto</h1>
       <p class="text-base md:text-lg text-sub leading-relaxed max-w-2xl mx-auto">Green Water Italia distribuisce e installa sistemi di filtrazione dell'acqua premium per uso domestico, professionale e nel settore Ho.Re.Ca. La nostra attività nasce con un obiettivo preciso: rendere accessibile a famiglie e aziende un'acqua di qualità superiore, eliminando le bottiglie di plastica e semplificando la quotidianità.</p>
+    </div>
+  </section>
+
+  <!-- NUMERI -->
+  <section class="py-10 px-6 bg-surface border-t border-line/60">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <p class="text-3xl md:text-4xl font-semibold text-brand mb-1">100<span class="text-2xl">+</span></p>
+        <p class="text-sm text-sub leading-tight">clienti serviti<br>a Milano e provincia</p>
+      </div>
+      <div>
+        <p class="text-3xl md:text-4xl font-semibold text-brand mb-1">5</p>
+        <p class="text-sm text-sub leading-tight">province<br>di operatività</p>
+      </div>
+      <div>
+        <p class="text-3xl md:text-4xl font-semibold text-brand mb-1">9</p>
+        <p class="text-sm text-sub leading-tight">modelli certificati<br>NSF/CE installati</p>
+      </div>
+      <div>
+        <p class="text-3xl md:text-4xl font-semibold text-brand mb-1">48h</p>
+        <p class="text-sm text-sub leading-tight">tempo medio<br>dall'ordine all'installazione</p>
+      </div>
     </div>
   </section>
 
@@ -223,6 +274,142 @@
           </div>
           <h3 class="font-semibold text-ink text-base mb-3">Consulenza personalizzata sull'acqua</h3>
           <p class="text-sub text-sm leading-relaxed">Non esiste un sistema adatto a tutti. Prima di ogni installazione analizziamo i parametri dell'acqua nella zona del cliente — durezza, TDS, eventuale presenza di nitrati o altri contaminanti — e consigliamo la soluzione tecnica più adeguata, senza proposte standardizzate.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICAZIONI -->
+  <section class="py-14 md:py-20 px-6 border-t border-line/60">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10">
+        <p class="text-brand font-semibold text-xs tracking-widest uppercase mb-4">Qualità certificata</p>
+        <h2 class="text-2xl md:text-3xl font-semibold text-ink mb-4">Impianti certificati, materiali conformi</h2>
+        <p class="text-sub max-w-xl mx-auto leading-relaxed">Tutti i sistemi che installiamo rispettano gli standard internazionali di sicurezza alimentare e qualità dell'acqua potabile.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface rounded-2xl p-6 border border-line/60 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-brand-light flex items-center justify-center mx-auto mb-4">
+            <span class="text-brand font-bold text-base tracking-tight">NSF</span>
+          </div>
+          <h3 class="font-semibold text-ink text-sm mb-2">NSF/ANSI 58 e 42</h3>
+          <p class="text-sub text-sm leading-relaxed">Le membrane e i filtri dei nostri sistemi RO sono conformi NSF/ANSI 58 (osmosi inversa) e 42 (riduzione cloro/taste) — lo standard americano di riferimento adottato anche dai produttori europei di fascia alta.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-line/60 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-brand-light flex items-center justify-center mx-auto mb-4">
+            <span class="text-brand font-bold text-base tracking-tight">CE</span>
+          </div>
+          <h3 class="font-semibold text-ink text-sm mb-2">Marcatura CE e DM 174/2004</h3>
+          <p class="text-sub text-sm leading-relaxed">Tutti i materiali a contatto con l'acqua potabile sono conformi al Regolamento CE n. 1935/2004 e al Decreto Ministeriale 174/2004, la normativa italiana sui materiali idonei al contatto con acqua destinata al consumo umano.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-line/60 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-brand-light flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-ink text-sm mb-2">Garanzia e manutenzione programmata</h3>
+          <p class="text-sub text-sm leading-relaxed">Ogni impianto installato è coperto da garanzia sul lavoro e sui componenti. Forniamo un piano di manutenzione programmata con ricambio filtri e membrane alle scadenze indicate dal produttore — nessuna sorpresa, nessun costo nascosto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY / RISULTATI -->
+  <section class="py-14 md:py-20 px-6 bg-surface border-t border-line/60">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-brand font-semibold text-xs tracking-widest uppercase mb-4">I nostri risultati</p>
+        <h2 class="text-2xl md:text-3xl font-semibold text-ink mb-4">Dati reali, clienti reali</h2>
+        <p class="text-sub max-w-xl mx-auto leading-relaxed">Misuriamo i parametri dell'acqua prima e dopo ogni installazione con un misuratore TDS calibrato. Ecco i risultati di tre interventi recenti nell'area di Milano e provincia.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+        <!-- Case 1: Residenziale -->
+        <div class="bg-white rounded-2xl p-6 border border-line/60">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full">Residenziale</span>
+            <span class="text-xs text-sub">Sesto S. Giovanni, MI</span>
+          </div>
+          <h3 class="font-semibold text-ink text-sm mb-2">Famiglia con neonato</h3>
+          <p class="text-sub text-xs leading-relaxed mb-4">Acqua di rete con TDS elevato e nitrati oltre i limiti OMS per neonati. Installato Osmosystem 150 con rimineralizzatore al calcio e magnesio.</p>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="bg-red-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">TDS prima</p>
+              <p class="font-bold text-red-600 text-xl">620</p>
+              <p class="text-xs text-sub">mg/L</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">TDS dopo</p>
+              <p class="font-bold text-green-600 text-xl">38</p>
+              <p class="text-xs text-sub">mg/L</p>
+            </div>
+            <div class="bg-red-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Nitrati prima</p>
+              <p class="font-bold text-red-600 text-xl">48</p>
+              <p class="text-xs text-sub">mg/L</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Nitrati dopo</p>
+              <p class="font-bold text-green-600 text-xl">&lt;2</p>
+              <p class="text-xs text-sub">mg/L</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2: Ufficio -->
+        <div class="bg-white rounded-2xl p-6 border border-line/60">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">Ufficio</span>
+            <span class="text-xs text-sub">Milano, zona Navigli</span>
+          </div>
+          <h3 class="font-semibold text-ink text-sm mb-2">Studio professionale, 25 persone</h3>
+          <p class="text-sub text-xs leading-relaxed mb-4">Consumo elevato di boccioni (8 al mese, circa €35 l'uno). Installata Bollicina FV con erogazione naturale e frizzante a temperatura regolabile.</p>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="bg-red-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Costo prima</p>
+              <p class="font-bold text-red-600 text-xl">€280</p>
+              <p class="text-xs text-sub">al mese</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Costo dopo</p>
+              <p class="font-bold text-green-600 text-xl">€12</p>
+              <p class="text-xs text-sub">al mese</p>
+            </div>
+            <div class="col-span-2 bg-brand-light rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Risparmio annuo</p>
+              <p class="font-bold text-brand text-2xl">€3.216</p>
+              <p class="text-xs text-sub">ROI raggiunto entro 12 mesi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3: HoReCa -->
+        <div class="bg-white rounded-2xl p-6 border border-line/60">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xs font-semibold bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full">HoReCa</span>
+            <span class="text-xs text-sub">Varese, centro storico</span>
+          </div>
+          <h3 class="font-semibold text-ink text-sm mb-2">Ristorante, 60 coperti</h3>
+          <p class="text-sub text-xs leading-relaxed mb-4">Acquisto di circa 18.000 bottiglie di vetro all'anno da fornitore esterno. Installata Linea Thanta con erogazione naturale, frizzante e calda direttamente a tavola.</p>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="bg-red-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Bottiglie/anno</p>
+              <p class="font-bold text-red-600 text-xl">18.000</p>
+              <p class="text-xs text-sub">acquistate</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Bottiglie/anno</p>
+              <p class="font-bold text-green-600 text-xl">0</p>
+              <p class="text-xs text-sub">eliminate</p>
+            </div>
+            <div class="col-span-2 bg-brand-light rounded-xl p-3 text-center">
+              <p class="text-xs text-sub mb-0.5">Risparmio annuo</p>
+              <p class="font-bold text-brand text-2xl">€12.600</p>
+              <p class="text-xs text-sub">+ zero smaltimento vetro</p>
+            </div>
+          </div>
         </div>
 
       </div>

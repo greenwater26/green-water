@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,8 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.greenwateritalia.it/blog/acqua-neonati-bambini-rubinetto-sicura.html" />
   <meta property="og:locale" content="it_IT" />
+  <meta name="theme-color" content="#2596be">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="/dist/styles.css">
   <script type="application/ld+json">
   {
@@ -36,8 +38,17 @@
         "@type":"FAQPage",
         "mainEntity":[
           {"@type":"Question","name":"Posso usare l'acqua del rubinetto per il latte in polvere del neonato?","acceptedAnswer":{"@type":"Answer","text":"Dipende dall'acqua della tua zona. L'OMS raccomanda di usare acqua con meno di 25 mg/L di nitrati per preparare il latte artificiale dei neonati. In molte città italiane (spec. nord) il rubinetto soddisfa questo requisito. Bisogna però considerare anche piombo (se hai tubature pre-1980), sodio e la possibilità di usare acqua a temperatura ambiente senza bollire (cosa che l'osmosi inversa consente). Prima di decidere, controlla l'analisi dell'acqua del tuo gestore locale."}},
-          {"@type":"Question","name":"Qual è il limite di nitrati nell'acqua per neonati?","acceptedAnswer":{"@type":"Answer","text":"L'OMS raccomanda <25 mg/L di nitrati per l'acqua usata per preparare latte artificiale per i neonati sotto i 4 mesi. Il limite italiano ed europeo per l'acqua potabile è 50 mg/L (D.Lgs. 18/2023), ma questo è pensato per la popolazione adulta. L'EFSA (European Food Safety Authority) ha confermato nel 2017 che bambini sotto i 6 mesi sono particolarmente vulnerabili alla metemoglobinemia da nitrati."}}
+          {"@type":"Question","name":"Qual è il limite di nitrati nell'acqua per neonati?","acceptedAnswer":{"@type":"Answer","text":"L'OMS raccomanda <25 mg/L di nitrati per l'acqua usata per preparare latte artificiale per i neonati sotto i 4 mesi. Il limite italiano ed europeo per l'acqua potabile è 50 mg/L (D.Lgs. 18/2023), ma questo è pensato per la popolazione adulta. L'EFSA (European Food Safety Authority) ha confermato nel 2017 che bambini sotto i 6 mesi sono particolarmente vulnerabili alla metemoglobinemia da nitrati."}},
+          {"@type":"Question","name":"La bollitura dell'acqua elimina i nitrati per i neonati?","acceptedAnswer":{"@type":"Answer","text":"No. La bollitura non rimuove i nitrati — anzi, per evaporazione riduce il volume d'acqua e può concentrare i nitrati residui. La bollitura serve per eliminare batteri e virus, non per ridurre la contaminazione chimica da nitrati, piombo o PFAS."}},
+          {"@type":"Question","name":"Posso usare l'acqua filtrata con osmosi per il latte del neonato?","acceptedAnswer":{"@type": "Answer","text":"Sì, con l'aggiunta di un rimineralizzatore. L'osmosi inversa rimuove nitrati (85-95%), piombo (90-99%), PFAS (>95%) e cloro. L'acqua osmotizzata pura ha un residuo fisso quasi zero, quindi per i neonati sotto i 6 mesi è necessario aggiungere un rimineralizzatore che riporti il TDS a 100-300 mg/L, come raccomandato dall'ISS."}},
+          {"@type":"Question","name":"Posso usare l'acqua addolcita per il latte del neonato?","acceptedAnswer":{"@type":"Answer","text":"No. L'ISS raccomanda un limite di sodio di 20 mg/L per i neonati. L'acqua trattata con addolcitore a scambio ionico può superare significativamente questo valore in zone con acqua dura, perché durante l'addolcimento gli ioni calcio e magnesio vengono sostituiti da ioni sodio."}},
+          {"@type":"Question","name":"Come verifico se l'acqua del rubinetto è sicura per mio figlio?","acceptedAnswer":{"@type":"Answer","text":"1) Scarica il bollettino annuale di qualità dell'acqua dal sito del tuo gestore idrico (obbligatorio per legge). 2) Verifica la concentrazione di nitrati: se è sotto 25 mg/L, sei nel range OMS per i lattanti. 3) Se l'edificio è pre-1980, chiedi un'analisi del piombo al rubinetto (non alla centrale). 4) Non usare acqua addolcita."}},
+          {"@type":"Question","name":"Quando i bambini possono iniziare a bere acqua del rubinetto normalmente?","acceptedAnswer":{"@type":"Answer","text":"A partire dai 6 mesi di età, quando inizia lo svezzamento, i bambini che assumono cibi solidi possono generalmente bere acqua del rubinetto come gli adulti, purché l'acqua soddisfi i limiti di legge. Oltre i 12 mesi, un bambino sano con dieta varia può bere liberamente l'acqua del rubinetto italiano, che in quasi tutta Italia è sicura e controllata."}}
         ]
+      },
+      {
+        "@type":"SpeakableSpecification",
+        "cssSelector":["#risposta-rapida","h1"]
       }
     ]
   }
@@ -75,7 +86,12 @@
   </div>
 
   <h1 class="text-3xl md:text-4xl font-bold text-ink leading-tight mb-6">Acqua per neonati e bambini: quando il rubinetto è sicuro e quando no</h1>
-  <p class="text-lg text-sub leading-relaxed mb-10">I neonati sono il gruppo più vulnerabile ai contaminanti nell'acqua. Il loro peso corporeo è basso, i reni sono immaturi e l'ossigeno nel sangue è più sensibile ai nitrati. Ma "acqua del rubinetto = pericolosa per il neonato" è una semplificazione eccessiva. La risposta dipende da dove abiti e da cosa c'è nell'acqua.</p>
+  <p class="text-lg text-sub leading-relaxed mb-6">I neonati sono il gruppo più vulnerabile ai contaminanti nell'acqua. Il loro peso corporeo è basso, i reni sono immaturi e l'ossigeno nel sangue è più sensibile ai nitrati. Ma "acqua del rubinetto = pericolosa per il neonato" è una semplificazione eccessiva. La risposta dipende da dove abiti e da cosa c'è nell'acqua.</p>
+
+  <div id="risposta-rapida" class="bg-brand-light border-l-4 border-brand rounded-r-2xl p-6 mb-10">
+    <p class="text-xs font-semibold text-brand uppercase tracking-widest mb-2">Risposta rapida</p>
+    <p class="text-base text-ink leading-relaxed">Per i neonati sotto i 4 mesi, usare acqua con <strong>meno di 25 mg/L di nitrati</strong> (limite OMS). In molte città italiane — specialmente al nord — l'acqua del rubinetto soddisfa già questo requisito. Attenzione a: piombo (edifici pre-1980), sodio (non usare acqua addolcita) e acqua di zone agricole intensive. La <strong>bollitura non rimuove nitrati, piombo o PFAS</strong>: l'osmosi inversa con rimineralizzatore è la soluzione più sicura e definitiva per le famiglie con neonati.</p>
+  </div>
 
   <!-- Visual: semaforo contaminanti -->
   <div class="bg-surface rounded-2xl p-6 mb-10">
@@ -166,6 +182,32 @@
       <li>In caso di dubbio, l'osmosi inversa con rimineralizzazione è la soluzione più sicura e definitiva</li>
     </ol>
   </div>
+
+  <section class="mt-12 mb-10" aria-label="Domande frequenti sull'acqua per neonati">
+    <h2 class="text-xl font-bold text-ink mb-6">Domande frequenti</h2>
+    <div class="space-y-3">
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">La bollitura elimina i nitrati dall'acqua per il neonato?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">No. La bollitura non rimuove nitrati, piombo o PFAS — anzi, per evaporazione può concentrarli. Serve solo per eliminare batteri e virus, non per problemi chimici dell'acqua.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Posso usare l'acqua filtrata con osmosi per il latte del neonato?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Sì, ma con rimineralizzatore. L'osmosi rimuove nitrati, piombo e PFAS. Per i neonati sotto 6 mesi serve riportare il TDS a 100-300 mg/L con rimineralizzatore, come indicato dall'ISS.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Posso usare l'acqua addolcita per il latte del neonato?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">No. L'ISS fissa a 20 mg/L il limite di sodio per i neonati. L'addolcitore a scambio ionico può superare questo valore in zone con acqua dura perché sostituisce calcio e magnesio con sodio.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Come verifico se l'acqua del mio rubinetto è sicura per mio figlio?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">1) Scarica il bollettino annuale dal sito del gestore idrico locale (obbligatorio per legge). 2) Verifica nitrati: se &lt;25 mg/L è nel range OMS per lattanti. 3) Se edificio pre-1980, richiedi analisi del piombo al rubinetto. 4) Non usare acqua addolcita.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Quando i bambini possono bere acqua del rubinetto normalmente?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">A partire dai 6 mesi con lo svezzamento. Dopo i 12 mesi, un bambino con dieta varia può bere liberamente l'acqua del rubinetto italiano, che in quasi tutta Italia è sicura e controllata nel rispetto dei limiti di legge.</div>
+      </details>
+    </div>
+  </section>
 
   <div class="bg-gradient-to-br from-brand to-brand-dark rounded-2xl p-8 text-white mt-12 mb-10 text-center">
     <p class="text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">Green Water Italia</p>

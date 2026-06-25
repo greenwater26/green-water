@@ -1,0 +1,20 @@
+{
+  "name": "Green Water Italia",
+  "short_name": "Green Water",
+  "description": "Sistemi di filtrazione acqua premium per casa, ufficio e HoReCa a Milano e provincia",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#2596be",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "/logo.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

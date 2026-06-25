@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,8 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.greenwateritalia.it/blog/cloro-acqua-rubinetto-fa-male-come-eliminarlo.html" />
   <meta property="og:locale" content="it_IT" />
+  <meta name="theme-color" content="#2596be">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="/dist/styles.css">
   <script type="application/ld+json">
   {
@@ -36,8 +38,17 @@
         "@type":"FAQPage",
         "mainEntity":[
           {"@type":"Question","name":"Il cloro nell'acqua del rubinetto fa male alla salute?","acceptedAnswer":{"@type":"Answer","text":"Il cloro residuo ai livelli usati negli acquedotti italiani (0,05–0,3 mg/L al rubinetto) non rappresenta un rischio diretto per la salute. Il problema non è il cloro in sé, ma i suoi sottoprodotti: i trialometani (THM) come il cloroformio, che si formano quando il cloro reagisce con la materia organica presente nell'acqua. Il limite EU per i THM totali è 100 µg/L; l'IARC classifica il cloroformio come possibile cancerogeno (Gruppo 2B)."}},
-          {"@type":"Question","name":"Come si elimina il cloro dall'acqua del rubinetto?","acceptedAnswer":{"@type":"Answer","text":"Il carbone attivo (sia granulare che a blocco) è il metodo più efficace per eliminare il cloro libero dall'acqua: rimozione >99% con adeguato tempo di contatto. L'osmosi inversa include sempre un pre-filtro a carbone attivo che rimuove il cloro prima che raggiunga la membrana (il cloro danneggerebbe la membrana RO). La bollitura riduce il cloro libero ma può concentrare i THM nel vapore."}}
+          {"@type":"Question","name":"Come si elimina il cloro dall'acqua del rubinetto?","acceptedAnswer":{"@type":"Answer","text":"Il carbone attivo (sia granulare che a blocco) è il metodo più efficace per eliminare il cloro libero dall'acqua: rimozione >99% con adeguato tempo di contatto. L'osmosi inversa include sempre un pre-filtro a carbone attivo che rimuove il cloro prima che raggiunga la membrana (il cloro danneggerebbe la membrana RO). La bollitura riduce il cloro libero ma può concentrare i THM nel vapore."}},
+          {"@type":"Question","name":"L'acqua di Roma ha davvero le clorammine?","acceptedAnswer":{"@type":"Answer","text":"Sì. ACEA, il gestore idrico di Roma, utilizza clorammine (combinazione di cloro e ammoniaca) come disinfettante residuo in molte zone della rete, al posto del cloro libero. Le clorammine formano meno THM e sono più stabili nella rete lunga di Roma. Attenzione: il carbone attivo standard non rimuove le clorammine — serve carbone catalitico (Centaur) o un sistema a osmosi inversa."}},
+          {"@type":"Question","name":"Lasciare l'acqua riposare in caraffa elimina il cloro?","acceptedAnswer":{"@type":"Answer","text":"Parzialmente. Il cloro libero è volatile e si disperde nell'aria per degasazione naturale: lasciare l'acqua in una caraffa aperta per 30-60 minuti rimuove il 50-80% del cloro libero. Questo metodo non funziona per le clorammine (come a Roma), i THM o altri contaminanti chimici."}},
+          {"@type":"Question","name":"Il cloro nell'acqua fa male alla pelle e ai capelli?","acceptedAnswer":{"@type":"Answer","text":"Il cloro residuo nell'acqua del rubinetto (0,05-0,3 mg/L) è molto inferiore a quello delle piscine (1-2 mg/L) e generalmente non è la causa primaria di pelle secca o capelli opachi. Un contributo può esserci in persone con pelle molto sensibile o con eczema. L'acqua dura (calcare) ha un effetto molto più significativo sulla pelle e sui capelli rispetto al cloro residuo."}},
+          {"@type":"Question","name":"Qual è la differenza tra cloro libero e clorammine?","acceptedAnswer":{"@type":"Answer","text":"Il cloro libero (Cl₂) è l'agente disinfettante classico: efficace, economico, ma volatile e con forte odore. Le clorammine (monoclorammine: NH₂Cl) sono formate dalla reazione di cloro con ammoniaca: sono più stabili nella rete, meno volatili, formano meno THM, ma non si eliminano con il carbone attivo standard. Per rimuoverle serve carbone catalitico o osmosi inversa."}},
+          {"@type":"Question","name":"Quant'è il cloro nell'acqua di Milano rispetto a Roma?","acceptedAnswer":{"@type": "Answer","text":"Milano utilizza cloro libero a concentrazioni tipicamente molto basse (0,05-0,1 mg/L al rubinetto) grazie alla qualità eccellente dell'acqua di fonte alpina e una rete idrica moderna. Roma usa clorammine in molte zone, con concentrazioni che variano per zona: alcune aree centrali e periferiche hanno odori più marcati per via della rete più estesa e del maggior contenuto organico dell'acqua."}}
         ]
+      },
+      {
+        "@type":"SpeakableSpecification",
+        "cssSelector":["#risposta-rapida","h1"]
       }
     ]
   }
@@ -75,7 +86,12 @@
   </div>
 
   <h1 class="text-3xl md:text-4xl font-bold text-ink leading-tight mb-6">Cloro nell'acqua del rubinetto: fa davvero male? Come eliminarlo</h1>
-  <p class="text-lg text-sub leading-relaxed mb-10">Il cloro è aggiunto all'acqua potabile per distruggerela carica batterica e mantenerla sicura durante il tragitto dalle centrali di trattamento ai rubinetti. Questo è positivo. Il problema sono i sottoprodotti — i trialometani (THM) — che si formano quando il cloro reagisce con la materia organica. Ecco cosa sapere.</p>
+  <p class="text-lg text-sub leading-relaxed mb-6">Il cloro è aggiunto all'acqua potabile per distruggere la carica batterica e mantenerla sicura durante il tragitto dalle centrali di trattamento ai rubinetti. Questo è positivo. Il problema sono i sottoprodotti — i trialometani (THM) — che si formano quando il cloro reagisce con la materia organica. Ecco cosa sapere.</p>
+
+  <div id="risposta-rapida" class="bg-brand-light border-l-4 border-brand rounded-r-2xl p-6 mb-10">
+    <p class="text-xs font-semibold text-brand uppercase tracking-widest mb-2">Risposta rapida</p>
+    <p class="text-base text-ink leading-relaxed">Il cloro nell'acqua italiana (0,05–0,3 mg/L) non è di per sé pericoloso. Il problema sono i <strong>trialometani (THM)</strong>, sottoprodotti cancerogeni che si formano quando il cloro reagisce con la materia organica. Il <strong>carbone attivo</strong> elimina il cloro libero efficacemente (>99%). <strong>Attenzione per chi abita a Roma</strong>: l'acqua usa clorammine, non cloro libero, e richiede carbone catalitico o osmosi inversa per la rimozione.</p>
+  </div>
 
   <!-- Visual: confronto livelli cloro -->
   <div class="bg-surface rounded-2xl p-6 mb-10">
@@ -201,6 +217,32 @@
 
     <p class="text-base text-ink leading-relaxed mb-4">Per la sola problematica cloro/odore, un buon filtro a carbone attivo sottopiano è sufficiente e ha costi molto contenuti (filtro da 50–150€, sostituzione cartucce ogni 6 mesi). Se invece vuoi una filtrazione completa che rimuova anche THM, microplastiche, nitrati e altri contaminanti, un sistema a osmosi inversa è la scelta più completa.</p>
   </div>
+
+  <section class="mt-12 mb-10" aria-label="Domande frequenti sul cloro nell'acqua">
+    <h2 class="text-xl font-bold text-ink mb-6">Domande frequenti</h2>
+    <div class="space-y-3">
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">L'acqua di Roma ha le clorammine? Come le elimino?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Sì. ACEA usa clorammine in molte zone di Roma. Il carbone attivo standard non le rimuove: serve carbone catalitico (Centaur) o un sistema a osmosi inversa completo.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Lasciare l'acqua riposare in caraffa elimina il cloro?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Parzialmente. Il cloro libero si disperde per degasazione naturale in 30-60 minuti in caraffa aperta (50-80% rimosso). Non funziona per clorammine, THM o altri contaminanti chimici.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Il cloro fa male alla pelle e ai capelli?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Il cloro del rubinetto (0,05-0,3 mg/L) è molto meno concentrato di quello delle piscine (1-2 mg/L). Per pelle secca e capelli opachi, il calcare (acqua dura) è solitamente la causa principale, più che il cloro.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">I THM nell'acqua sono pericolosi?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">I THM totali nell'acqua italiana sono mediamente 15-30 µg/L, ben sotto il limite EU di 100 µg/L. Il cloroformio è classificato IARC come possibile cancerogeno (Gruppo 2B). L'esposizione cronica è il fattore di rischio, non l'esposizione occasionale. Il carbone attivo e l'osmosi inversa li riducono significativamente.</div>
+      </details>
+      <details class="border border-line rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-ink text-sm hover:bg-surface transition-colors list-none">Qual è la differenza tra cloro libero e clorammine?<svg class="w-4 h-4 text-sub shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="px-5 pb-5 text-sm text-sub leading-relaxed">Il cloro libero (Cl₂) è l'agente classico: volatile, forte odore, eliminato dal carbone attivo standard. Le clorammine (NH₂Cl) sono più stabili, meno volatili, formano meno THM, ma non si eliminano col carbone normale — servono carbone catalitico o osmosi inversa.</div>
+      </details>
+    </div>
+  </section>
 
   <div class="bg-gradient-to-br from-brand to-brand-dark rounded-2xl p-8 text-white mt-12 mb-10 text-center">
     <p class="text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">Green Water Italia</p>
