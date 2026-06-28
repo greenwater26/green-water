@@ -27,3 +27,4 @@ User-agent: Omgilibot
 Allow: /
 
 Sitemap: https://www.greenwateritalia.it/sitemap.xml
+LLMs: https://www.greenwateritalia.it/llms.txt
