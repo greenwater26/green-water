@@ -17,6 +17,8 @@
 - Non chiamare `gtag` se non è definito (`typeof gtag === 'function'` come guardia) — non deve bypassare il banner cookie esistente.
 - Lo script va inserito immediatamente prima di `</body>` in ciascuna delle 25 pagine elencate nello spec (`docs/superpowers/specs/2026-07-03-whatsapp-click-tracking-design.md`), invariato carattere per carattere.
 - Nessuna pagina blog priva del bottone WhatsApp va toccata.
+- (Aggiunto dopo la revisione finale di Task 1+2) 10 delle 25 pagine non avevano affatto GA4/banner cookie installato, quindi il loro script di tracciamento non poteva mai inviare eventi. Il Task 3 aggiunge a queste 10 pagine l'identica infrastruttura di consenso cookie + GA4 già presente nelle altre 15, byte-per-byte (copiata da `chi-siamo.html`), senza inventare nulla di nuovo.
+- Non viene aggiunto il pulsante "Gestisci preferenze cookie" nel footer di queste 10 pagine (richiederebbe modificare la struttura del footer di ciascun file, fuori scope per questo task): resta un follow-up eventuale, da segnalare all'utente, non da fare qui.
 
 ---
 
@@ -199,7 +201,169 @@ Nota: non aggiungere `scripts/` allo staging (è stato rimosso al Step 5, non de
 
 ---
 
-### Task 3: Verifica finale in GA4 DebugView
+### Task 3: Aggiungere consenso cookie + GA4 alle 10 pagine che ne sono prive
+
+**Perché:** la revisione finale di Task 1+2 ha scoperto che 10 delle 25 pagine (elencate sotto) non hanno mai avuto GA4 installato: nessun banner cookie, nessuna funzione `loadGA`, nessun `gwi_consent`. Lo script `click_whatsapp` inserito nel Task 2 su queste pagine è corretto ma inerte, perché `gtag` non è mai definito. Questo task porta l'infrastruttura mancante, copiata byte-per-byte da una pagina che già funziona (`chi-siamo.html`).
+
+**Files:**
+- Modify (10 file, inserimento prima del blocco `<script>` di tracciamento `click_whatsapp` già presente da Task 2):
+  `prodotti.html`, `blog/acqua-calcare-pelle-capelli.html`, `blog/acqua-contatore-tds-risultati.html`, `blog/acqua-e-gravidanza.html`, `blog/certificazioni-impianti-acqua-nsf-ce.html`, `blog/come-leggere-analisi-acqua.html`, `blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html`, `blog/migliori-impianti-osmosi-inversa-2026.html`, `blog/osmosi-inversa-appartamento-affitto.html`, `blog/quanto-dura-impianto-osmosi-inversa.html`
+- Create (temporaneo, da cancellare a fine task): `scripts/insert-cookie-ga.mjs`
+
+**Interfaces:**
+- Consumes: il blocco `<script>` `click_whatsapp` prodotto in Task 2 (usato solo come punto di ancoraggio per l'inserimento: il nuovo contenuto va subito prima di esso).
+- Produces: su queste 10 pagine, `window.gtag` diventa disponibile dopo l'accettazione del banner, esattamente come sulle altre 15 — nessuna nuova interfaccia per task successivi.
+
+- [ ] **Step 1: Verificare che nessuna delle 10 pagine abbia già `id="cookie-banner"` o funzioni `loadGA`/`setCookie`**
+
+Run:
+```bash
+grep -l "cookie-banner\|function loadGA" prodotti.html blog/acqua-calcare-pelle-capelli.html blog/acqua-contatore-tds-risultati.html blog/acqua-e-gravidanza.html blog/certificazioni-impianti-acqua-nsf-ce.html blog/come-leggere-analisi-acqua.html blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html blog/migliori-impianti-osmosi-inversa-2026.html blog/osmosi-inversa-appartamento-affitto.html blog/quanto-dura-impianto-osmosi-inversa.html
+```
+Expected: nessun output (nessuna delle 10 pagine ha già questa infrastruttura — già verificato in fase di pianificazione, da ri-confermare prima di modificare).
+
+- [ ] **Step 2: Scrivere lo script di inserimento**
+
+Create `scripts/insert-cookie-ga.mjs`:
+
+```javascript
+import { readFileSync, writeFileSync } from 'node:fs';
+
+const files = [
+  'prodotti.html',
+  'blog/acqua-calcare-pelle-capelli.html',
+  'blog/acqua-contatore-tds-risultati.html',
+  'blog/acqua-e-gravidanza.html',
+  'blog/certificazioni-impianti-acqua-nsf-ce.html',
+  'blog/come-leggere-analisi-acqua.html',
+  'blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html',
+  'blog/migliori-impianti-osmosi-inversa-2026.html',
+  'blog/osmosi-inversa-appartamento-affitto.html',
+  'blog/quanto-dura-impianto-osmosi-inversa.html',
+];
+
+// Ancora: l'esatto inizio del blocco <script> click_whatsapp inserito nel Task 2.
+const anchor = `<script>
+    (function() {
+        function trackWhatsAppClick(pos) {`;
+
+const snippet = `<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100] bg-ink border-t border-white/10 shadow-2xl px-6 py-5" style="display:none">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-5">
+        <p class="flex-1 text-sm text-white/70 leading-relaxed">
+            Utilizziamo <strong class="text-white">cookie analitici</strong> (Google Analytics) per migliorare l'esperienza sul sito. Puoi accettarli o continuare solo con i cookie tecnici necessari. Leggi la nostra <a href="/cookie.html" class="text-brand underline">Cookie Policy</a> e la <a href="/privacy.html" class="text-brand underline">Privacy Policy</a>.
+        </p>
+        <div class="flex gap-3 shrink-0">
+            <button id="cookie-reject" class="px-5 py-2.5 rounded-full border border-white/30 text-sm font-medium text-white/70 hover:border-white hover:text-white transition-colors">Solo necessari</button>
+            <button id="cookie-accept" class="px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors">Accetta tutti</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setCookie(name, value, days) {
+        var d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = name + '=' + value + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    }
+    function getCookie(name) {
+        var v = '; ' + document.cookie;
+        var parts = v.split('; ' + name + '=');
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+    function loadGA() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EQSCT1RWG4';
+        document.head.appendChild(s);
+        s.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){dataLayer.push(arguments);};
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-EQSCT1RWG4');
+        };
+    }
+    function mostraBannerCookie() {
+        setCookie('gwi_consent', '', -1);
+        document.getElementById('cookie-banner').style.display = 'block';
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    }
+    (function() {
+        var consent = getCookie('gwi_consent');
+        if (consent === 'accepted') {
+            loadGA();
+        } else if (!consent) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+            setCookie('gwi_consent', 'accepted', 365);
+            document.getElementById('cookie-banner').style.display = 'none';
+            loadGA();
+        });
+        document.getElementById('cookie-reject').addEventListener('click', function() {
+            setCookie('gwi_consent', 'rejected', 365);
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    })();
+</script>
+
+`;
+
+for (const file of files) {
+  const content = readFileSync(file, 'utf8');
+  if (content.includes('id="cookie-banner"')) {
+    console.log(`SKIP (già presente): ${file}`);
+    continue;
+  }
+  const anchorIndex = content.indexOf(anchor);
+  if (anchorIndex === -1) {
+    console.error(`ERRORE: ancora click_whatsapp non trovata in ${file}`);
+    process.exitCode = 1;
+    continue;
+  }
+  const updated = content.slice(0, anchorIndex) + snippet + content.slice(anchorIndex);
+  writeFileSync(file, updated, 'utf8');
+  console.log(`OK: ${file}`);
+}
+```
+
+- [ ] **Step 3: Eseguire lo script**
+
+Run: `node scripts/insert-cookie-ga.mjs`
+Expected: una riga `OK: <file>` per ciascuno dei 10 file, nessun `ERRORE`.
+
+- [ ] **Step 4: Verifica statica**
+
+Run: `grep -rlc 'id="cookie-banner"' prodotti.html blog/acqua-calcare-pelle-capelli.html blog/acqua-contatore-tds-risultati.html blog/acqua-e-gravidanza.html blog/certificazioni-impianti-acqua-nsf-ce.html blog/come-leggere-analisi-acqua.html blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html blog/migliori-impianti-osmosi-inversa-2026.html blog/osmosi-inversa-appartamento-affitto.html blog/quanto-dura-impianto-osmosi-inversa.html`
+Expected: `1` per ciascuno dei 10 file.
+
+Run: `grep -c "</body>" prodotti.html` (e ripeti per gli altri 9)
+Expected: `1` per ciascun file — l'inserimento non deve aver introdotto o rimosso tag.
+
+Confronta che il banner+script appena inserito sia identico byte-per-byte in tutti i 10 file e coincida con quello già presente in una delle 15 pagine esistenti (es. `chi-siamo.html`, righe 391-402 e 412-458): estrai il blocco da `<!-- Cookie Consent Banner -->` a `</script>` (il primo, quello del banner) in un file temporaneo per ciascuna pagina e confrontali con `diff` o hash.
+
+- [ ] **Step 5: Rimuovere lo script temporaneo**
+
+Run: `rm scripts/insert-cookie-ga.mjs`
+Run: `rmdir scripts 2>/dev/null || true`
+
+- [ ] **Step 6: Verifica manuale in browser**
+
+Se disponibile un browser reale (altrimenti documenta chiaramente che questo step non è stato eseguito, come già accaduto nei Task 1-2): avvia `npx serve . -l 5000`, apri `http://localhost:5000/prodotti.html`, verifica che il banner cookie compaia in basso, cliccalo su "Accetta tutti", poi clicca i bottoni WhatsApp e controlla in console che `dataLayer` contenga sia l'evento GA standard (`config`) sia `click_whatsapp` con `posizione` corretta.
+
+- [ ] **Step 7: Commit**
+
+```bash
+git add prodotti.html blog/acqua-calcare-pelle-capelli.html blog/acqua-contatore-tds-risultati.html blog/acqua-e-gravidanza.html blog/certificazioni-impianti-acqua-nsf-ce.html blog/come-leggere-analisi-acqua.html blog/detrazione-fiscale-50-impianto-filtrazione-acqua.html blog/migliori-impianti-osmosi-inversa-2026.html blog/osmosi-inversa-appartamento-affitto.html blog/quanto-dura-impianto-osmosi-inversa.html
+git commit -m "feat: aggiungi consenso cookie e GA4 alle pagine che ne erano prive"
+```
+
+Nota: non aggiungere `scripts/` allo staging.
+
+---
+
+### Task 4: Verifica finale in GA4 DebugView
 
 **Files:** nessuna modifica — solo verifica.
 
