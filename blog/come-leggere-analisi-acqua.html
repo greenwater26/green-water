@@ -315,5 +315,20 @@
         <span class="text-sm font-semibold">Scrivici su WhatsApp</span>
     </a>
 
+    <script>
+    (function() {
+        function trackWhatsAppClick(pos) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_whatsapp', { posizione: pos });
+            }
+        }
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a[href*="wa.me"]');
+            if (!link) return;
+            var pos = link.getAttribute('aria-label') === 'Contattaci su WhatsApp' ? 'flottante' : 'altro';
+            trackWhatsAppClick(pos);
+        });
+    })();
+    </script>
 </body>
 </html>
