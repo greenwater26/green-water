@@ -12,8 +12,8 @@
     <copyright>Copyright 2026 Green Water Italia</copyright>
     <managingEditor>info@greenwateritalia.it (Green Water Italia)</managingEditor>
     <webMaster>info@greenwateritalia.it (Green Water Italia)</webMaster>
-    <lastBuildDate>Thu, 25 Jun 2026 10:00:00 +0200</lastBuildDate>
-    <pubDate>Thu, 25 Jun 2026 10:00:00 +0200</pubDate>
+    <lastBuildDate>Mon, 06 Jul 2026 10:00:00 +0200</lastBuildDate>
+    <pubDate>Mon, 06 Jul 2026 10:00:00 +0200</pubDate>
     <ttl>1440</ttl>
     <image>
       <url>https://www.greenwateritalia.it/logo.webp</url>
@@ -21,6 +21,15 @@
       <link>https://www.greenwateritalia.it/</link>
     </image>
     <atom:link href="https://www.greenwateritalia.it/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Depuratore acqua per la casa: la guida completa 2026</title>
+      <link>https://www.greenwateritalia.it/blog/depuratore-acqua-casa.html</link>
+      <description>La guida di riferimento al depuratore d'acqua per la casa: tipi e tecnologie (microfiltrazione, ultrafiltrazione, osmosi inversa), costi reali, detrazione fiscale 50%, effetti sulla salute e installazione. Con i collegamenti a tutti gli approfondimenti del blog.</description>
+      <pubDate>Mon, 06 Jul 2026 10:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/depuratore-acqua-casa.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
 
     <item>
       <title>Acqua calcare e pelle: come l'acqua dura causa pelle secca e capelli opachi</title>
