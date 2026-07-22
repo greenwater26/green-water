@@ -19,6 +19,42 @@
     <meta name="theme-color" content="#2596be">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/dist/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://www.greenwateritalia.it/"},
+            {"@type":"ListItem","position":2,"name":"Prodotti","item":"https://www.greenwateritalia.it/prodotti.html"},
+            {"@type":"ListItem","position":3,"name":"Erogatore a rete idrica","item":"https://www.greenwateritalia.it/erogatore-rete-idrica.html"}
+          ]
+        },
+        {
+          "@type": "Product",
+          "@id": "https://www.greenwateritalia.it/erogatore-rete-idrica.html#greenquality",
+          "name": "GREENQUALITY — Erogatore a rete idrica",
+          "description": "Refrigeratore per ufficio a noleggio, collegato alla rete idrica. Eroga acqua naturale e fredda (28 L/h, 5 litri in continuo), con filtrazione microfine 8\" da 3.000 litri. Disponibile anche in versione GAS con acqua frizzante.",
+          "image": "https://www.greenwateritalia.it/immagini/erogatoreareteidrica.PNG",
+          "url": "https://www.greenwateritalia.it/erogatore-rete-idrica.html",
+          "brand": { "@type": "Brand", "name": "Green Water Italia" },
+          "category": "Erogatori a rete idrica"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"Serve un allaccio idraulico per installare l'erogatore?","acceptedAnswer":{"@type":"Answer","text":"Sì, il refrigeratore GREENQUALITY si collega direttamente alla rete idrica dell'ufficio. Il collegamento è a nostro carico ed è incluso nel canone di noleggio."}},
+            {"@type":"Question","name":"Quante persone può servire un erogatore a rete idrica?","acceptedAnswer":{"@type":"Answer","text":"Il refrigeratore GREENQUALITY è indicato per uffici fino a 30-40 persone. Per volumi più alti, valuta i totem e le colonnine della sezione Uffici/HoReCa."}},
+            {"@type":"Question","name":"Cosa include il canone di noleggio?","acceptedAnswer":{"@type":"Answer","text":"Il canone di 48 mesi include l'installazione, la manutenzione senza limiti di interventi, il cambio filtri e la sanificazione una volta all'anno, e l'analisi batteriologica su richiesta una volta all'anno."}},
+            {"@type":"Question","name":"Che differenza c'è tra la versione AC e la versione GAS?","acceptedAnswer":{"@type":"Answer","text":"Le due versioni hanno le stesse caratteristiche tecniche. La versione GAS aggiunge una bombola di CO2 e un carbonatore per erogare anche acqua frizzante, oltre a naturale e fredda."}},
+            {"@type":"Question","name":"Che differenza c'è tra erogatore a rete idrica ed erogatore a boccioni?","acceptedAnswer":{"@type":"Answer","text":"L'erogatore a rete idrica si collega alla rete idrica dell'ufficio ed eroga acqua in continuo, senza ricariche. L'erogatore a boccioni non richiede alcun collegamento idraulico ma va rifornito periodicamente con boccioni da 18 litri."}},
+            {"@type":"Question","name":"Quanto dura il contratto di noleggio?","acceptedAnswer":{"@type":"Answer","text":"Il noleggio ha una durata di 48 mesi, con installazione, manutenzione e cambio filtri inclusi nel canone per tutta la durata del contratto."}}
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         body { letter-spacing: -0.01em; }
@@ -339,6 +375,40 @@
             </div>
         </div>
         <p class="text-center text-sub text-sm mt-8">Non sai quale scegliere? Confrontalo con il nostro <a href="erogatore-boccioni.html" class="text-brand font-medium hover:underline">erogatore a boccioni</a>, oppure scopri i <a href="prodotti.html#uffici" class="text-brand font-medium hover:underline">totem e le colonnine ad osmosi per Uffici/HoReCa</a> per portate ancora più alte.</p>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────────────────────────── -->
+    <section id="faq-rete" class="py-16 border-t border-line/60">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-brand font-semibold text-xs tracking-widest uppercase text-center mb-3">Domande frequenti</p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-ink mb-10 tracking-tight">Erogatore a rete idrica: le domande più comuni</h2>
+            <div class="space-y-4">
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Serve un allaccio idraulico per installare l'erogatore?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Sì, il refrigeratore GREENQUALITY si collega direttamente alla rete idrica dell'ufficio. Il collegamento è a nostro carico ed è incluso nel canone di noleggio.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Quante persone può servire un erogatore a rete idrica?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Il refrigeratore GREENQUALITY è indicato per uffici fino a 30-40 persone. Per volumi più alti, valuta i totem e le colonnine della sezione Uffici/HoReCa.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Cosa include il canone di noleggio?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Il canone di 48 mesi include l'installazione, la manutenzione senza limiti di interventi, il cambio filtri e la sanificazione una volta all'anno, e l'analisi batteriologica su richiesta una volta all'anno.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Che differenza c'è tra la versione AC e la versione GAS?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Le due versioni hanno le stesse caratteristiche tecniche. La versione GAS aggiunge una bombola di CO2 e un carbonatore per erogare anche acqua frizzante, oltre a naturale e fredda.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Che differenza c'è tra erogatore a rete idrica ed erogatore a boccioni?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">L'erogatore a rete idrica si collega alla rete idrica dell'ufficio ed eroga acqua in continuo, senza ricariche. L'erogatore a boccioni non richiede alcun collegamento idraulico ma va rifornito periodicamente con boccioni da 18 litri.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Quanto dura il contratto di noleggio?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Il noleggio ha una durata di 48 mesi, con installazione, manutenzione e cambio filtri inclusi nel canone per tutta la durata del contratto.</p>
+                </details>
+            </div>
+        </div>
     </section>
 
 </main>
