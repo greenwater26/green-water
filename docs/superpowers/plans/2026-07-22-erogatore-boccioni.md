@@ -329,8 +329,10 @@ Run: `ls immagini/5940735430699453882.jpg immagini/5940735430699453880.jpg` (fro
 
 - [ ] **Step 3: Commit**
 
+The two images are currently untracked in git (uploaded by the user but never committed) — stage them along with the page:
+
 ```bash
-git add erogatore-boccioni.html
+git add erogatore-boccioni.html immagini/5940735430699453882.jpg immagini/5940735430699453880.jpg
 git commit -m "feat: aggiungi card prodotto colonnina e boccione"
 ```
 
@@ -486,8 +488,10 @@ Run: `grep -o 'id="[a-z-]*"' erogatore-boccioni.html | sort | uniq -d` — expec
 
 - [ ] **Step 3: Commit**
 
+The Vantaggi section's detail image is also currently untracked — stage it along with the page:
+
 ```bash
-git add erogatore-boccioni.html
+git add erogatore-boccioni.html immagini/5940735430699453949.jpg
 git commit -m "feat: aggiungi sezioni come funziona, vantaggi, servizio e confronto"
 ```
 
