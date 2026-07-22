@@ -19,6 +19,43 @@
     <meta name="theme-color" content="#2596be">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/dist/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://www.greenwateritalia.it/"},
+            {"@type":"ListItem","position":2,"name":"Prodotti","item":"https://www.greenwateritalia.it/prodotti.html"},
+            {"@type":"ListItem","position":3,"name":"Erogatore a boccioni","item":"https://www.greenwateritalia.it/erogatore-boccioni.html"}
+          ]
+        },
+        {
+          "@type": "Product",
+          "@id": "https://www.greenwateritalia.it/erogatore-boccioni.html#colonnina",
+          "name": "Colonnina Emax — Erogatore a boccioni",
+          "description": "Colonnina per ufficio a noleggio, eroga acqua naturale a temperatura ambiente e naturale refrigerata (20 L/h, 8-12°C) da boccioni intercambiabili da 18 litri. Nessun collegamento alla rete idrica.",
+          "image": "https://www.greenwateritalia.it/immagini/5940735430699453882.jpg",
+          "url": "https://www.greenwateritalia.it/erogatore-boccioni.html",
+          "brand": { "@type": "Brand", "name": "Green Water Italia" },
+          "category": "Erogatori a boccione"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"Quanto pesa un boccione da 18 litri e come avviene il cambio?","acceptedAnswer":{"@type":"Answer","text":"Un boccione pieno da 18 litri pesa circa 18-19 kg. Il cambio richiede pochi secondi: si solleva il boccione vuoto, si posiziona quello pieno con l'apposito attacco monouso e si rimuove il tappo anti-manomissione."}},
+            {"@type":"Question","name":"Quante persone può servire un erogatore a boccioni?","acceptedAnswer":{"@type":"Answer","text":"La colonnina Emax è indicata per uffici fino a circa 15 persone. Per numeri più alti, o per un utilizzo continuo senza sostituire boccioni, sono più adatti i totem ad osmosi della sezione Uffici/HoReCa."}},
+            {"@type":"Question","name":"Che differenza c'è tra erogatore a boccioni e sistema ad osmosi inversa collegato alla rete?","acceptedAnswer":{"@type":"Answer","text":"L'erogatore a boccioni non richiede alcun collegamento idraulico: si installa ovunque ci sia una presa elettrica ma va rifornito periodicamente. Un sistema ad osmosi inversa si allaccia alla rete idrica e filtra l'acqua in continuo, senza bisogno di ricariche, ma richiede un intervento di installazione tecnica."}},
+            {"@type":"Question","name":"Serve un allaccio idraulico per installare la colonnina?","acceptedAnswer":{"@type":"Answer","text":"No. La colonnina Emax funziona solo con corrente elettrica: non serve alcun collegamento alla rete idrica né opere murarie."}},
+            {"@type":"Question","name":"Cosa succede quando il boccione è vuoto?","acceptedAnswer":{"@type":"Answer","text":"Il boccione vuoto viene ritirato e avviato al riciclo in occasione della consegna successiva, secondo il programma di rifornimento concordato per il tuo ufficio."}},
+            {"@type":"Question","name":"Come funziona la manutenzione della colonnina?","acceptedAnswer":{"@type":"Answer","text":"La manutenzione della colonnina, con sanificazione dei componenti a contatto con l'acqua, è inclusa nel servizio di noleggio ed è programmata periodicamente dal nostro team."}},
+            {"@type":"Question","name":"Da dove proviene l'acqua dei boccioni?","acceptedAnswer":{"@type":"Answer","text":"L'acqua è minerale naturale, imbottigliata alla Fonte Bauda, a Calizzano (provincia di Savona), sulle Alpi Marittime, a oltre 1.000 metri di altitudine."}}
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         body { letter-spacing: -0.01em; }
@@ -325,6 +362,44 @@
             </div>
         </div>
         <p class="text-center text-sub text-sm mt-8">Hai bisogno di portate più alte? Scopri i <a href="prodotti.html#uffici" class="text-brand font-medium hover:underline">totem e le colonnine ad osmosi per Uffici/HoReCa</a>.</p>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────────────────────────── -->
+    <section id="faq-boccioni" class="py-16 border-t border-line/60">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-brand font-semibold text-xs tracking-widest uppercase text-center mb-3">Domande frequenti</p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-ink mb-10 tracking-tight">Erogatore a boccioni: le domande più comuni</h2>
+            <div class="space-y-4">
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Quanto pesa un boccione da 18 litri e come avviene il cambio?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Un boccione pieno da 18 litri pesa circa 18-19 kg. Il cambio richiede pochi secondi: si solleva il boccione vuoto, si posiziona quello pieno con l'apposito attacco monouso e si rimuove il tappo anti-manomissione.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Quante persone può servire un erogatore a boccioni?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">La colonnina Emax è indicata per uffici fino a circa 15 persone. Per numeri più alti, o per un utilizzo continuo senza sostituire boccioni, sono più adatti i totem ad osmosi della sezione Uffici/HoReCa.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Che differenza c'è tra erogatore a boccioni e sistema ad osmosi inversa collegato alla rete?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">L'erogatore a boccioni non richiede alcun collegamento idraulico: si installa ovunque ci sia una presa elettrica ma va rifornito periodicamente. Un sistema ad osmosi inversa si allaccia alla rete idrica e filtra l'acqua in continuo, senza bisogno di ricariche, ma richiede un intervento di installazione tecnica.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Serve un allaccio idraulico per installare la colonnina?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">No. La colonnina Emax funziona solo con corrente elettrica: non serve alcun collegamento alla rete idrica né opere murarie.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Cosa succede quando il boccione è vuoto?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">Il boccione vuoto viene ritirato e avviato al riciclo in occasione della consegna successiva, secondo il programma di rifornimento concordato per il tuo ufficio.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Come funziona la manutenzione della colonnina?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">La manutenzione della colonnina, con sanificazione dei componenti a contatto con l'acqua, è inclusa nel servizio di noleggio ed è programmata periodicamente dal nostro team.</p>
+                </details>
+                <details class="bg-surface rounded-2xl p-6">
+                    <summary class="font-medium text-ink cursor-pointer">Da dove proviene l'acqua dei boccioni?</summary>
+                    <p class="text-sub text-sm leading-relaxed mt-3">L'acqua è minerale naturale, imbottigliata alla Fonte Bauda, a Calizzano (provincia di Savona), sulle Alpi Marittime, a oltre 1.000 metri di altitudine.</p>
+                </details>
+            </div>
+        </div>
     </section>
 
 </main>
