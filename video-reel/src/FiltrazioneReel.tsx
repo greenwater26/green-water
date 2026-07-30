@@ -832,6 +832,108 @@ const Scene6: React.FC = () => {
   );
 };
 
+// ─── Scene 7: CTA ─────────────────────────────────────────────────────────────
+
+const Scene7: React.FC = () => {
+  const f = useCurrentFrame();
+
+  const pulse = interpolate(f, [0, 40, 80], [1, 1.02, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <AbsoluteFill
+      style={{
+        background:
+          "linear-gradient(180deg, #0e3a52 0%, #2596be 55%, #1b7a9c 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 30,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0, 20),
+          transform: `scale(${sc(f, 0, 22, 0.85)})`,
+          fontFamily: oswald,
+          fontSize: 60,
+          fontWeight: 700,
+          color: "rgba(255,255,255,0.85)",
+          textAlign: "center",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+        }}
+      >
+        GREEN WATER ITALIA
+      </div>
+
+      <div
+        style={{
+          width: 100,
+          height: 4,
+          background: "rgba(255,255,255,0.5)",
+          borderRadius: 2,
+          opacity: fi(f, 18),
+        }}
+      />
+
+      <div
+        style={{
+          opacity: fi(f, 28),
+          transform: `translateY(${su(f, 28)}px)`,
+          fontFamily: oswald,
+          fontSize: 68,
+          fontWeight: 700,
+          color: "#ffffff",
+          textAlign: "center",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          lineHeight: 1.15,
+        }}
+      >
+        SCOPRI QUALE FILTRO
+        <br />
+        TI SERVE
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 48),
+          transform: `translateY(${su(f, 48)}px) scale(${pulse})`,
+          background: "rgba(255,255,255,0.18)",
+          borderRadius: 20,
+          padding: "22px 56px",
+          fontFamily: inter,
+          fontSize: 46,
+          fontWeight: 700,
+          color: "#ffffff",
+          textAlign: "center",
+          border: "2.5px solid rgba(255,255,255,0.35)",
+          letterSpacing: "0.02em",
+        }}
+      >
+        greenwateritalia.it
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 65),
+          fontFamily: inter,
+          fontSize: 34,
+          fontWeight: 600,
+          color: "rgba(255,255,255,0.75)",
+          textAlign: "center",
+        }}
+      >
+        Consulenza gratuita · Analisi TDS inclusa
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -870,6 +972,11 @@ export const FiltrazioneReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={120}>
           <Scene6 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={90}>
+          <Scene7 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
