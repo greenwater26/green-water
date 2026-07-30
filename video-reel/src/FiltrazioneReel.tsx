@@ -328,6 +328,83 @@ const Scene2: React.FC = () => {
   );
 };
 
+// ─── Scene 3: ULTRAFILTRAZIONE ─────────────────────────────────────────────────
+
+const Scene3: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #08131a 0%, #090912 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 22,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 62,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+        }}
+      >
+        ULTRAFILTRAZIONE
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 14),
+          fontFamily: inter,
+          fontSize: 30,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+          marginBottom: 4,
+        }}
+      >
+        Sistema a 3 stadi
+      </div>
+
+      <Divider opacity={fi(f, 26)} color={BLUE} />
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 24,
+          width: "100%",
+          marginTop: 8,
+        }}
+      >
+        <FilterRow
+          frame={f}
+          delay={42}
+          text="Cloro e monocloramina"
+          level="yes"
+        />
+        <FilterRow frame={f} delay={62} text="Batteri e virus" level="yes" />
+        <FilterRow frame={f} delay={82} text="Metalli pesanti" level="no" />
+        <FilterRow
+          frame={f}
+          delay={102}
+          text="PFAS (solo parziale)"
+          level="partial"
+        />
+        <FilterRow frame={f} delay={122} text="Residuo fisso" level="no" />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -346,6 +423,11 @@ export const FiltrazioneReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene2 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={150}>
+          <Scene3 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
