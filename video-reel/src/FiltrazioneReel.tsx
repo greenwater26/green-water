@@ -131,6 +131,141 @@ const FilterRow: React.FC<{
   </div>
 );
 
+const TableCell: React.FC<{ level: Level }> = ({ level }) => (
+  <div
+    style={{
+      flex: 1,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <div
+      style={{
+        width: 42,
+        height: 42,
+        borderRadius: "50%",
+        background: `${LEVEL_COLOR[level]}22`,
+        border: `2.5px solid ${LEVEL_COLOR[level]}`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: inter,
+        fontSize: 20,
+        fontWeight: 700,
+        color: LEVEL_COLOR[level],
+      }}
+    >
+      {SYMBOL[level]}
+    </div>
+  </div>
+);
+
+const TableHeader: React.FC<{ frame: number }> = ({ frame }) => (
+  <div
+    style={{
+      opacity: fi(frame, 14),
+      display: "flex",
+      alignItems: "flex-end",
+      width: "100%",
+      padding: "0 12px 10px",
+    }}
+  >
+    <div style={{ flex: 1.5 }} />
+    <div
+      style={{
+        flex: 1,
+        fontFamily: inter,
+        fontSize: 16,
+        fontWeight: 700,
+        color: MUTED,
+        textAlign: "center",
+        textTransform: "uppercase",
+        letterSpacing: "0.03em",
+        lineHeight: 1.2,
+      }}
+    >
+      Carbon
+      <br />
+      Block
+    </div>
+    <div
+      style={{
+        flex: 1,
+        fontFamily: inter,
+        fontSize: 16,
+        fontWeight: 700,
+        color: MUTED,
+        textAlign: "center",
+        textTransform: "uppercase",
+        letterSpacing: "0.03em",
+        lineHeight: 1.2,
+      }}
+    >
+      Ultra-
+      <br />
+      filtr.
+    </div>
+    <div
+      style={{
+        flex: 1,
+        fontFamily: inter,
+        fontSize: 16,
+        fontWeight: 700,
+        color: BLUE,
+        textAlign: "center",
+        textTransform: "uppercase",
+        letterSpacing: "0.03em",
+        lineHeight: 1.2,
+      }}
+    >
+      Osmosi
+      <br />
+      Inversa
+    </div>
+  </div>
+);
+
+const TableRow: React.FC<{
+  label: string;
+  carbon: Level;
+  ultra: Level;
+  osmosi: Level;
+  delay: number;
+  frame: number;
+}> = ({ label, carbon, ultra, osmosi, delay, frame }) => (
+  <div
+    style={{
+      opacity: fi(frame, delay),
+      transform: `translateX(${su(frame, delay, 18, 40)}px)`,
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+      background: "rgba(255,255,255,0.05)",
+      border: "1px solid rgba(255,255,255,0.08)",
+      borderRadius: 16,
+      padding: "14px 12px",
+    }}
+  >
+    <div
+      style={{
+        flex: 1.5,
+        fontFamily: inter,
+        fontSize: 24,
+        fontWeight: 600,
+        color: "#ffffff",
+        paddingLeft: 6,
+        lineHeight: 1.15,
+      }}
+    >
+      {label}
+    </div>
+    <TableCell level={carbon} />
+    <TableCell level={ultra} />
+    <TableCell level={osmosi} />
+  </div>
+);
+
 // ─── Scene 1: HOOK ────────────────────────────────────────────────────────────
 
 const Scene1: React.FC = () => {
@@ -529,6 +664,95 @@ const Scene4: React.FC = () => {
   );
 };
 
+// ─── Scene 5: TABELLA COMPARATIVA ──────────────────────────────────────────────
+
+const Scene5: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #061620 0%, #040a12 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 46px",
+        gap: 18,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 58,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+          marginBottom: 6,
+        }}
+      >
+        IL CONFRONTO
+      </div>
+
+      <div style={{ width: "100%" }}>
+        <TableHeader frame={f} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            width: "100%",
+          }}
+        >
+          <TableRow
+            frame={f}
+            delay={30}
+            label="Cloro / odori"
+            carbon="yes"
+            ultra="yes"
+            osmosi="yes"
+          />
+          <TableRow
+            frame={f}
+            delay={56}
+            label="Batteri e virus"
+            carbon="partial"
+            ultra="yes"
+            osmosi="yes"
+          />
+          <TableRow
+            frame={f}
+            delay={82}
+            label="Metalli pesanti"
+            carbon="no"
+            ultra="no"
+            osmosi="yes"
+          />
+          <TableRow
+            frame={f}
+            delay={108}
+            label="PFAS"
+            carbon="no"
+            ultra="partial"
+            osmosi="yes"
+          />
+          <TableRow
+            frame={f}
+            delay={134}
+            label="Residuo fisso"
+            carbon="no"
+            ultra="no"
+            osmosi="yes"
+          />
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -557,6 +781,11 @@ export const FiltrazioneReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={165}>
           <Scene4 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={180}>
+          <Scene5 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>

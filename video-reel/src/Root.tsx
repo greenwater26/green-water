@@ -26,7 +26,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="FiltrazioneReel"
         component={FiltrazioneReel}
-        durationInFrames={570}
+        durationInFrames={735}
         fps={30}
         width={1080}
         height={1920}
