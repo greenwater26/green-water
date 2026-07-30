@@ -405,6 +405,130 @@ const Scene3: React.FC = () => {
   );
 };
 
+// ─── Scene 4: OSMOSI INVERSA ────────────────────────────────────────────────────
+
+const Scene4: React.FC = () => {
+  const f = useCurrentFrame();
+
+  const residuo = Math.round(
+    interpolate(f, [80, 145], [300, 20], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+      easing: Easing.bezier(0.25, 0.46, 0.45, 0.94),
+    })
+  );
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #090912 0%, #061620 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 16,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 66,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+        }}
+      >
+        OSMOSI INVERSA
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 16),
+          fontFamily: inter,
+          fontSize: 28,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+          marginBottom: 6,
+        }}
+      >
+        Membrana 0,001 micron — 1000 volte più fitta
+      </div>
+
+      <Divider opacity={fi(f, 34)} color={GREEN} />
+
+      <div
+        style={{
+          opacity: fi(f, 44),
+          transform: `translateY(${su(f, 44)}px)`,
+          fontFamily: inter,
+          fontSize: 34,
+          fontWeight: 700,
+          color: GREEN,
+          textAlign: "center",
+          marginTop: 4,
+        }}
+      >
+        Rimuove tutto: cloro, batteri, virus,
+        <br />
+        metalli pesanti, PFAS
+      </div>
+
+      <div
+        style={{ position: "relative", margin: "18px 0 0", opacity: fi(f, 74) }}
+      >
+        <div
+          style={{
+            fontFamily: inter,
+            fontSize: 28,
+            fontWeight: 600,
+            color: MUTED,
+            textAlign: "center",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            marginBottom: 6,
+          }}
+        >
+          Residuo fisso
+        </div>
+        <div
+          style={{
+            fontFamily: oswald,
+            fontSize: 150,
+            fontWeight: 700,
+            color: BLUE,
+            lineHeight: 1,
+            textAlign: "center",
+            textShadow: "0 0 70px rgba(37,150,190,0.5)",
+          }}
+        >
+          {residuo} <span style={{ fontSize: 60 }}>mg/L</span>
+        </div>
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 150, 15),
+          transform: `scale(${sc(f, 150, 15, 0.6)})`,
+          fontFamily: oswald,
+          fontSize: 56,
+          fontWeight: 700,
+          color: GOLD,
+          textAlign: "center",
+          marginTop: 10,
+          textShadow: "0 0 50px rgba(255,184,0,0.5)",
+        }}
+      >
+        −93%
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -428,6 +552,11 @@ export const FiltrazioneReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene3 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={165}>
+          <Scene4 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
