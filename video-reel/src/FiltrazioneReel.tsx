@@ -753,6 +753,85 @@ const Scene5: React.FC = () => {
   );
 };
 
+// ─── Scene 6: VERDETTO ─────────────────────────────────────────────────────────
+
+const Scene6: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #040a12 0%, #04120e 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 24,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 56,
+          fontWeight: 700,
+          color: MUTED,
+          textTransform: "uppercase",
+          letterSpacing: "0.05em",
+          textAlign: "center",
+        }}
+      >
+        VUOI LA SOLUZIONE COMPLETA?
+      </div>
+
+      <Divider opacity={fi(f, 20)} color={GREEN} />
+
+      <div
+        style={{
+          opacity: fi(f, 30, 20),
+          transform: `scale(${sc(f, 30, 22, 0.6)})`,
+          position: "relative",
+          marginTop: 10,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: oswald,
+            fontSize: 100,
+            fontWeight: 700,
+            color: GREEN,
+            textAlign: "center",
+            textTransform: "uppercase",
+            letterSpacing: "0.01em",
+            textShadow: "0 0 80px rgba(53,208,122,0.55)",
+            lineHeight: 1.05,
+          }}
+        >
+          OSMOSI INVERSA
+        </div>
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 70),
+          transform: `translateY(${su(f, 70)}px)`,
+          fontFamily: inter,
+          fontSize: 32,
+          fontWeight: 600,
+          color: "#ffffff",
+          textAlign: "center",
+          marginTop: 10,
+        }}
+      >
+        Zero PFAS · Zero metalli pesanti
+        <br />
+        Acqua leggera e pura
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -786,6 +865,11 @@ export const FiltrazioneReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={180}>
           <Scene5 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={120}>
+          <Scene6 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
