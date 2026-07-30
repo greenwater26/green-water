@@ -6,7 +6,8 @@ import {
   staticFile,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TransitionSeries } from "@remotion/transitions";
+import { TransitionSeries, linearTiming } from "@remotion/transitions";
+import { fade } from "@remotion/transitions/fade";
 import { loadFont } from "@remotion/google-fonts/Oswald";
 import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
 
@@ -22,6 +23,9 @@ const { fontFamily: inter } = loadInter("normal", {
 
 // ─── Palette ──────────────────────────────────────────────────────────────────
 
+const BLUE = "#2596be";
+const GOLD = "#FFB800";
+const GREEN = "#35d07a";
 const RED = "#ff4040";
 const MUTED = "#8090b0";
 
@@ -52,6 +56,80 @@ function sc(frame: number, start: number, dur = 22, from = 0.6): number {
     easing: SPRING,
   });
 }
+
+// ─── Shared elements ──────────────────────────────────────────────────────────
+
+const Divider: React.FC<{ opacity: number; color?: string }> = ({
+  opacity,
+  color = BLUE,
+}) => (
+  <div
+    style={{
+      width: "100%",
+      height: 3,
+      background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
+      opacity,
+      margin: "8px 0",
+    }}
+  />
+);
+
+type Level = "yes" | "partial" | "no";
+
+const SYMBOL: Record<Level, string> = { yes: "✓", partial: "~", no: "✗" };
+const LEVEL_COLOR: Record<Level, string> = {
+  yes: GREEN,
+  partial: GOLD,
+  no: RED,
+};
+
+const FilterRow: React.FC<{
+  text: string;
+  level: Level;
+  delay: number;
+  frame: number;
+}> = ({ text, level, delay, frame }) => (
+  <div
+    style={{
+      opacity: fi(frame, delay),
+      transform: `translateY(${su(frame, delay, 20)}px)`,
+      display: "flex",
+      alignItems: "center",
+      gap: 22,
+      width: "100%",
+    }}
+  >
+    <div
+      style={{
+        width: 50,
+        height: 50,
+        borderRadius: "50%",
+        background: `${LEVEL_COLOR[level]}22`,
+        border: `2.5px solid ${LEVEL_COLOR[level]}`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        fontFamily: inter,
+        fontSize: 26,
+        fontWeight: 700,
+        color: LEVEL_COLOR[level],
+      }}
+    >
+      {SYMBOL[level]}
+    </div>
+    <div
+      style={{
+        fontFamily: inter,
+        fontSize: 34,
+        fontWeight: 600,
+        color: "#ffffff",
+      }}
+    >
+      {text}
+    </div>
+  </div>
+);
 
 // ─── Scene 1: HOOK ────────────────────────────────────────────────────────────
 
@@ -178,7 +256,82 @@ const Scene1: React.FC = () => {
   );
 };
 
+// ─── Scene 2: MICROFILTRAZIONE ─────────────────────────────────────────────────
+
+const Scene2: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #0c0c20 0%, #08131a 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 22,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 66,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+        }}
+      >
+        MICROFILTRAZIONE
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 14),
+          fontFamily: inter,
+          fontSize: 30,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+          marginBottom: 4,
+        }}
+      >
+        Carbon Block
+      </div>
+
+      <Divider opacity={fi(f, 26)} />
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 24,
+          width: "100%",
+          marginTop: 8,
+        }}
+      >
+        <FilterRow frame={f} delay={42} text="Cloro e odore" level="yes" />
+        <FilterRow
+          frame={f}
+          delay={62}
+          text="Alcuni batteri (parziale)"
+          level="partial"
+        />
+        <FilterRow frame={f} delay={82} text="Metalli pesanti" level="no" />
+        <FilterRow frame={f} delay={102} text="PFAS" level="no" />
+        <FilterRow frame={f} delay={122} text="Residuo fisso" level="no" />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
+
+const TRANS_DUR = 15;
+const timing = linearTiming({ durationInFrames: TRANS_DUR });
 
 export const FiltrazioneReel: React.FC = () => {
   return (
@@ -188,6 +341,11 @@ export const FiltrazioneReel: React.FC = () => {
       <TransitionSeries>
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene1 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={150}>
+          <Scene2 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
