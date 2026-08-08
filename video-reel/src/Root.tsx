@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { WaterReel } from "./Composition";
 import { DetrazioneReel } from "./DetrazioneReel";
 import { FiltrazioneReel } from "./FiltrazioneReel";
+import { PfasReel } from "./PfasReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -27,6 +28,14 @@ export const RemotionRoot: React.FC = () => {
         id="FiltrazioneReel"
         component={FiltrazioneReel}
         durationInFrames={915}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="PfasReel"
+        component={PfasReel}
+        durationInFrames={150}
         fps={30}
         width={1080}
         height={1920}
