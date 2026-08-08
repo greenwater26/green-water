@@ -24,6 +24,8 @@ const { fontFamily: inter } = loadInter("normal", {
 // ─── Palette ──────────────────────────────────────────────────────────────────
 
 const BLUE = "#2596be";
+const GOLD = "#FFB800";
+const GREEN = "#35d07a";
 const RED = "#ff4040";
 const MUTED = "#8090b0";
 
@@ -71,6 +73,72 @@ const Divider: React.FC<{ opacity: number; color?: string }> = ({
     }}
   />
 );
+
+const RegionBar: React.FC<{
+  frame: number;
+  delay: number;
+  region: string;
+  status: string;
+  pct: number;
+  color: string;
+}> = ({ frame, delay, region, status, pct, color }) => {
+  const fill = interpolate(frame, [delay, delay + 26], [0, pct], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.25, 0.46, 0.45, 0.94),
+  });
+
+  return (
+    <div style={{ opacity: fi(frame, delay), width: "100%" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "baseline",
+          marginBottom: 8,
+        }}
+      >
+        <span
+          style={{
+            fontFamily: inter,
+            fontSize: 22,
+            fontWeight: 600,
+            color: "#ffffff",
+          }}
+        >
+          {region}
+        </span>
+        <span
+          style={{
+            fontFamily: inter,
+            fontSize: 18,
+            fontWeight: 700,
+            color,
+          }}
+        >
+          {status}
+        </span>
+      </div>
+      <div
+        style={{
+          width: "100%",
+          height: 22,
+          background: "rgba(255,255,255,0.08)",
+          borderRadius: 11,
+        }}
+      >
+        <div
+          style={{
+            width: `${fill}%`,
+            height: 22,
+            background: color,
+            borderRadius: 11,
+          }}
+        />
+      </div>
+    </div>
+  );
+};
 
 // ─── Scene 1: HOOK ────────────────────────────────────────────────────────────
 
@@ -315,6 +383,98 @@ const Scene2: React.FC = () => {
   );
 };
 
+// ─── Scene 3: DOVE SI TROVANO ──────────────────────────────────────────────────
+
+const Scene3: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #150a1c 0%, #0c0f1c 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 70px",
+        gap: 20,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 50,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+          marginBottom: 10,
+        }}
+      >
+        DOVE SI TROVANO IN ITALIA
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 24,
+          width: "100%",
+        }}
+      >
+        <RegionBar
+          frame={f}
+          delay={30}
+          region="Veneto (PFAS Valley)"
+          status="Criticità elevata"
+          pct={95}
+          color={RED}
+        />
+        <RegionBar
+          frame={f}
+          delay={58}
+          region="Piemonte (aree TO/AL)"
+          status="Moderata"
+          pct={45}
+          color={GOLD}
+        />
+        <RegionBar
+          frame={f}
+          delay={86}
+          region="Lombardia (basi AFFF)"
+          status="Localizzata"
+          pct={30}
+          color={GOLD}
+        />
+        <RegionBar
+          frame={f}
+          delay={114}
+          region="Resto d'Italia"
+          status="Sotto i limiti EU"
+          pct={15}
+          color={GREEN}
+        />
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 128),
+          fontFamily: inter,
+          fontSize: 18,
+          fontWeight: 500,
+          color: MUTED,
+          textAlign: "center",
+          marginTop: 10,
+        }}
+      >
+        Dati ISPRA 2023 / ISS
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -333,6 +493,11 @@ export const PfasReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene2 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={150}>
+          <Scene3 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
