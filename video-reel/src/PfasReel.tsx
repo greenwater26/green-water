@@ -625,6 +625,19 @@ const Scene4: React.FC = () => {
         I PFAS passano nel latte materno.
       </div>
 
+      <div
+        style={{
+          opacity: fi(f, 24),
+          fontFamily: inter,
+          fontSize: 20,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+        }}
+      >
+        Fonte: EFSA 2020
+      </div>
+
       <Divider opacity={fi(f, 30)} color={RED} />
 
       <div
@@ -756,7 +769,7 @@ const Scene5: React.FC = () => {
             textShadow: "0 0 60px rgba(37,150,190,0.5)",
           }}
         >
-          {limit1.toFixed(2)} <span style={{ fontSize: 38 }}>µg/L</span>
+          {limit1.toFixed(2).replace(".", ",")} <span style={{ fontSize: 38 }}>µg/L</span>
         </div>
       </div>
 
@@ -784,14 +797,14 @@ const Scene5: React.FC = () => {
             textShadow: "0 0 60px rgba(37,150,190,0.5)",
           }}
         >
-          {limit2.toFixed(2)} <span style={{ fontSize: 38 }}>µg/L</span>
+          {limit2.toFixed(2).replace(".", ",")} <span style={{ fontSize: 38 }}>µg/L</span>
         </div>
       </div>
 
       <div
         style={{
-          opacity: fi(f, 132, 15),
-          transform: `scale(${sc(f, 132, 15, 0.6)})`,
+          opacity: fi(f, 118, 15),
+          transform: `scale(${sc(f, 118, 15, 0.6)})`,
           fontFamily: oswald,
           fontSize: 42,
           fontWeight: 700,
