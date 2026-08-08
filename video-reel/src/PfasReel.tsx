@@ -607,6 +607,141 @@ const Scene4: React.FC = () => {
   );
 };
 
+// ─── Scene 5: NUOVI LIMITI EU ──────────────────────────────────────────────────
+
+const Scene5: React.FC = () => {
+  const f = useCurrentFrame();
+
+  const limit1 = interpolate(f, [46, 84], [0, 0.01], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.25, 0.46, 0.45, 0.94),
+  });
+
+  const limit2 = interpolate(f, [96, 128], [0, 0.1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.25, 0.46, 0.45, 0.94),
+  });
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #1c0c14 0%, #0a1420 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 16,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 56,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+        }}
+      >
+        NUOVI LIMITI EU
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 16),
+          fontFamily: inter,
+          fontSize: 26,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+          marginBottom: 6,
+        }}
+      >
+        D.Lgs. 18/2023 — in vigore dal 2026
+      </div>
+
+      <Divider opacity={fi(f, 30)} />
+
+      <div style={{ opacity: fi(f, 40), textAlign: "center", marginTop: 4 }}>
+        <div
+          style={{
+            fontFamily: inter,
+            fontSize: 22,
+            fontWeight: 600,
+            color: MUTED,
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            marginBottom: 4,
+          }}
+        >
+          Per ogni singolo PFAS
+        </div>
+        <div
+          style={{
+            fontFamily: oswald,
+            fontSize: 84,
+            fontWeight: 700,
+            color: BLUE,
+            lineHeight: 1,
+            textShadow: "0 0 60px rgba(37,150,190,0.5)",
+          }}
+        >
+          {limit1.toFixed(2)} <span style={{ fontSize: 38 }}>µg/L</span>
+        </div>
+      </div>
+
+      <div style={{ opacity: fi(f, 90), textAlign: "center", marginTop: 14 }}>
+        <div
+          style={{
+            fontFamily: inter,
+            fontSize: 22,
+            fontWeight: 600,
+            color: MUTED,
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            marginBottom: 4,
+          }}
+        >
+          Somma di 20 PFAS
+        </div>
+        <div
+          style={{
+            fontFamily: oswald,
+            fontSize: 84,
+            fontWeight: 700,
+            color: BLUE,
+            lineHeight: 1,
+            textShadow: "0 0 60px rgba(37,150,190,0.5)",
+          }}
+        >
+          {limit2.toFixed(2)} <span style={{ fontSize: 38 }}>µg/L</span>
+        </div>
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 132, 15),
+          transform: `scale(${sc(f, 132, 15, 0.6)})`,
+          fontFamily: oswald,
+          fontSize: 42,
+          fontWeight: 700,
+          color: GOLD,
+          textAlign: "center",
+          marginTop: 14,
+          textShadow: "0 0 50px rgba(255,184,0,0.5)",
+        }}
+      >
+        TRA I PIÙ SEVERI AL MONDO
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -635,6 +770,11 @@ export const PfasReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene4 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={150}>
+          <Scene5 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
