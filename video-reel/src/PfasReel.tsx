@@ -140,6 +140,44 @@ const RegionBar: React.FC<{
   );
 };
 
+const RiskItem: React.FC<{ text: string; delay: number; frame: number }> = ({
+  text,
+  delay,
+  frame,
+}) => (
+  <div
+    style={{
+      opacity: fi(frame, delay),
+      transform: `translateY(${su(frame, delay, 20)}px)`,
+      display: "flex",
+      alignItems: "center",
+      gap: 20,
+      width: "100%",
+    }}
+  >
+    <div
+      style={{
+        width: 14,
+        height: 14,
+        borderRadius: "50%",
+        background: RED,
+        boxShadow: `0 0 14px ${RED}`,
+        flexShrink: 0,
+      }}
+    />
+    <div
+      style={{
+        fontFamily: inter,
+        fontSize: 32,
+        fontWeight: 600,
+        color: "#ffffff",
+      }}
+    >
+      {text}
+    </div>
+  </div>
+);
+
 // ─── Scene 1: HOOK ────────────────────────────────────────────────────────────
 
 const Scene1: React.FC = () => {
@@ -475,6 +513,100 @@ const Scene3: React.FC = () => {
   );
 };
 
+// ─── Scene 4: RISCHI PER LA SALUTE ─────────────────────────────────────────────
+
+const Scene4: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #0c0f1c 0%, #1c0c14 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 22,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 58,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+        }}
+      >
+        RISCHI PER LA SALUTE
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 16),
+          transform: `translateY(${su(f, 16)}px)`,
+          fontFamily: inter,
+          fontSize: 30,
+          fontWeight: 700,
+          color: RED,
+          textAlign: "center",
+          marginBottom: 4,
+        }}
+      >
+        I PFAS passano nel latte materno.
+      </div>
+
+      <Divider opacity={fi(f, 30)} color={RED} />
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 22,
+          width: "100%",
+          marginTop: 6,
+        }}
+      >
+        <RiskItem
+          frame={f}
+          delay={44}
+          text="Riduzione risposta immunitaria ai vaccini"
+        />
+        <RiskItem
+          frame={f}
+          delay={64}
+          text="Alterazioni dello sviluppo tiroideo"
+        />
+        <RiskItem
+          frame={f}
+          delay={84}
+          text="Rischio tumori renali e testicolari (PFOA)"
+        />
+        <RiskItem frame={f} delay={104} text="Complicanze in gravidanza" />
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 128),
+          transform: `translateY(${su(f, 128)}px)`,
+          fontFamily: inter,
+          fontSize: 34,
+          fontWeight: 700,
+          color: "#ffffff",
+          textAlign: "center",
+          marginTop: 10,
+        }}
+      >
+        I bambini sono i più esposti.
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -498,6 +630,11 @@ export const PfasReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene3 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={150}>
+          <Scene4 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
