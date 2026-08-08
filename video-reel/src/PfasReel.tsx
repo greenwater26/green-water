@@ -178,6 +178,71 @@ const RiskItem: React.FC<{ text: string; delay: number; frame: number }> = ({
   </div>
 );
 
+const TechRow: React.FC<{
+  tech: string;
+  pct: string;
+  color: string;
+  note?: string;
+  delay: number;
+  frame: number;
+}> = ({ tech, pct, color, note, delay, frame }) => (
+  <div
+    style={{
+      opacity: fi(frame, delay),
+      transform: `translateY(${su(frame, delay, 20)}px)`,
+      display: "flex",
+      flexDirection: "column",
+      gap: 6,
+      width: "100%",
+      background: "rgba(255,255,255,0.05)",
+      border: `1.5px solid ${color}66`,
+      borderRadius: 18,
+      padding: "18px 24px",
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      <span
+        style={{
+          fontFamily: inter,
+          fontSize: 28,
+          fontWeight: 600,
+          color: "#ffffff",
+        }}
+      >
+        {tech}
+      </span>
+      <span
+        style={{
+          fontFamily: oswald,
+          fontSize: 36,
+          fontWeight: 700,
+          color,
+        }}
+      >
+        {pct}
+      </span>
+    </div>
+    {note && (
+      <div
+        style={{
+          fontFamily: inter,
+          fontSize: 18,
+          fontWeight: 500,
+          color: MUTED,
+        }}
+      >
+        {note}
+      </div>
+    )}
+  </div>
+);
+
 // ─── Scene 1: HOOK ────────────────────────────────────────────────────────────
 
 const Scene1: React.FC = () => {
@@ -742,6 +807,96 @@ const Scene5: React.FC = () => {
   );
 };
 
+// ─── Scene 6: COSA FUNZIONA DAVVERO ────────────────────────────────────────────
+
+const Scene6: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #0a1420 0%, #061620 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 60px",
+        gap: 18,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 52,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+          marginBottom: 4,
+        }}
+      >
+        COSA FUNZIONA DAVVERO
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 16,
+          width: "100%",
+        }}
+      >
+        <TechRow
+          frame={f}
+          delay={30}
+          tech="Osmosi inversa"
+          pct=">95%"
+          color={GREEN}
+        />
+        <TechRow
+          frame={f}
+          delay={60}
+          tech="Carbone attivo granulare"
+          pct="70-90%"
+          color={GOLD}
+        />
+        <TechRow
+          frame={f}
+          delay={90}
+          tech="Filtro a brocca"
+          pct="30-50%"
+          color={GOLD}
+        />
+        <TechRow
+          frame={f}
+          delay={120}
+          tech="Bollitura"
+          pct="0%"
+          color={RED}
+          note="Concentra i PFAS, non li elimina"
+        />
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 155),
+          transform: `translateY(${su(f, 155)}px)`,
+          fontFamily: inter,
+          fontSize: 30,
+          fontWeight: 700,
+          color: GREEN,
+          textAlign: "center",
+          marginTop: 12,
+        }}
+      >
+        Solo l'osmosi inversa è affidabile su tutti i PFAS.
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
 
 const TRANS_DUR = 15;
@@ -775,6 +930,11 @@ export const PfasReel: React.FC = () => {
 
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene5 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={180}>
+          <Scene6 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
