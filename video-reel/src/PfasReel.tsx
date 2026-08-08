@@ -6,7 +6,8 @@ import {
   staticFile,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TransitionSeries } from "@remotion/transitions";
+import { TransitionSeries, linearTiming } from "@remotion/transitions";
+import { fade } from "@remotion/transitions/fade";
 import { loadFont } from "@remotion/google-fonts/Oswald";
 import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
 
@@ -22,6 +23,7 @@ const { fontFamily: inter } = loadInter("normal", {
 
 // ─── Palette ──────────────────────────────────────────────────────────────────
 
+const BLUE = "#2596be";
 const RED = "#ff4040";
 const MUTED = "#8090b0";
 
@@ -52,6 +54,23 @@ function sc(frame: number, start: number, dur = 22, from = 0.6): number {
     easing: SPRING,
   });
 }
+
+// ─── Shared elements ──────────────────────────────────────────────────────────
+
+const Divider: React.FC<{ opacity: number; color?: string }> = ({
+  opacity,
+  color = BLUE,
+}) => (
+  <div
+    style={{
+      width: "100%",
+      height: 3,
+      background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
+      opacity,
+      margin: "8px 0",
+    }}
+  />
+);
 
 // ─── Scene 1: HOOK ────────────────────────────────────────────────────────────
 
@@ -176,7 +195,130 @@ const Scene1: React.FC = () => {
   );
 };
 
+// ─── Scene 2: COSA SONO ────────────────────────────────────────────────────────
+
+const Scene2: React.FC = () => {
+  const f = useCurrentFrame();
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: "linear-gradient(180deg, #170a10 0%, #150a1c 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "0 80px",
+        gap: 22,
+      }}
+    >
+      <div
+        style={{
+          opacity: fi(f, 0),
+          transform: `translateY(${su(f, 0)}px)`,
+          fontFamily: oswald,
+          fontSize: 64,
+          fontWeight: 700,
+          color: "#ffffff",
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          textAlign: "center",
+        }}
+      >
+        FOREVER CHEMICALS
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 14),
+          fontFamily: inter,
+          fontSize: 28,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+          marginBottom: 4,
+        }}
+      >
+        Oltre 4.700 sostanze chimiche
+      </div>
+
+      <Divider opacity={fi(f, 26)} />
+
+      <div
+        style={{
+          opacity: fi(f, 44),
+          transform: `translateY(${su(f, 44)}px)`,
+          fontFamily: inter,
+          fontSize: 32,
+          fontWeight: 600,
+          color: "#ffffff",
+          textAlign: "center",
+          marginTop: 6,
+        }}
+      >
+        Il legame chimico più forte mai creato.
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 66),
+          transform: `translateY(${su(f, 66)}px)`,
+          fontFamily: inter,
+          fontSize: 30,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+        }}
+      >
+        Non si degradano MAI — né nell'ambiente, né nel corpo.
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 98, 20),
+          transform: `scale(${sc(f, 98, 20, 0.6)})`,
+          marginTop: 18,
+          background: `${RED}22`,
+          border: `2.5px solid ${RED}`,
+          borderRadius: 20,
+          padding: "18px 34px",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: oswald,
+            fontSize: 46,
+            fontWeight: 700,
+            color: RED,
+            textAlign: "center",
+            letterSpacing: "0.02em",
+            textTransform: "uppercase",
+          }}
+        >
+          PFOA = CANCEROGENO
+        </div>
+      </div>
+
+      <div
+        style={{
+          opacity: fi(f, 124),
+          fontFamily: inter,
+          fontSize: 22,
+          fontWeight: 600,
+          color: MUTED,
+          textAlign: "center",
+          marginTop: 6,
+        }}
+      >
+        Classificazione IARC 2023 — Gruppo 1
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // ─── Main composition ─────────────────────────────────────────────────────────
+
+const TRANS_DUR = 15;
+const timing = linearTiming({ durationInFrames: TRANS_DUR });
 
 export const PfasReel: React.FC = () => {
   return (
@@ -186,6 +328,11 @@ export const PfasReel: React.FC = () => {
       <TransitionSeries>
         <TransitionSeries.Sequence durationInFrames={150}>
           <Scene1 />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+
+        <TransitionSeries.Sequence durationInFrames={150}>
+          <Scene2 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
