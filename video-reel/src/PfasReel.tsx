@@ -1023,37 +1023,37 @@ export const PfasReel: React.FC = () => {
       <Audio src={staticFile("bold-statement.mp3")} volume={0.28} />
 
       <TransitionSeries>
-        <TransitionSeries.Sequence durationInFrames={150}>
+        <TransitionSeries.Sequence durationInFrames={220}>
           <Scene1 />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition presentation={fade()} timing={timing} />
 
-        <TransitionSeries.Sequence durationInFrames={150}>
+        <TransitionSeries.Sequence durationInFrames={230}>
           <Scene2 />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition presentation={fade()} timing={timing} />
 
-        <TransitionSeries.Sequence durationInFrames={150}>
+        <TransitionSeries.Sequence durationInFrames={240}>
           <Scene3 />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition presentation={fade()} timing={timing} />
 
-        <TransitionSeries.Sequence durationInFrames={150}>
+        <TransitionSeries.Sequence durationInFrames={260}>
           <Scene4 />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition presentation={fade()} timing={timing} />
 
-        <TransitionSeries.Sequence durationInFrames={150}>
+        <TransitionSeries.Sequence durationInFrames={240}>
           <Scene5 />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition presentation={fade()} timing={timing} />
 
-        <TransitionSeries.Sequence durationInFrames={180}>
+        <TransitionSeries.Sequence durationInFrames={280}>
           <Scene6 />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition presentation={fade()} timing={timing} />
 
-        <TransitionSeries.Sequence durationInFrames={90}>
+        <TransitionSeries.Sequence durationInFrames={130}>
           <Scene7 />
         </TransitionSeries.Sequence>
       </TransitionSeries>
