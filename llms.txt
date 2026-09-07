@@ -44,6 +44,7 @@ Un impianto Green Water Italia consente di:
 - [Glossario](https://www.greenwateritalia.it/glossario.html): definizioni tecniche su osmosi inversa, residuo fisso, TDS, PFAS e altri termini
 - [Guida all'osmosi inversa](https://www.greenwateritalia.it/guida-osmosi-inversa.html): guida completa al funzionamento degli impianti ad osmosi inversa
 - [Contaminanti nell'acqua](https://www.greenwateritalia.it/contaminanti-acqua.html): approfondimento su nitrati, PFAS, microplastiche, cloro e metalli pesanti nell'acqua italiana
+- [Residuo fisso delle acque in bottiglia](https://www.greenwateritalia.it/residuo-fisso-acque-in-bottiglia.html): tabella comparativa del residuo fisso, sodio, calcio e magnesio di oltre 20 marche di acqua minerale italiana, con guida alla scelta per neonati, reni, sodio, calcio e sport
 - [Acqua e bambini](https://www.greenwateritalia.it/acqua-bambini-famiglia.html): guida alla sicurezza dell'acqua filtrata per neonati e bambini
 
 ---
