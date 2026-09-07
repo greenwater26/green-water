@@ -110,7 +110,13 @@
 <!-- HEADER -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-line">
   <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-    <a href="/" class="font-semibold text-ink text-lg tracking-tight">Green Water Italia</a>
+    <div class="flex items-center gap-3">
+      <a href="/" class="font-semibold text-ink text-lg tracking-tight">Green Water Italia</a>
+      <span class="hidden sm:flex items-center gap-1.5 border-l border-black/10 pl-3">
+        <span class="text-xs font-medium text-sub">by</span>
+        <img src="/logo-s.webp" alt="RoMimatic" class="h-5 w-auto object-contain opacity-70 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0" width="51" height="20" loading="lazy" onerror="this.style.display='none'">
+      </span>
+    </div>
     <nav class="hidden md:flex items-center gap-6 text-sm text-sub font-medium">
       <a href="/prodotti.html" class="hover:text-ink transition-colors">Prodotti</a>
       <a href="/blog/" class="hover:text-ink transition-colors">Blog</a>
