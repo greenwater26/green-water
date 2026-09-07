@@ -1140,6 +1140,9 @@
                     RICHIEDI IL TUO PREVENTIVO GRATUITO
                 </button>
                 <p class="text-xs text-center text-sub mt-4">I tuoi dati sono al sicuro.</p>
+
+                <!-- Honeypot anti-bot: campo invisibile e non focusabile; se compilato, Formspree scarta l'invio -->
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;overflow:hidden">
             </form>
         </div>
     </section>
