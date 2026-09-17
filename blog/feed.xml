@@ -12,8 +12,8 @@
     <copyright>Copyright 2026 Green Water Italia</copyright>
     <managingEditor>info@greenwateritalia.it (Green Water Italia)</managingEditor>
     <webMaster>info@greenwateritalia.it (Green Water Italia)</webMaster>
-    <lastBuildDate>Mon, 06 Jul 2026 10:00:00 +0200</lastBuildDate>
-    <pubDate>Mon, 06 Jul 2026 10:00:00 +0200</pubDate>
+    <lastBuildDate>Thu, 17 Sep 2026 10:00:00 +0200</lastBuildDate>
+    <pubDate>Thu, 17 Sep 2026 10:00:00 +0200</pubDate>
     <ttl>1440</ttl>
     <image>
       <url>https://www.greenwateritalia.it/logo.webp</url>
@@ -21,6 +21,15 @@
       <link>https://www.greenwateritalia.it/</link>
     </image>
     <atom:link href="https://www.greenwateritalia.it/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Bollicina FV: il frigogasatore sottolavello a osmosi inversa, guida completa</title>
+      <link>https://www.greenwateritalia.it/blog/bollicina-fv-frigogasatore-osmosi-inversa.html</link>
+      <description>Come funziona la Bollicina FV, scheda tecnica, dimensioni, installazione, manutenzione, confronto con le bottiglie e detrazione fiscale del 50%.</description>
+      <pubDate>Thu, 17 Sep 2026 10:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/bollicina-fv-frigogasatore-osmosi-inversa.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
 
     <item>
       <title>Acqua frizzante in casa: gasatore, frigogasatore o bottiglie?</title>
