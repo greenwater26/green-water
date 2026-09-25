@@ -97,6 +97,10 @@ Per ogni elemento `[data-form-contatti]` nella pagina:
 - Il banner cookie (`z-[100]`) resta sopra la barra (barra `z-30`, sotto
   al `#mobile-menu` che è `z-40`, così un menu mobile aperto non resta
   coperto dalla barra).
+- Essendo anch'esso `fixed bottom-0`, il banner cookie (`#cookie-banner`,
+  se presente) riceve un margine inferiore pari all'altezza della barra
+  (`mb-16 md:mb-0`): su smartphone il banner si posiziona subito sopra
+  la barra invece di coprirla.
 - Tracciamento click, se `gtag` esiste:
   `click_telefono` / `click_whatsapp` / `click_preventivo` con
   `posizione: 'barra_mobile'`.
