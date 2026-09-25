@@ -43,7 +43,7 @@
 
   function htmlConferma() {
     return '' +
-      '<div data-fc-conferma role="status" class="max-w-xl mx-auto bg-white p-6 md:p-14 rounded-[28px] shadow-sm text-center">' +
+      '<div data-fc-conferma role="status" tabindex="-1" class="max-w-xl mx-auto bg-white p-6 md:p-14 rounded-[28px] shadow-sm text-center focus:outline-none">' +
         '<h2 class="text-2xl md:text-3xl font-semibold text-ink mb-3">Richiesta inviata</h2>' +
         '<p class="text-sub leading-relaxed">Grazie! Abbiamo ricevuto la tua richiesta e ti ricontatteremo al più presto.</p>' +
         '<p class="text-sub text-sm mt-4">Hai fretta? <a href="' + WHATSAPP + '" target="_blank" rel="noopener noreferrer" class="text-brand font-medium hover:underline">Scrivici su WhatsApp</a>.</p>' +
@@ -88,7 +88,9 @@
           window.gtag('event', 'generate_lead', { metodo: 'form_consulenza', pagina: pagina });
         }
         contenitore.innerHTML = htmlConferma();
+        contenitore.querySelector('[data-fc-conferma]').focus();
       }).catch(function () {
+        errore.textContent = '';
         errore.innerHTML = TESTO_ERRORE;
         errore.classList.remove('hidden');
         bottone.disabled = false;

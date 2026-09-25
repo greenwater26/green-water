@@ -86,6 +86,7 @@ window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(argu
     var conf = contenitori()[0].querySelector('[data-fc-conferma]');
     ok('conferma mostrata', conf && conf.textContent.indexOf('Grazie! Abbiamo ricevuto la tua richiesta e ti ricontatteremo al più presto.') !== -1);
     ok('form rimosso dopo successo', contenitori()[0].querySelector('form') === null);
+    ok('focus sulla conferma', document.activeElement === contenitori()[0].querySelector('[data-fc-conferma]'));
     var ev = window.__eventi[0];
     ok('evento generate_lead', ev && ev[0] === 'event' && ev[1] === 'generate_lead' && ev[2].metodo === 'form_consulenza' && ev[2].pagina === location.pathname, JSON.stringify(ev));
 
