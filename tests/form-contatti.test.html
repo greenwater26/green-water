@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta charset="UTF-8"><title>Test form contatti</title></head>
+<body>
+<pre id="risultati"></pre>
+
+<section id="contatti"><div data-form-contatti data-titolo="Titolo di prova"><a href="/index.html#form">fallback</a></div></section>
+<section id="secondo"><div data-form-contatti><a href="/index.html#form">fallback</a></div></section>
+
+<script>
+// Stub di fetch: ogni chiamata resta in sospeso finché il test non la risolve.
+window.__chiamate = [];
+window.fetch = function (url, opzioni) {
+  return new Promise(function (resolve, reject) {
+    window.__chiamate.push({ url: url, opzioni: opzioni, resolve: resolve, reject: reject });
+  });
+};
+window.__eventi = [];
+window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(arguments)); };
+</script>
+<script src="/form-contatti.js"></script>
+<script>
+(function () {
+  var out = document.getElementById('risultati');
+  var righe = [];
+  function ok(nome, cond, msg) { righe.push((cond ? 'PASS ' : 'FAIL ') + nome + (cond ? '' : ': ' + (msg || ''))); }
+  function attendi() { return new Promise(function (r) { setTimeout(r, 0); }); }
+  function contenitori() { return document.querySelectorAll('[data-form-contatti]'); }
+  function compila(form) {
+    form.querySelector('[name="Nome"]').value = 'Mario Rossi';
+    form.querySelector('[name="Email"]').value = 'mario@example.com';
+    form.querySelector('[name="Telefono"]').value = '3331234567';
+    form.querySelector('[name="Messaggio"]').value = 'Vorrei info';
+    form.querySelector('[name="Privacy"]').checked = true;
+  }
+  function nuovoForm(indice) {
+    // Ricrea un form pulito nel contenitore `indice` per isolare i test.
+    var c = contenitori()[indice];
+    c.removeAttribute('data-fc-pronto');
+    c.innerHTML = '<a href="/index.html#form">fallback</a>';
+    window.FormContatti.inizializza();
+    return c.querySelector('form[data-fc-form]');
+  }
+
+  async function esegui() {
+    // 1. Rendering in entrambi i contenitori
+    var forms = document.querySelectorAll('form[data-fc-form]');
+    ok('rende un form per contenitore', forms.length === 2, 'trovati ' + forms.length);
+    ok('segna il contenitore come pronto', contenitori()[0].getAttribute('data-fc-pronto') === '1');
+    ok('titolo da data-titolo', contenitori()[0].querySelector('h2').textContent === 'Titolo di prova');
+    ok('titolo di default', contenitori()[1].querySelector('h2').textContent === 'Richiedi informazioni');
+
+    // 2. Campi esatti
+    var nomi = Array.prototype.map.call(forms[0].elements, function (e) { return e.name; }).filter(Boolean).sort().join(',');
+    ok('campi esatti', nomi === 'Email,Messaggio,Nome,Pagina,Privacy,Telefono,_gotcha,_subject', nomi);
+    ok('obbligatori', ['Nome', 'Email', 'Telefono', 'Privacy'].every(function (n) { return forms[0].querySelector('[name="' + n + '"]').required; }));
+    ok('Messaggio facoltativo', !forms[0].querySelector('[name="Messaggio"]').required);
+    ok('campo Pagina', forms[0].querySelector('[name="Pagina"]').value === location.pathname);
+    ok('campo _subject', forms[0].querySelector('[name="_subject"]').value === 'Nuova richiesta da ' + location.pathname);
+
+    // 3. ID univoci e label collegate
+    var check0 = forms[0].querySelector('[name="Privacy"]'), check1 = forms[1].querySelector('[name="Privacy"]');
+    ok('ID checkbox univoci', check0.id && check0.id !== check1.id);
+    ok('label collegata', forms[1].querySelector('label[for="' + check1.id + '"]') !== null);
+
+    // 4. Script incluso di nuovo: nessun duplicato
+    var s = document.createElement('script');
+    s.src = '/form-contatti.js?bis';
+    await new Promise(function (r) { s.onload = r; document.body.appendChild(s); });
+    ok('nessun form duplicato', document.querySelectorAll('form[data-fc-form]').length === 2);
+
+    // 5. Invio riuscito + doppio clic
+    var f = nuovoForm(0); compila(f);
+    window.__chiamate = []; window.__eventi = [];
+    f.requestSubmit(); await attendi();
+    var bottone = f.querySelector('[data-fc-invia]');
+    ok('bottone disabilitato durante invio', bottone.disabled === true);
+    ok('testo invio in corso', bottone.textContent.trim() === 'Invio in corso…', bottone.textContent);
+    f.requestSubmit(); await attendi();
+    ok('doppio invio bloccato', window.__chiamate.length === 1, 'chiamate ' + window.__chiamate.length);
+    var c0 = window.__chiamate[0];
+    ok('endpoint', c0.url === 'https://formspree.io/f/mojnkvgl');
+    ok('header Accept JSON', c0.opzioni.headers.Accept === 'application/json');
+    ok('body FormData con Nome', c0.opzioni.body.get('Nome') === 'Mario Rossi');
+    c0.resolve({ ok: true, status: 200 }); await attendi(); await attendi();
+    var conf = contenitori()[0].querySelector('[data-fc-conferma]');
+    ok('conferma mostrata', conf && conf.textContent.indexOf('Grazie! Abbiamo ricevuto la tua richiesta e ti ricontatteremo al più presto.') !== -1);
+    ok('form rimosso dopo successo', contenitori()[0].querySelector('form') === null);
+    var ev = window.__eventi[0];
+    ok('evento generate_lead', ev && ev[0] === 'event' && ev[1] === 'generate_lead' && ev[2].metodo === 'form_consulenza' && ev[2].pagina === location.pathname, JSON.stringify(ev));
+
+    // 6. Errore HTTP (422)
+    f = nuovoForm(0); compila(f);
+    window.__chiamate = []; window.__eventi = [];
+    f.requestSubmit(); await attendi();
+    window.__chiamate[0].resolve({ ok: false, status: 422 }); await attendi(); await attendi();
+    var err = f.querySelector('[data-fc-errore]');
+    ok('errore visibile su 422', !err.classList.contains('hidden') && err.textContent.indexOf('Invio non riuscito') !== -1);
+    ok('dati conservati su 422', f.querySelector('[name="Email"]').value === 'mario@example.com');
+    ok('bottone riabilitato su 422', f.querySelector('[data-fc-invia]').disabled === false);
+    ok('testo bottone ripristinato', f.querySelector('[data-fc-invia]').textContent.trim() === 'Richiedi il tuo preventivo gratuito');
+    ok('nessun evento su errore', window.__eventi.length === 0);
+
+    // 7. Errore di rete
+    window.__chiamate = [];
+    f.requestSubmit(); await attendi();
+    ok('errore nascosto durante nuovo invio', f.querySelector('[data-fc-errore]').classList.contains('hidden'));
+    window.__chiamate[0].reject(new TypeError('rete')); await attendi(); await attendi();
+    ok('errore visibile su rete', !f.querySelector('[data-fc-errore]').classList.contains('hidden'));
+    ok('link WhatsApp nell\'errore', f.querySelector('[data-fc-errore] a[href^="https://wa.me/393204478319"]') !== null);
+
+    // 8. gtag assente (cookie non accettati)
+    var gtagSalvato = window.gtag; delete window.gtag;
+    f = nuovoForm(0); compila(f);
+    window.__chiamate = [];
+    var eccezione = null;
+    window.addEventListener('error', function (e) { eccezione = e.message; });
+    f.requestSubmit(); await attendi();
+    window.__chiamate[0].resolve({ ok: true, status: 200 }); await attendi(); await attendi();
+    ok('successo senza gtag', contenitori()[0].querySelector('[data-fc-conferma]') !== null && eccezione === null, eccezione);
+    window.gtag = gtagSalvato;
+
+    righe.push('FINE');
+    out.textContent = righe.join('\n');
+  }
+  window.addEventListener('load', function () {
+    esegui().catch(function (e) { righe.push('FAIL eccezione: ' + e.message); righe.push('FINE'); out.textContent = righe.join('\n'); });
+  });
+})();
+</script>
+</body>
+</html>
