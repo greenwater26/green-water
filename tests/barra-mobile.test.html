@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
   var barre = document.querySelectorAll('[data-barra-mobile]');
   ok('una sola barra', barre.length === 1, 'trovate ' + barre.length);
   var b = barre[0];
-  ok('solo mobile', b.classList.contains('md:hidden') && b.classList.contains('fixed') && b.classList.contains('z-40'));
+  ok('solo mobile', b.classList.contains('md:hidden') && b.classList.contains('fixed') && b.classList.contains('z-30'));
   var tel = b.querySelector('[data-azione="telefono"]'), wa = b.querySelector('[data-azione="whatsapp"]'), pr = b.querySelector('[data-azione="preventivo"]');
   ok('link telefono', tel && tel.getAttribute('href') === 'tel:+393204478319');
   ok('link whatsapp', wa && wa.getAttribute('href').indexOf('https://wa.me/393204478319') === 0);

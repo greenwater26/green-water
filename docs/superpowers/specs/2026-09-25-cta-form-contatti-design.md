@@ -94,7 +94,9 @@ Per ogni elemento `[data-form-contatti]` nella pagina:
 - Nasconde sotto `md` la bolla WhatsApp flottante
   (`a[aria-label="Contattaci su WhatsApp"]`), che resta visibile su
   desktop.
-- Il banner cookie (`z-[100]`) resta sopra la barra (barra `z-40`).
+- Il banner cookie (`z-[100]`) resta sopra la barra (barra `z-30`, sotto
+  al `#mobile-menu` che è `z-40`, così un menu mobile aperto non resta
+  coperto dalla barra).
 - Tracciamento click, se `gtag` esiste:
   `click_telefono` / `click_whatsapp` / `click_preventivo` con
   `posizione: 'barra_mobile'`.

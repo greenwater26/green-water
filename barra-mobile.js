@@ -17,7 +17,7 @@
     var barra = document.createElement('nav');
     barra.setAttribute('data-barra-mobile', '');
     barra.setAttribute('aria-label', 'Contatti rapidi');
-    barra.className = 'md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-3 bg-white border-t border-line shadow-[0_-4px_16px_rgba(0,0,0,0.06)]';
+    barra.className = 'md:hidden fixed bottom-0 inset-x-0 z-30 grid grid-cols-3 bg-white border-t border-line shadow-[0_-4px_16px_rgba(0,0,0,0.06)]';
     barra.innerHTML = '' +
       '<a href="tel:+393204478319" data-azione="telefono" class="' + link + ' text-ink">' +
         '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>' +
