@@ -5,6 +5,7 @@
 <pre id="risultati"></pre>
 <a href="https://wa.me/393204478319" aria-label="Contattaci su WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center">bolla</a>
 <section id="contatti"><div data-form-contatti></div></section>
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100]" style="display:none"></div>
 <script>
 window.__eventi = [];
 window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(arguments)); };
@@ -41,6 +42,8 @@ window.addEventListener('load', function () {
   window.addEventListener('error', function (e) { eccezione = e.message; });
   wa.click();
   ok('click senza gtag', eccezione === null, eccezione);
+  var banner = document.getElementById('cookie-banner');
+  ok('banner cookie sopra la barra', banner.classList.contains('mb-16') && banner.classList.contains('md:mb-0'));
   righe.push('FINE');
   document.getElementById('risultati').textContent = righe.join('\n');
 });
