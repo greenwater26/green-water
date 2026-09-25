@@ -49,6 +49,13 @@
       bolla.classList.remove('flex');
       bolla.classList.add('hidden', 'md:flex');
     }
+
+    // Anche il banner cookie è fixed bottom-0: senza margine si sovrapporrebbe
+    // alla barra su smartphone, nascondendola del tutto.
+    var bannerCookie = document.getElementById('cookie-banner');
+    if (bannerCookie) {
+      bannerCookie.classList.add('mb-16', 'md:mb-0');
+    }
   }
 
   if (document.readyState === 'loading') {
