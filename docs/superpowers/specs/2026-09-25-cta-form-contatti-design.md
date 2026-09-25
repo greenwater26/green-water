@@ -47,18 +47,14 @@ Per ogni elemento `[data-form-contatti]` nella pagina:
 - Sostituisce il contenuto con il form. Il contenuto originale del
   contenitore è il fallback senza JS: un link "Richiedi informazioni" a
   `/index.html#form`.
-- Attributi opzionali del contenitore:
-  - `data-titolo` — titolo della card (default "Richiedi informazioni")
-  - `data-tipo` — `casa` | `ufficio` | `horeca`: valore preselezionato
-    di "Per chi è" (default nessuno)
+- Attributo opzionale del contenitore: `data-titolo` — titolo della
+  card (default "Richiedi informazioni").
 - Campi (i `name` sono le etichette che compaiono nell'email Formspree):
   | name | tipo | obbligatorio |
   |---|---|---|
   | `Nome` | text | sì |
   | `Email` | email | sì |
   | `Telefono` | tel | sì |
-  | `Per chi è` | select: Casa / Ufficio / Ristorante, bar, hotel | sì |
-  | `Comune` | text | no |
   | `Messaggio` | textarea | no |
   | `Privacy` | checkbox (testo e link identici al form attuale) | sì |
   | `_gotcha` | honeypot nascosto (come oggi) | — |
@@ -111,20 +107,13 @@ Per ogni elemento `[data-form-contatti]` nella pagina:
 Sezione `<section id="contatti">` con il contenitore
 `<div data-form-contatti …>`, subito prima del footer, in:
 
-- `privati.html` (`data-tipo="casa"`), `prodotti.html`,
-  `erogatore-boccioni.html` e `erogatore-rete-idrica.html`
-  (`data-tipo="ufficio"`)
-- pagine città ×5, `acqua-bambini-famiglia.html` (`casa`),
+- `privati.html`, `prodotti.html`, `erogatore-boccioni.html`,
+  `erogatore-rete-idrica.html`
+- pagine città ×5, `acqua-bambini-famiglia.html`,
   `contaminanti-acqua.html`, `guida-osmosi-inversa.html`, `faq.html`,
   `glossario.html`, `residuo-fisso-acque-in-bottiglia.html`,
   `chi-siamo.html`, `blog/index.html`
-- i 32 articoli del blog, dopo il box CTA finale esistente, con
-  `data-tipo`:
-  - `ufficio`: `depuratore-acqua-ufficio-quante-persone.html`,
-    `colonnina-boccioni-vs-osmosi-inversa.html`
-  - `horeca`: `linea-thanta-erogatore-acqua-professionale-horeca.html`,
-    `acqua-microfiltrata-rsa-strutture-sanitarie.html`
-  - `casa`: tutti gli altri
+- i 32 articoli del blog, dopo il box CTA finale esistente
 
 **Home:** il form attuale viene sostituito dal contenitore, con
 `id="form"` mantenuto sulla sezione, così i 101 link esistenti
@@ -153,8 +142,7 @@ home; `form-contatti.js` in tutte le pagine che hanno un contenitore.
 - Pagina di test locale (non pubblicata) che sostituisce `fetch` con uno
   stub: verifica stato "invio in corso", conferma su successo, messaggio
   d'errore e dati conservati su fallimento, presenza dei campi `Pagina`
-  e `_subject`, `data-tipo` preselezionato, ID univoci con due form in
-  pagina.
+  e `_subject`, ID univoci con due form in pagina.
 - Verifica grep: ogni pagina in elenco ha il contenitore e gli script;
   nessun `#form` residuo nelle pagine con form (esclusa la home).
 - Un invio reale su Formspree solo con l'ok del titolare (arriva
@@ -165,3 +153,5 @@ home; `form-contatti.js` in tutte le pagine che hanno un contenitore.
 - Form guide gratuite / `api/subscribe.js`.
 - Invio dei contatti a Brevo o a un CRM, risposta automatica al cliente.
 - Box CTA a metà articolo, CTA tra le sezioni, popup.
+- Campi di qualificazione (tipo di cliente, comune): scartati per tenere
+  il form corto.
