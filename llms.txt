@@ -39,6 +39,7 @@ Un impianto Green Water Italia consente di:
 
 - [Homepage](https://www.greenwateritalia.it/): panoramica su prodotti, risparmio stimato, recensioni clienti e FAQ
 - [Prodotti](https://www.greenwateritalia.it/prodotti.html): catalogo completo con specifiche tecniche di tutti i sistemi
+- [Depuratore acqua per casa (Privati)](https://www.greenwateritalia.it/privati.html): pagina per privati e famiglie: quale depuratore scegliere (osmosi inversa, frigogasatore, modelli salvaspazio), confronto costi con acqua in bottiglia e caraffa filtrante, risparmio in 5 anni, detrazione fiscale 50% nel 2026, zone di installazione e FAQ
 - [Chi siamo](https://www.greenwateritalia.it/chi-siamo.html): storia, missione e valori dell'azienda
 - [FAQ](https://www.greenwateritalia.it/faq.html): domande frequenti su installazione, manutenzione, sicurezza e funzionamento
 - [Glossario](https://www.greenwateritalia.it/glossario.html): definizioni tecniche su osmosi inversa, residuo fisso, TDS, PFAS e altri termini
