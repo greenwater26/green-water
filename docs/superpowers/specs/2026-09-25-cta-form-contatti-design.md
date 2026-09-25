@@ -133,6 +133,10 @@ home; `form-contatti.js` in tutte le pagine che hanno un contenitore.
 - `tailwind.config.js`: aggiungere `./*.js` a `content`, altrimenti le
   classi usate solo negli script non vengono compilate.
 - Rebuild con `node node_modules/tailwindcss/lib/cli.js -i src/input.css -o dist/styles.css --minify`.
+- `dist/styles.css` è servito con `Cache-Control: public, max-age=31536000, immutable`, quindi ogni
+  volta che il file cambia bisogna aggiornare il parametro `?v=` sul link `href="/dist/styles.css?v=…"`
+  in tutte le pagine (stesso sed su `*.html` e `blog/*.html`), altrimenti i visitatori di ritorno
+  restano con il CSS vecchio in cache per un anno.
 
 ## Test
 
