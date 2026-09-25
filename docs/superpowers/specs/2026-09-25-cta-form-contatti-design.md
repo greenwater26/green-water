@@ -98,9 +98,10 @@ Per ogni elemento `[data-form-contatti]` nella pagina:
 - Tracciamento click, se `gtag` esiste:
   `click_telefono` / `click_whatsapp` / `click_preventivo` con
   `posizione: 'barra_mobile'`.
-- La barra ha l'attributo `data-barra-mobile`. Lo snippet di
-  tracciamento WhatsApp esistente viene aggiornato per ignorare i click
-  dentro `[data-barra-mobile]`, evitando il doppio conteggio.
+- La barra ha l'attributo `data-barra-mobile` e ferma la propagazione
+  dei propri click (`stopPropagation`), così lo snippet di tracciamento
+  WhatsApp esistente, che ascolta sul `document`, non li conta due
+  volte. Lo snippet non viene modificato.
 
 ## Posizionamento
 

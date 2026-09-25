@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta charset="UTF-8"><title>Test barra mobile</title></head>
+<body>
+<pre id="risultati"></pre>
+<a href="https://wa.me/393204478319" aria-label="Contattaci su WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center">bolla</a>
+<section id="contatti"><div data-form-contatti></div></section>
+<script>
+window.__eventi = [];
+window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(arguments)); };
+// Come lo snippet di tracciamento WhatsApp già presente nelle pagine.
+window.__documento = 0;
+document.addEventListener('click', function (e) { if (e.target.closest('a[href*="wa.me"]')) window.__documento++; });
+// Evita la navigazione durante i test.
+window.addEventListener('click', function (e) { if (e.target.closest('a')) e.preventDefault(); }, true);
+</script>
+<script src="/barra-mobile.js"></script>
+<script src="/barra-mobile.js?bis"></script>
+<script>
+window.addEventListener('load', function () {
+  var righe = [];
+  function ok(n, c, m) { righe.push((c ? 'PASS ' : 'FAIL ') + n + (c ? '' : ': ' + (m || ''))); }
+  var barre = document.querySelectorAll('[data-barra-mobile]');
+  ok('una sola barra', barre.length === 1, 'trovate ' + barre.length);
+  var b = barre[0];
+  ok('solo mobile', b.classList.contains('md:hidden') && b.classList.contains('fixed') && b.classList.contains('z-40'));
+  var tel = b.querySelector('[data-azione="telefono"]'), wa = b.querySelector('[data-azione="whatsapp"]'), pr = b.querySelector('[data-azione="preventivo"]');
+  ok('link telefono', tel && tel.getAttribute('href') === 'tel:+393204478319');
+  ok('link whatsapp', wa && wa.getAttribute('href').indexOf('https://wa.me/393204478319') === 0);
+  ok('preventivo verso sezione della pagina', pr && pr.getAttribute('href') === '#contatti', pr && pr.getAttribute('href'));
+  ok('padding body', document.body.classList.contains('pb-16') && document.body.classList.contains('md:pb-0'));
+  var bolla = document.querySelector('a[aria-label="Contattaci su WhatsApp"]');
+  ok('bolla solo desktop', bolla.classList.contains('hidden') && bolla.classList.contains('md:flex') && !bolla.classList.contains('flex'));
+  window.__eventi = [];
+  wa.click(); tel.click(); pr.click();
+  var nomi = window.__eventi.map(function (e) { return e[1] + ':' + e[2].posizione; }).join(',');
+  ok('eventi barra', nomi === 'click_whatsapp:barra_mobile,click_telefono:barra_mobile,click_preventivo:barra_mobile', nomi);
+  ok('nessun doppio conteggio whatsapp', window.__documento === 0, 'listener documento chiamato ' + window.__documento);
+  delete window.gtag;
+  var eccezione = null;
+  window.addEventListener('error', function (e) { eccezione = e.message; });
+  wa.click();
+  ok('click senza gtag', eccezione === null, eccezione);
+  righe.push('FINE');
+  document.getElementById('risultati').textContent = righe.join('\n');
+});
+</script>
+</body>
+</html>
