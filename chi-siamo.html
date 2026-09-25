@@ -124,9 +124,9 @@
       <a href="/glossario.html" class="hidden lg:block hover:text-ink transition-colors">Glossario</a>
       <a href="/residuo-fisso-acque-in-bottiglia.html" class="hidden xl:block hover:text-ink transition-colors">Acque in bottiglia</a>
       <a href="/chi-siamo.html" class="text-brand font-semibold">Chi siamo</a>
-      <a href="/#form" class="hidden lg:block hover:text-ink transition-colors">Contatti</a>
+      <a href="#contatti" class="hidden lg:block hover:text-ink transition-colors">Contatti</a>
       <a href="/#guide-gratuite" class="flex items-center gap-1.5 font-medium text-brand hover:text-brand-dark transition-colors"><svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Guide gratuite</a>
-      <a href="/#form" class="bg-brand text-white px-5 py-2 rounded-full font-medium hover:bg-brand-dark transition-colors text-sm">Consulenza gratuita</a>
+      <a href="#contatti" class="bg-brand text-white px-5 py-2 rounded-full font-medium hover:bg-brand-dark transition-colors text-sm">Consulenza gratuita</a>
     </nav>
     <!-- Mobile hamburger -->
     <button id="mob-btn" class="md:hidden text-ink hover:text-brand focus:outline-none" aria-label="Menu">
@@ -146,9 +146,9 @@
     <a href="/glossario.html" class="hover:text-ink transition-colors">Glossario</a>
     <a href="/residuo-fisso-acque-in-bottiglia.html" class="hover:text-ink transition-colors">Acque in bottiglia</a>
     <a href="/chi-siamo.html" class="text-brand font-semibold">Chi siamo</a>
-    <a href="/#form" class="hover:text-ink transition-colors">Contatti</a>
+    <a href="#contatti" class="hover:text-ink transition-colors">Contatti</a>
     <a href="/#guide-gratuite" class="flex items-center gap-2 font-semibold text-brand hover:text-brand-dark transition-colors"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Guide gratuite</a>
-    <a href="/#form" class="bg-brand text-white text-center px-5 py-2.5 rounded-full font-medium hover:bg-brand-dark transition-colors">Consulenza gratuita</a>
+    <a href="#contatti" class="bg-brand text-white text-center px-5 py-2.5 rounded-full font-medium hover:bg-brand-dark transition-colors">Consulenza gratuita</a>
   </div>
 </header>
 
@@ -277,7 +277,7 @@
         <p class="text-sub leading-relaxed mb-6">Green Water Italia opera nell'hinterland milanese e nelle province di Varese, Como e Lecco, inclusa tutta la fascia di confine: in provincia di Como copriamo il territorio dal lago fino alla Valchiavenna, mentre in provincia di Varese raggiungiamo anche i comuni di frontiera verso Luino e il Lago Maggiore. La concentrazione su un territorio definito ci consente di offrire un servizio puntuale, con trasferte brevi e tempi di risposta concreti.</p>
         <p class="text-sub leading-relaxed">Se non sei sicuro di rientrare nella nostra area operativa, contattaci: valutiamo ogni richiesta singolarmente e, dove possibile, organizziamo un sopralluogo senza impegno.</p>
         <div class="mt-8">
-          <a href="/#form" class="inline-block bg-brand text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-brand-dark transition-colors">Richiedi informazioni</a>
+          <a href="#contatti" class="inline-block bg-brand text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-brand-dark transition-colors">Richiedi informazioni</a>
         </div>
       </div>
 
@@ -300,11 +300,17 @@
     <div class="max-w-2xl mx-auto text-center text-white">
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Inizia con una consulenza gratuita</h2>
       <p class="text-white/80 leading-relaxed mb-8">Raccontaci la tua situazione: tipologia di utilizzo, numero di persone, zona. Analizziamo i parametri dell'acqua nella tua area e ti proponiamo la soluzione più adatta — senza impegno.</p>
-      <a href="/#form" class="inline-block bg-white text-brand font-semibold px-8 py-3.5 rounded-full hover:bg-brand-light transition-colors">Prenota una consulenza gratuita</a>
+      <a href="#contatti" class="inline-block bg-white text-brand font-semibold px-8 py-3.5 rounded-full hover:bg-brand-light transition-colors">Prenota una consulenza gratuita</a>
     </div>
   </section>
 
 </main>
+
+<section id="contatti" class="py-16 md:py-24 bg-surface px-6 scroll-mt-24">
+    <div data-form-contatti>
+        <p class="text-center"><a href="/index.html#form" class="inline-flex bg-brand text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-dark transition-colors">Richiedi informazioni</a></p>
+    </div>
+</section>
 
 <footer class="py-16 bg-ink text-white/60 text-sm">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mb-8 text-center md:text-left">
@@ -492,5 +498,7 @@
         });
     })();
     </script>
+<script src="/form-contatti.js" defer></script>
+<script src="/barra-mobile.js" defer></script>
 </body>
 </html>
