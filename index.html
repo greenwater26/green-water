@@ -1132,30 +1132,9 @@
             <a href="#form" class="bg-brand text-white px-8 py-3.5 rounded-full font-medium text-lg hover:bg-brand-dark transition-colors inline-block">Candidati o richiedi maggiori info</a>
         </div>
     </section>
-    <section id="form" class="py-16 md:py-28 bg-surface px-6">
-        <div class="max-w-xl mx-auto bg-white p-6 md:p-14 rounded-[28px] shadow-sm">
-            <h2 class="text-2xl md:text-4xl font-semibold text-center text-ink">Richiedi informazioni</h2>
-            <p class="text-center text-sub mb-10 mt-3 leading-relaxed">Richiedi informazioni e scopri l'impianto perfetto per le tue esigenze (casa, ufficio o locale).</p>
-            <form id="lead-form" action="https://formspree.io/f/mojnkvgl" method="POST" class="space-y-4">
-                <input type="text" name="Nome" placeholder="Nome e Cognome / Azienda" class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition" required>
-                <input type="email" name="Email" placeholder="Indirizzo Email" class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition" required>
-                <input type="tel" name="Telefono" placeholder="Telefono Cellulare" class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition" required>
-
-                <textarea name="Messaggio" rows="4" placeholder="Scrivi qui la tua richiesta o eventuali domande..." class="w-full p-4 bg-surface border border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition"></textarea>
-
-                <div class="flex items-start gap-3 pt-1">
-                    <input type="checkbox" name="Privacy" id="privacy-check" required class="mt-1 w-4 h-4 accent-brand cursor-pointer shrink-0">
-                    <label for="privacy-check" class="text-sm text-sub leading-relaxed">Ho letto e accetto la <a href="privacy.html" target="_blank" class="text-brand underline hover:no-underline">Privacy Policy</a>. Acconsento al trattamento dei miei dati personali per ricevere informazioni sui prodotti e servizi Green Water Italia.</label>
-                </div>
-
-                <button type="submit" class="w-full bg-brand text-white py-4 rounded-full font-medium text-lg hover:bg-brand-dark transition-colors">
-                    RICHIEDI IL TUO PREVENTIVO GRATUITO
-                </button>
-                <p class="text-xs text-center text-sub mt-4">I tuoi dati sono al sicuro.</p>
-
-                <!-- Honeypot anti-bot: campo invisibile e non focusabile; se compilato, Formspree scarta l'invio -->
-                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;overflow:hidden">
-            </form>
+    <section id="form" class="py-16 md:py-28 bg-surface px-6 scroll-mt-24">
+        <div data-form-contatti>
+            <p class="text-center text-sub">Scrivici a <a href="mailto:commercialegreenwater@protonmail.com" class="text-brand underline">commercialegreenwater@protonmail.com</a> o chiama il <a href="tel:+393204478319" class="text-brand underline">+39 3204478319</a>.</p>
         </div>
     </section>
     <footer class="py-16 bg-ink text-white/60 text-sm">
@@ -1507,17 +1486,7 @@
     })();
     </script>
 
-    <script>
-    (function() {
-        var leadForm = document.getElementById('lead-form');
-        if (leadForm) {
-            leadForm.addEventListener('submit', function() {
-                if (typeof gtag === 'function') {
-                    gtag('event', 'generate_lead', { metodo: 'form_consulenza' });
-                }
-            });
-        }
-    })();
-    </script>
+    <script src="/form-contatti.js" defer></script>
+    <script src="/barra-mobile.js" defer></script>
 </body>
 </html>
