@@ -12,8 +12,8 @@
     <copyright>Copyright 2026 Green Water Italia</copyright>
     <managingEditor>info@greenwateritalia.it (Green Water Italia)</managingEditor>
     <webMaster>info@greenwateritalia.it (Green Water Italia)</webMaster>
-    <lastBuildDate>Thu, 17 Sep 2026 10:00:00 +0200</lastBuildDate>
-    <pubDate>Thu, 17 Sep 2026 10:00:00 +0200</pubDate>
+    <lastBuildDate>Thu, 08 Oct 2026 10:00:00 +0200</lastBuildDate>
+    <pubDate>Thu, 08 Oct 2026 10:00:00 +0200</pubDate>
     <ttl>1440</ttl>
     <image>
       <url>https://www.greenwateritalia.it/logo.webp</url>
@@ -21,6 +21,15 @@
       <link>https://www.greenwateritalia.it/</link>
     </image>
     <atom:link href="https://www.greenwateritalia.it/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Quanto costa un depuratore d'acqua per casa? Prezzi 2026</title>
+      <link>https://www.greenwateritalia.it/blog/costo-depuratore-acqua-casa-prezzi.html</link>
+      <description>Costo di un depuratore acqua per casa nel 2026: caraffa 20-60€, microfiltrazione 600-1.200€, osmosi inversa 1.800-3.800€, frigogasatore 2.500-4.000€. Installazione, manutenzione, costo su 10 anni e prezzo netto con la detrazione del 50%.</description>
+      <pubDate>Thu, 08 Oct 2026 10:00:00 +0200</pubDate>
+      <guid isPermaLink="true">https://www.greenwateritalia.it/blog/costo-depuratore-acqua-casa-prezzi.html</guid>
+      <dc:creator>Green Water Italia</dc:creator>
+    </item>
 
     <item>
       <title>Bollicina FV: il frigogasatore sottolavello a osmosi inversa, guida completa</title>
