@@ -38,7 +38,7 @@ Un impianto Green Water Italia consente di:
 ## Pagine principali del sito
 
 - [Homepage](https://www.greenwateritalia.it/): panoramica su prodotti, risparmio stimato, recensioni clienti e FAQ
-- [Depuratore acqua casa](https://www.greenwateritalia.it/depuratore-acqua-casa.html): depuratori a osmosi inversa e frigogasatori per la casa con schede tecniche dei 6 modelli (Osmosystem 150, Osmosì, Osmoslim, Bollicina FV, Bollaquick, Frighost), prezzi da 2.200 € installati, confronto con bottiglia e caraffa, detrazione fiscale 50%, zone di installazione e FAQ
+- [Depuratore acqua casa](https://www.greenwateritalia.it/depuratore-acqua-casa.html): depuratori a osmosi inversa e frigogasatori per la casa con schede tecniche dei 9 modelli (Osmosystem 150, Osmosì, Osmoslim, Picciridda, Osmoquick, Bollicina FV, Bollaquick, Frighost, Babyquick), prezzi da 2.200 € installati, confronto con bottiglia e caraffa, detrazione fiscale 50%, zone di installazione e FAQ
 - [Distributori acqua ufficio](https://www.greenwateritalia.it/distributori-acqua-ufficio.html): distributori d'acqua per uffici a rete idrica, a boccioni e totem (Linea Thanta, T40, Totem Bollicina), scelta in base al numero di persone, confronto, noleggio con manutenzione inclusa e FAQ
 - [Chi siamo](https://www.greenwateritalia.it/chi-siamo.html): storia, missione e valori dell'azienda
 - [FAQ](https://www.greenwateritalia.it/faq.html): domande frequenti su installazione, manutenzione, sicurezza e funzionamento
