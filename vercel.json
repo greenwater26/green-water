@@ -5,20 +5,51 @@
     {
       "source": "/(.*)\\.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
       ]
     },
     {
       "source": "/(.*)\\.webp",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/dist/styles.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/prodotti.html",
+      "destination": "/depuratore-acqua-casa.html",
+      "permanent": true
+    },
+    {
+      "source": "/prodotti",
+      "destination": "/depuratore-acqua-casa.html",
+      "permanent": true
+    },
+    {
+      "source": "/privati.html",
+      "destination": "/depuratore-acqua-casa.html",
+      "permanent": true
+    },
+    {
+      "source": "/privati",
+      "destination": "/depuratore-acqua-casa.html",
+      "permanent": true
     }
   ]
 }

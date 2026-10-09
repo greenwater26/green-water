@@ -9,11 +9,11 @@ Contatti: info@greenwateritalia.it | Aree servite: Milano, Monza, Brianza, Vares
 
 ## Prodotti principali
 
-- [Osmoslim – Osmosi inversa sottopiano](https://www.greenwateritalia.it/prodotti.html): impianto ad osmosi inversa compatto (6,7 cm di spessore), installabile sotto il lavello o dietro lo zoccolo. Filtra nitrati, PFAS, metalli pesanti, microplastiche e cloro. Include modulo di rimineralizzazione per mantenere i sali essenziali.
-- [Osmosystem 150 – Osmosi inversa ad alta portata](https://www.greenwateritalia.it/prodotti.html): sistema ad osmosi inversa con alta produttività, ideale per famiglie numerose o uffici.
-- [Bollicina FV – Frigogasatore ad osmosi](https://www.greenwateritalia.it/prodotti.html): eroga acqua naturale fredda, acqua gasata fredda e acqua naturale a temperatura ambiente. Gasatura regolabile. Basato su osmosi inversa integrata.
-- [BollaQuick – Frigogasatore compatto](https://www.greenwateritalia.it/prodotti.html): versione compatta del frigogasatore, ideale per cucine con poco spazio.
-- [Linea Thanta – Erogatori professionali](https://www.greenwateritalia.it/prodotti.html): erogatori d'acqua di design per uffici, ristoranti, bar e strutture Ho.Re.Ca. Disponibili in versione da banco e da colonna (totem).
+- [Osmoslim – Osmosi inversa sottopiano](https://www.greenwateritalia.it/depuratore-acqua-casa.html#osmoslim): impianto ad osmosi inversa compatto (6,7 cm di spessore), installabile sotto il lavello o dietro lo zoccolo. Filtra nitrati, PFAS, metalli pesanti, microplastiche e cloro. Include modulo di rimineralizzazione per mantenere i sali essenziali.
+- [Osmosystem 150 – Osmosi inversa ad alta portata](https://www.greenwateritalia.it/depuratore-acqua-casa.html#osmosystem): sistema ad osmosi inversa con alta produttività, ideale per famiglie numerose o uffici.
+- [Bollicina FV – Frigogasatore ad osmosi](https://www.greenwateritalia.it/depuratore-acqua-casa.html#bollicina): eroga acqua naturale fredda, acqua gasata fredda e acqua naturale a temperatura ambiente. Gasatura regolabile. Basato su osmosi inversa integrata.
+- [BollaQuick – Frigogasatore compatto](https://www.greenwateritalia.it/depuratore-acqua-casa.html#bollaquick): versione compatta del frigogasatore, ideale per cucine con poco spazio.
+- [Linea Thanta – Erogatori professionali](https://www.greenwateritalia.it/distributori-acqua-ufficio.html#thanta): erogatori d'acqua di design per uffici, ristoranti, bar e strutture Ho.Re.Ca. Disponibili in versione da banco e da colonna (totem).
 
 ---
 
@@ -38,8 +38,8 @@ Un impianto Green Water Italia consente di:
 ## Pagine principali del sito
 
 - [Homepage](https://www.greenwateritalia.it/): panoramica su prodotti, risparmio stimato, recensioni clienti e FAQ
-- [Prodotti](https://www.greenwateritalia.it/prodotti.html): catalogo completo con specifiche tecniche di tutti i sistemi
-- [Depuratore acqua per casa (Privati)](https://www.greenwateritalia.it/privati.html): pagina per privati e famiglie: quale depuratore scegliere (osmosi inversa, frigogasatore, modelli salvaspazio), confronto costi con acqua in bottiglia e caraffa filtrante, risparmio in 5 anni, detrazione fiscale 50% nel 2026, zone di installazione e FAQ
+- [Depuratore acqua casa](https://www.greenwateritalia.it/depuratore-acqua-casa.html): depuratori a osmosi inversa e frigogasatori per la casa con schede tecniche dei 6 modelli (Osmosystem 150, Osmosì, Osmoslim, Bollicina FV, Bollaquick, Frighost), prezzi da 2.200 € installati, confronto con bottiglia e caraffa, detrazione fiscale 50%, zone di installazione e FAQ
+- [Distributori acqua ufficio](https://www.greenwateritalia.it/distributori-acqua-ufficio.html): distributori d'acqua per uffici a rete idrica, a boccioni e totem (Linea Thanta, T40, Totem Bollicina), scelta in base al numero di persone, confronto, noleggio con manutenzione inclusa e FAQ
 - [Chi siamo](https://www.greenwateritalia.it/chi-siamo.html): storia, missione e valori dell'azienda
 - [FAQ](https://www.greenwateritalia.it/faq.html): domande frequenti su installazione, manutenzione, sicurezza e funzionamento
 - [Glossario](https://www.greenwateritalia.it/glossario.html): definizioni tecniche su osmosi inversa, residuo fisso, TDS, PFAS e altri termini
