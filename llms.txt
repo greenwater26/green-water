@@ -39,7 +39,8 @@ Un impianto Green Water Italia consente di:
 
 - [Homepage](https://www.greenwateritalia.it/): panoramica su prodotti, risparmio stimato, recensioni clienti e FAQ
 - [Depuratore acqua casa](https://www.greenwateritalia.it/depuratore-acqua-casa.html): depuratori a osmosi inversa e frigogasatori per la casa con schede tecniche dei 9 modelli (Osmosystem 150, Osmosì, Osmoslim, Picciridda, Osmoquick, Bollicina FV, Bollaquick, Frighost, Babyquick), prezzi da 2.200 € installati, confronto con bottiglia e caraffa, detrazione fiscale 50%, zone di installazione e FAQ
-- [Distributori acqua ufficio](https://www.greenwateritalia.it/distributori-acqua-ufficio.html): distributori d'acqua per uffici a rete idrica, a boccioni e totem (Linea Thanta, T40, Totem Bollicina), scelta in base al numero di persone, confronto, noleggio con manutenzione inclusa e FAQ
+- [Erogatore acqua casa](https://www.greenwateritalia.it/erogatore-acqua-casa.html): erogatori d'acqua per la casa sotto il lavello (frigogasatori Bollicina FV, Bollaquick, Frighost a osmosi inversa e Babyquick a filtrazione) per acqua naturale, fredda e frizzante da un rubinetto dedicato, da 2.700 € installati; confronto con gasatore da appoggio ed erogatore a boccioni, FAQ
+- [Erogatori e distributori acqua ufficio](https://www.greenwateritalia.it/distributori-acqua-ufficio.html): distributori d'acqua per uffici a rete idrica, a boccioni e totem (Linea Thanta, T40, Totem Bollicina), scelta in base al numero di persone, confronto, noleggio con manutenzione inclusa e FAQ
 - [Chi siamo](https://www.greenwateritalia.it/chi-siamo.html): storia, missione e valori dell'azienda
 - [FAQ](https://www.greenwateritalia.it/faq.html): domande frequenti su installazione, manutenzione, sicurezza e funzionamento
 - [Glossario](https://www.greenwateritalia.it/glossario.html): definizioni tecniche su osmosi inversa, residuo fisso, TDS, PFAS e altri termini
@@ -65,6 +66,7 @@ Un impianto Green Water Italia consente di:
 
 - [Cosa c'è nell'acqua del rubinetto](https://www.greenwateritalia.it/blog/cosa-ce-nellacqua-del-rubinetto.html)
 - [Osmosi inversa fa male? Calcio e minerali](https://www.greenwateritalia.it/blog/osmosi-inversa-fa-male-minerali-calcio.html)
+- [Erogatore acqua per casa: Culligan, BWT o alternative?](https://www.greenwateritalia.it/blog/erogatore-acqua-casa-culligan-alternative.html)
 - [Costo depuratore acqua casa: prezzi 2026](https://www.greenwateritalia.it/blog/costo-depuratore-acqua-casa-prezzi.html)
 - [Costo impianto osmosi inversa: prezzi 2025](https://www.greenwateritalia.it/blog/costo-osmosi-inversa-prezzi-impianto.html)
 - [Migliori impianti osmosi inversa 2026](https://www.greenwateritalia.it/blog/migliori-impianti-osmosi-inversa-2026.html)
