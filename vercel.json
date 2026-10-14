@@ -32,6 +32,11 @@
   ],
   "redirects": [
     {
+      "source": "/blog/erogatore-acqua-casa-culligan-alternative.html",
+      "destination": "/erogatore-acqua-casa.html",
+      "permanent": true
+    },
+    {
       "source": "/prodotti.html",
       "destination": "/depuratore-acqua-casa.html",
       "permanent": true
