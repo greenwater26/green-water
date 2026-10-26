@@ -24,3 +24,6 @@ carosello-detrazione-fiscale*
 status-detrazione-fiscale*
 esporta-carosello-detrazione.ps1
 esporta-status-detrazione.sh
+
+# Bozze brainstorming locali
+.superpowers/
