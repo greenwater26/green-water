@@ -1,2 +1,20 @@
 node_modules/
 .DS_Store
+
+# Materiale interno: repo pubblico e Vercel pubblica tutto
+backup-green-water/
+docs/partner-*/
+docs/Green-Water-Partnership-*.pdf
+docs/Green-Water-Potenziali-Partner.pdf
+docs/DOC-*.pdf
+google-ads/
+google-business/
+
+# Media pesanti di lavorazione video (restano solo in locale)
+video-spot/
+video/*.mp4
+video-reel/public/clip-*/
+video-reel/public/vo-*/
+video-reel/public/bollicina-baby-*.png
+immagini/bollicina-baby-soprabanco*
+immagini/macchina*-pulita.png
