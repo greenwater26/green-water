@@ -1,1 +1,9 @@
 tests
+
+# Contenuti social: versionati in git ma mai pubblicati sul sito
+carosello*
+status-*
+video
+video-reel
+video-spot
+esporta-*
