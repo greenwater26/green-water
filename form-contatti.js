@@ -60,6 +60,9 @@
 
     contenitore.innerHTML = htmlForm(nuovoId());
     contenitore.querySelector('h2').textContent = contenitore.getAttribute('data-titolo') || 'Richiedi informazioni';
+    var sottotitolo = contenitore.getAttribute('data-sottotitolo');
+    if (sottotitolo) contenitore.querySelector('[data-fc-card] > p').textContent = sottotitolo;
+    var testoBottone = contenitore.getAttribute('data-bottone') || TESTO_BOTTONE;
 
     var form = contenitore.querySelector('form[data-fc-form]');
     var pagina = window.location.pathname;
@@ -67,6 +70,7 @@
     form.querySelector('[name="_subject"]').value = 'Nuova richiesta da ' + pagina;
 
     var bottone = form.querySelector('[data-fc-invia]');
+    bottone.textContent = testoBottone;
     var errore = form.querySelector('[data-fc-errore]');
     var inCorso = false;
 
@@ -94,7 +98,7 @@
         errore.innerHTML = TESTO_ERRORE;
         errore.classList.remove('hidden');
         bottone.disabled = false;
-        bottone.textContent = TESTO_BOTTONE;
+        bottone.textContent = testoBottone;
         inCorso = false;
       });
     });

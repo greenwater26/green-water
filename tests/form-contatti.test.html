@@ -6,6 +6,7 @@
 
 <section id="contatti"><div data-form-contatti data-titolo="Titolo di prova"><a href="/index.html#form">fallback</a></div></section>
 <section id="secondo"><div data-form-contatti><a href="/index.html#form">fallback</a></div></section>
+<section id="terzo"><div data-form-contatti data-sottotitolo="Sottotitolo di prova" data-bottone="Bottone di prova"><a href="/index.html#form">fallback</a></div></section>
 
 <script>
 // Stub di fetch: ogni chiamata resta in sospeso finché il test non la risolve.
@@ -45,10 +46,14 @@ window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(argu
   async function esegui() {
     // 1. Rendering in entrambi i contenitori
     var forms = document.querySelectorAll('form[data-fc-form]');
-    ok('rende un form per contenitore', forms.length === 2, 'trovati ' + forms.length);
+    ok('rende un form per contenitore', forms.length === 3, 'trovati ' + forms.length);
     ok('segna il contenitore come pronto', contenitori()[0].getAttribute('data-fc-pronto') === '1');
     ok('titolo da data-titolo', contenitori()[0].querySelector('h2').textContent === 'Titolo di prova');
     ok('titolo di default', contenitori()[1].querySelector('h2').textContent === 'Richiedi informazioni');
+    ok('sottotitolo di default', contenitori()[1].querySelector('[data-fc-card] > p').textContent.indexOf('Scrivici e ti aiutiamo a scegliere') === 0);
+    ok('bottone di default', forms[1].querySelector('[data-fc-invia]').textContent === 'Richiedi il tuo preventivo gratuito');
+    ok('sottotitolo da data-sottotitolo', contenitori()[2].querySelector('[data-fc-card] > p').textContent === 'Sottotitolo di prova');
+    ok('bottone da data-bottone', forms[2].querySelector('[data-fc-invia]').textContent === 'Bottone di prova');
 
     // 2. Campi esatti
     var nomi = Array.prototype.map.call(forms[0].elements, function (e) { return e.name; }).filter(Boolean).sort().join(',');
@@ -67,7 +72,7 @@ window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(argu
     var s = document.createElement('script');
     s.src = '/form-contatti.js?bis';
     await new Promise(function (r) { s.onload = r; document.body.appendChild(s); });
-    ok('nessun form duplicato', document.querySelectorAll('form[data-fc-form]').length === 2);
+    ok('nessun form duplicato', document.querySelectorAll('form[data-fc-form]').length === 3);
 
     // 5. Invio riuscito + doppio clic
     var f = nuovoForm(0); compila(f);
@@ -109,6 +114,13 @@ window.gtag = function () { window.__eventi.push(Array.prototype.slice.call(argu
     window.__chiamate[0].reject(new TypeError('rete')); await attendi(); await attendi();
     ok('errore visibile su rete', !f.querySelector('[data-fc-errore]').classList.contains('hidden'));
     ok('link WhatsApp nell\'errore', f.querySelector('[data-fc-errore] a[href^="https://wa.me/393204478319"]') !== null);
+
+    // 7b. Errore con bottone personalizzato: torna al testo di data-bottone
+    f = nuovoForm(2); compila(f);
+    window.__chiamate = [];
+    f.requestSubmit(); await attendi();
+    window.__chiamate[0].resolve({ ok: false, status: 422 }); await attendi(); await attendi();
+    ok('testo bottone personalizzato ripristinato', f.querySelector('[data-fc-invia]').textContent.trim() === 'Bottone di prova');
 
     // 8. gtag assente (cookie non accettati)
     var gtagSalvato = window.gtag; delete window.gtag;
