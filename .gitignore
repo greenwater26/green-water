@@ -18,3 +18,9 @@ video-reel/public/vo-*/
 video-reel/public/bollicina-baby-*.png
 immagini/bollicina-baby-soprabanco*
 immagini/macchina*-pulita.png
+
+# Contenuti social già pubblicati, solo archivio locale
+carosello-detrazione-fiscale*
+status-detrazione-fiscale*
+esporta-carosello-detrazione.ps1
+esporta-status-detrazione.sh
