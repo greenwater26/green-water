@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta charset="UTF-8"><title>Controllo barra di navigazione</title></head>
+<body>
+<pre id="risultati"></pre>
+<script>
+// Uso: tests/nav-check.sh, oppure tests/nav-check.html?pagine=a.html,blog/b.html&larghezze=1024,1280
+// Carica ogni pagina in un iframe largo N px e controlla la barra desktop:
+// voci su più righe, voci fuori dal contenitore, voci sovrapposte al logo.
+(async function () {
+  var q = new URLSearchParams(location.search);
+  var pagine = q.get('pagine').split(',');
+  var larghezze = q.get('larghezze').split(',').map(Number);
+  var righe = [];
+  function carica(url, w) {
+    return new Promise(function (r) {
+      var f = document.createElement('iframe');
+      f.style.cssText = 'width:' + w + 'px;height:300px;border:0;position:absolute;left:0;top:0';
+      f.onload = function () { f.contentDocument.documentElement.style.overflow = 'hidden'; setTimeout(function () { r(f); }, 200); };
+      f.src = url;
+      document.body.appendChild(f);
+    });
+  }
+  function visibile(el) { var s = el.ownerDocument.defaultView.getComputedStyle(el); var b = el.getBoundingClientRect(); return s.display !== 'none' && s.visibility !== 'hidden' && b.width > 0; }
+  for (var p of pagine) {
+    for (var w of larghezze) {
+      var f = await carica('/' + p, w);
+      var d = f.contentDocument;
+      var testata = d.querySelector('body > nav, body header, body > div > nav');
+      var problemi = [];
+      if (testata) {
+        var bar = testata.getBoundingClientRect();
+        var link = Array.prototype.filter.call(testata.querySelectorAll('a, button, span, img'), function (el) {
+          return visibile(el) && !el.closest('[id^="mob"], #mobile-menu, .group > div, [aria-label="Breadcrumb"]') && el.getBoundingClientRect().top < bar.top + 80;
+        });
+        var voci = link.filter(function (el) { return el.tagName !== 'SPAN' && el.textContent.trim(); });
+        var marchio = link.filter(function (el) { return /green water italia|by/i.test(el.textContent.trim()) && el.closest('a[href="/"], a[href="index.html"], a[href="../index.html"], div > span, .flex') && el.getBoundingClientRect().left < w / 3; });
+        voci.forEach(function (el) {
+          var b = el.getBoundingClientRect();
+          var lh = parseFloat(d.defaultView.getComputedStyle(el).lineHeight) || 20;
+          if (b.height > lh * 1.6 && !/rounded-full/.test(el.className)) problemi.push('a capo: ' + el.textContent.trim());
+          if (b.height > lh * 2.6) problemi.push('a capo: ' + el.textContent.trim());
+          if (b.right > d.documentElement.clientWidth + 1 || b.left < -1) problemi.push('fuori schermo: ' + el.textContent.trim());
+        });
+        // sovrapposizioni tra elementi visibili della barra (marchio compreso)
+        var tutti = link.filter(function (el) { return el.tagName === 'IMG' || ((!el.querySelector('a, span, img') || el.tagName === 'A') && el.textContent.trim()); });
+        for (var i = 0; i < tutti.length; i++) for (var j = i + 1; j < tutti.length; j++) {
+          var a = tutti[i], b2 = tutti[j];
+          if (a.contains(b2) || b2.contains(a)) continue;
+          var r1 = a.getBoundingClientRect(), r2 = b2.getBoundingClientRect();
+          var ox = Math.min(r1.right, r2.right) - Math.max(r1.left, r2.left);
+          var oy = Math.min(r1.bottom, r2.bottom) - Math.max(r1.top, r2.top);
+          if (ox > 2 && oy > 2) problemi.push('sovrapposti: "' + a.textContent.trim().slice(0, 20) + '" / "' + b2.textContent.trim().slice(0, 20) + '"');
+          else if (oy > 2 && ox > -5) problemi.push('attaccati: "' + a.textContent.trim().slice(0, 20) + '" / "' + b2.textContent.trim().slice(0, 20) + '"');
+        }
+        var dp = voci.some(function (el) { return /diventa-partner/.test(el.getAttribute('href') || ''); });
+        righe.push((problemi.length ? 'FAIL ' : 'OK   ') + p + ' @' + w + (dp ? ' [partner]' : '') + (problemi.length ? ' → ' + Array.from(new Set(problemi)).join('; ') : ''));
+      } else {
+        righe.push('--   ' + p + ' @' + w + ' nessuna barra');
+      }
+      f.remove();
+    }
+  }
+  righe.push('FINE');
+  document.getElementById('risultati').textContent = righe.join('\n');
+})();
+</script>
+</body>
+</html>
