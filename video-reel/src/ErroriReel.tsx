@@ -61,7 +61,7 @@ const ERRORI: Errore[] = [
   },
   {
     titolo: "Guardare solo il prezzo",
-    fix: "Chiedi quanto costano i filtri ogni anno",
+    fix: "Calcola il costo totale su 5 anni, manutenzione inclusa",
     clip: "clip-residuo/r4.mp4",
   },
   {
