@@ -13,6 +13,7 @@ import { FiltriSpot, FILTRI_SPOT_DURATION } from "./FiltriSpot";
 import { SofiaSplitTest, SOFIA_SPLIT_TEST_DURATION } from "./SofiaSplitTest";
 import { BollicinaSpot, BOLLICINA_SPOT_DURATION } from "./BollicinaSpot";
 import { BollicinaReel, BOLLICINA_REEL_DURATION } from "./BollicinaReel";
+import { ErroriReel, ERRORI_DURATION } from "./ErroriReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -117,6 +118,14 @@ export const RemotionRoot: React.FC = () => {
         id="BollicinaReel"
         component={BollicinaReel}
         durationInFrames={BOLLICINA_REEL_DURATION}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="ErroriReel"
+        component={ErroriReel}
+        durationInFrames={ERRORI_DURATION}
         fps={30}
         width={1080}
         height={1920}
