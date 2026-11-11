@@ -32,47 +32,47 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "header",
           "key": "cf-worker"
         }
       ],
-      "destination": "https://www.greenwateritalia.it/:path*",
+      "destination": "https://www.greenwateritalia.it/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "header",
           "key": "cf-connecting-ip"
         }
       ],
-      "destination": "https://www.greenwateritalia.it/:path*",
+      "destination": "https://www.greenwateritalia.it/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "header",
           "key": "cf-ray"
         }
       ],
-      "destination": "https://www.greenwateritalia.it/:path*",
+      "destination": "https://www.greenwateritalia.it/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "green-water.vercel.app"
         }
       ],
-      "destination": "https://www.greenwateritalia.it/:path*",
+      "destination": "https://www.greenwateritalia.it/$1",
       "permanent": true
     },
     {
