@@ -7,7 +7,7 @@
 <script>
 window.addEventListener('load', function () {
   var pr = document.querySelector('[data-barra-mobile] [data-azione="preventivo"]');
-  var ok = pr && pr.getAttribute('href') === '/index.html#form';
+  var ok = pr && pr.getAttribute('href') === '/#form';
   document.getElementById('risultati').textContent =
     (ok ? 'PASS' : 'FAIL') + ' preventivo verso la home senza form' + (ok ? '' : ': ' + (pr && pr.getAttribute('href'))) + '\nFINE';
 });

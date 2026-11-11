@@ -1,4 +1,21 @@
 /*
+ * Protezione dai siti copia: se la pagina viene servita da un dominio
+ * diverso da quello ufficiale (es. un proxy che riscrive il dominio),
+ * porta il visitatore alla stessa pagina su www.greenwateritalia.it.
+ * Il dominio è spezzato in due stringhe perché i proxy sostituiscono
+ * il testo "greenwateritalia.it" con il proprio nome.
+ */
+(function () {
+  'use strict';
+  var ufficiale = 'www.green' + 'wateritalia.it';
+  var h = location.hostname;
+  var ammesso = h === ufficiale || h === 'localhost' || h === '127.0.0.1' || /\.vercel\.app$/.test(h);
+  if (!ammesso) {
+    location.replace('https://' + ufficiale + location.pathname + location.search + location.hash);
+  }
+})();
+
+/*
  * Barra CTA fissa su smartphone: Chiama · WhatsApp · Preventivo.
  * Spec: docs/superpowers/specs/2026-09-25-cta-form-contatti-design.md
  */
@@ -11,7 +28,7 @@
     // "Preventivo" porta al form della pagina se esiste, altrimenti a quello della home.
     var contenitore = document.querySelector('[data-form-contatti]');
     var sezione = contenitore && contenitore.closest('[id]');
-    var preventivo = sezione ? '#' + sezione.id : '/index.html#form';
+    var preventivo = sezione ? '#' + sezione.id : '/#form';
 
     var link = 'flex flex-col items-center justify-center gap-0.5 h-16 text-xs font-medium';
     var barra = document.createElement('nav');
